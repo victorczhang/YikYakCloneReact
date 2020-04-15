@@ -277,6 +277,7 @@ class SinglePostView extends Component {
         } 
         // this.fetchPosts()
         // test comment
+        // another
         // console.log(id)
         // this.fetchReplies()
     }
