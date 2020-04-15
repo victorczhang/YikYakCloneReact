@@ -1,0 +1,70 @@
+import React, {Component} from 'react'
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
+import {Link} from 'react-router-dom'
+
+class UserHeader extends Component {
+    constructor() {
+        super()
+        this.state = {
+
+        }
+    }
+
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();
+    };
+
+    render() {
+        const { user } = this.props.auth;
+
+        return (
+            <div className='dashboardHeader'>
+                <div className='dashboardLogo'>
+                    <Link to='/dashboard'><i className='material-icons md-24'>home</i></Link>
+                </div>
+                <div className='dashboardFeedSelection'> 
+                    {/* <p id='nearby'>Nearby</p>
+                    <p id='myHerd'>My Herd</p> */}
+                </div>
+                <div className='dashboardNewHot'>
+                    <div className='newPostToggle'>
+                        <input type='radio' name='feedOption' value='new' id='newPostToggle' />
+                        <label htmlFor='newPostToggle'>New</label>
+                    </div>
+                    <div className='hotPostToggle'>
+                        <input type='radio' name='feedOption' value='hot' id='hotPostToggle' defaultChecked />
+                        <label htmlFor='hotPostToggle'>Hot</label>
+                    </div>
+                    {/* <input type='radio' name='feedOption' value='new' id='newPostToggle' />
+                    <label for='newPostToggle'>New</label> */}
+                    {/* <input type='radio' name='feedOption' value='hot' id='hotPostToggle' />
+                    <label for='hotPostToggle'>Hot</label> */}
+                </div>
+                <div className='dashboardUserPref'>
+                    {/* <button className='userNotifications '><i className='material-icons md-24'>notifications</i></button> */}
+                    <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
+                    <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
+                </div>
+            </div>
+        )
+    }
+}
+
+UserHeader.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+};
+  
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+  
+export default connect(
+    mapStateToProps,
+    { logoutUser }
+)(UserHeader);
+
+// export default UserHeader

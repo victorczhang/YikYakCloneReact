@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Post from './Post'
-import Header from './Header'
+// import Post from '../Post/Post'
+import Header from '../Header/Header'
 
 class LandingPage extends Component {
     constructor() {
@@ -33,7 +33,7 @@ class LandingPage extends Component {
                         <h1>VIDEO GOES HERE</h1>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <Post />
                     <Post />
                     <Post />
@@ -43,7 +43,7 @@ class LandingPage extends Component {
                     <Post />
                     <Post />
                     <Post />
-                </div>
+                </div> */}
             </div>
         )
     }
