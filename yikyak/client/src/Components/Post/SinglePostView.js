@@ -219,7 +219,7 @@ class SinglePostView extends Component {
         })
     }
 
-    handleReplyUpvote = (id) => {
+    handleReplyDownvote = (id) => {
         this.setState(prevState => {
             const updatedReplies = prevState.replies.map(item => {
                 if (item._id === id) {
@@ -241,7 +241,7 @@ class SinglePostView extends Component {
                     return {
                         ...item,
                         // voted: true,
-                        points: item.points + 1
+                        points: item.points - 1
                     }
                 }
                 return item
@@ -309,7 +309,7 @@ class SinglePostView extends Component {
                     handleDelete={() => this.handleDelete(item._id)}
                     user={this.props.auth}
                     handleReplyUpvote={() => this.handleReplyUpvote(item._id)}
-                    handleDownvote={() => this.handleReplyDownvote(item._id)}
+                    handleReplyDownvote={() => this.handleReplyDownvote(item._id)}
                 />
             </div>
         )

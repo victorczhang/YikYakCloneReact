@@ -3,7 +3,7 @@ const router = express.Router();
 const keys = require("../../config/keys");
 const mongoose = require("mongoose");
 const passport = require("passport");
-const ObjectId = require('mongodb').ObjectID
+// const ObjectId = require('mongodb').ObjectID
 
 // Load Posts model
 const Posts = require("../../models/Posts");
@@ -287,7 +287,7 @@ router.post("/upvote/reply/id/:id", passport.authenticate('jwt', { session: fals
         const result = await Posts.findOneAndUpdate(
             { 
                 "comments._id": mongoose.Types.ObjectId(req.params.id),
-                "comments.$.upvotedBy" : { "$ne": Mongoose.Types.ObjectId(req.user._id) }
+                "comments.$.upvotedBy" : { "$ne": mongoose.Types.ObjectId(req.user._id) }
             },
             {
                 $inc: { "comments.$.points": 1 },
