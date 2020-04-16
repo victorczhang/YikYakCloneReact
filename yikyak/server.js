@@ -60,7 +60,7 @@ app.use("/api/profile", profile)
 app.use("/api/posts", posts)
 app.use("/api/reply", reply)
 
-app.get('/', function (req, res) { res.send('pong') });
+// app.get('/', function (req, res) { res.send('pong') });
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
