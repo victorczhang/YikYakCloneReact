@@ -10,7 +10,7 @@ const profile = require('./routes/api/profile')
 
 const session = require('express-session')
 
-import App from './client/src/App'
+// import App from './client/src/App'
 
 const cors = require('cors');
 const app = express();
@@ -62,11 +62,11 @@ app.use("/api/reply", reply)
 
 // app.get('/', function (req, res) { res.send('pong') });
 
-// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
-// app.get('/', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
