@@ -16,11 +16,6 @@ class Login extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     this.props.handleAuth()
-    //     console.log('Mount')
-    // }
-
     componentDidMount() {
         // If logged in and user navigates to Login page, should redirect them to dashboard
         if (this.props.auth.isAuthenticated) {
@@ -42,6 +37,7 @@ class Login extends Component {
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value });
     };
+    
     onSubmit = e => {
         e.preventDefault();
         const userData = {
