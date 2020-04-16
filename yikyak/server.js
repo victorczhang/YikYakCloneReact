@@ -10,6 +10,8 @@ const profile = require('./routes/api/profile')
 
 const session = require('express-session')
 
+import App from './client/src/App'
+
 const cors = require('cors');
 const app = express();
 
@@ -58,7 +60,7 @@ app.use("/api/profile", profile)
 app.use("/api/posts", posts)
 app.use("/api/reply", reply)
 
-app.get('/', function (req, res) { res.send('Hello'); });
+app.get('/', function (req, res) { <App /> });
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
