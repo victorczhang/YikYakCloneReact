@@ -54,7 +54,7 @@ class Dashboard extends Component {
 
       try {
         axios
-          .get(`http://localhost:5000/api/posts/yakarma/${user.id}`)
+          .get(`/api/posts/yakarma/${user.id}`)
           .then(res => {
             if (res.data.data.length > 0) {
               this.setState({
@@ -81,7 +81,7 @@ class Dashboard extends Component {
       //   { isLoading: true }
       // )
       await axios
-        .get("http://localhost:5000/api/posts/allPosts")
+        .get("/api/posts/allPosts")
         .then(res =>
           this.setState({
             posts: res.data.data,
@@ -123,7 +123,7 @@ class Dashboard extends Component {
       //   isLoading: true
       // })
       axios
-        .post("http://localhost:5000/api/posts/newPost", newPost)
+        .post("/api/posts/newPost", newPost)
         .then(res => {
           const {posts} = this.state
           // console.log(res.data)
@@ -200,7 +200,7 @@ class Dashboard extends Component {
         if (item._id === id) {
           try {
             axios
-              .post(`http://localhost:5000/api/posts/upvote/${id}`)
+              .post(`/api/posts/upvote/${id}`)
               .then(res => {
                 console.log(res)
                 if (!this.state.disabledUpvote) {
@@ -237,7 +237,7 @@ class Dashboard extends Component {
         if (item._id === id) {
           try {
             axios
-              .post(`http://localhost:5000/api/posts/downvote/${id}`)
+              .post(`/api/posts/downvote/${id}`)
               .then(res => {
                 console.log(res)
                 if (!this.state.disabledDownvote) {

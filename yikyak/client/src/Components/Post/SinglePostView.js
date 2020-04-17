@@ -33,7 +33,7 @@ class SinglePostView extends Component {
                 { isLoading: true }
             )
             axios
-                .get(`http://localhost:5000/api/posts/allReplies/${this.props.match.params.id}`)
+                .get(`/api/posts/allReplies/${this.props.match.params.id}`)
                 .then(res => 
                     // {
                         // const {posts} = this.state
@@ -62,7 +62,7 @@ class SinglePostView extends Component {
                 { isLoading: true }
             )
             axios
-                .get(`http://localhost:5000/api/posts/post/${this.props.match.params.id}`)
+                .get(`/api/posts/post/${this.props.match.params.id}`)
                 .then(res =>
                     this.setState(prevState => ({
                         data: [...prevState.data, res.data.data],
@@ -101,7 +101,7 @@ class SinglePostView extends Component {
                 isLoading: true
             })
             axios
-                .post(`http://localhost:5000/api/posts/newReply/${this.props.match.params.id}`, newReply)
+                .post(`/api/posts/newReply/${this.props.match.params.id}`, newReply)
                 .then(res => {
                     // console.log(res)
                     const {replies} = this.state
@@ -128,7 +128,7 @@ class SinglePostView extends Component {
                 if (item._id === id) {
                     try {
                         axios
-                            .post(`http://localhost:5000/api/posts/upvote/${id}`)
+                            .post(`/api/posts/upvote/${id}`)
                             .then(res => {
                                 console.log(res)
                                 // ...item,
@@ -160,7 +160,7 @@ class SinglePostView extends Component {
                 if (item._id === id) {
                     try {
                         axios
-                            .post(`http://localhost:5000/api/posts/downvote/${id}`)
+                            .post(`/api/posts/downvote/${id}`)
                             .then(res => {
                                 console.log(res)
                                 // ...item,
@@ -192,7 +192,7 @@ class SinglePostView extends Component {
                 if (item._id === id) {
                     try {
                         axios
-                            .post(`http://localhost:5000/api/posts/upvote/reply/id/${id}`)
+                            .post(`/api/posts/upvote/reply/id/${id}`)
                             .then(res => {
                                 // console.log(res.data.data[0].comments[0])
                                 console.log(res)
@@ -225,7 +225,7 @@ class SinglePostView extends Component {
                 if (item._id === id) {
                     try {
                         axios
-                            .post(`http://localhost:5000/api/posts/downvote/reply/id/${id}`)
+                            .post(`/api/posts/downvote/reply/id/${id}`)
                             .then(res => {
                                 // console.log(res.data.data[0].comments[0])
                                 console.log(res)
@@ -259,7 +259,7 @@ class SinglePostView extends Component {
                 isLoading: true
             })
             axios
-                .post(`http://localhost:5000/api/posts/${this.props.match.params.id}/reply/${id}`)
+                .post(`/api/posts/${this.props.match.params.id}/reply/${id}`)
                 .then(res =>
                     console.log(res),
                     // this.fetchPosts(),
