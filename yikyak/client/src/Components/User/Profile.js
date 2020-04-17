@@ -33,7 +33,7 @@ class Profile extends Component {
             { isLoading: true }
           )
           axios
-            .get(`http://localhost:5000/api/posts/post/user/${user.id}`)
+            .get(`/api/posts/post/user/${user.id}`)
             .then(res =>
               this.setState({
                 posts: res.data.data,
