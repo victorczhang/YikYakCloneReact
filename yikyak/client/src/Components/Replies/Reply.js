@@ -14,12 +14,6 @@ class Reply extends Component {
     }
 
     render() {
-        // const { user } = this.props.auth;
-        // console.log(this.props.user_id)
-        // console.log(user)
-        
-        // console.log(this.props.user.user.id)
-
         if (this.props.user.user.id === this.props.user_id) {
             return (
                 <div className='reply'>
@@ -88,19 +82,5 @@ class Reply extends Component {
         }
     }
 }
-
-// Reply.propTypes = {
-//     logoutUser: PropTypes.func.isRequired,
-//     auth: PropTypes.object.isRequired
-// };
-
-// const mapStateToProps = (state) => ({
-//     auth: state.auth
-// });
-
-// export default connect(
-//     mapStateToProps,
-//     { logoutUser })
-// (Reply);
 
 export default Reply
