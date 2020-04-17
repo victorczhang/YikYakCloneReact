@@ -417,6 +417,7 @@ input.loginField, input.signUpField {
   /* background: orange; */
   border: 2px solid rgba(138, 138, 138, 0.5);
   /* height: 420px; */
+  height: max-content;
   /* height: 600px; */
   border-radius: 3px;
 }
