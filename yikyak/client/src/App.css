@@ -773,6 +773,8 @@ input.loginField, input.signUpField {
   color: #30DBBD;
   background: none;
   border: none;
+  width: 20px;
+  height: 40px;
 }
 
 .featuredPostsContent, .followUsContent {
