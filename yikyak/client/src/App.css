@@ -90,7 +90,7 @@ li {
 
 .feedItem {
   border-bottom: 2px solid rgb(202, 202, 202, .3);
-  width: 95%;
+  /* width: 95%; */
   margin: 0 auto;
   background: white;
 }
@@ -791,6 +791,6 @@ input.loginField, input.signUpField {
   justify-content: center;
 }
 
-.test {
+.postTextMain {
   word-wrap: break-word;
 }
