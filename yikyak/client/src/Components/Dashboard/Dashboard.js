@@ -33,21 +33,6 @@ class Dashboard extends Component {
     this.getUserKarma()
   }
 
-  // testAxios = () => {
-  //   try {
-  //     axios
-  //       .get(`http://localhost:5000/api/profile/me`)
-  //       .then(res => {
-  //             console.log(res.data.data)
-  //           // hasVoted.push(res.data)
-  //           // this.setState({hasVoted})
-  //       })
-  //   }
-  //   catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-
   getUserKarma = () => {
     const { user } = this.props.auth;
     // console.log(user)
@@ -77,9 +62,6 @@ class Dashboard extends Component {
 
   async fetchPosts() {
     try {
-      // this.setState(
-      //   { isLoading: true }
-      // )
       await axios
         .get("/api/posts/allPosts")
         .then(res =>
@@ -119,9 +101,6 @@ class Dashboard extends Component {
     newPost.user_id = user.id
 
     try {
-      // this.setState({
-      //   isLoading: true
-      // })
       axios
         .post("/api/posts/newPost", newPost)
         .then(res => {
@@ -269,8 +248,6 @@ class Dashboard extends Component {
   }
   
   render() {
-    console.log(this.state.posts)
-
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
       obj2.createdAt.localeCompare(obj1.createdAt));
 
