@@ -209,8 +209,8 @@ class Dashboard extends Component {
                     disabledDownvote: false
                   })
                 }
-                console.log(this.state.disabledUpvote)
-                console.log(this.state.disableDownvote)
+                // console.log(this.state.disabledUpvote)
+                // console.log(this.state.disableDownvote)
               })
           }
           catch (err) {
@@ -246,8 +246,8 @@ class Dashboard extends Component {
                     disabledDownvote: true
                   })
                 }
-                console.log(this.state.disabledUpvote)
-                console.log(this.state.disableDownvote)
+                // console.log(this.state.disabledUpvote)
+                // console.log(this.state.disableDownvote)
               })
           }
           catch (err) {

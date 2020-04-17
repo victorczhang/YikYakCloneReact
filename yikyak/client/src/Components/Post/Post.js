@@ -32,7 +32,7 @@ class Post extends Component {
                 </div>
                 <div className='postScore'>
                     <button 
-                        // className = {this.props.hasVoted ? 'upvote-disabled' : 'upvote' } 
+                        className = 'downvote'
                         onClick={this.props.handleUpvote}
                         // disabled={this.props.disabledUpvote}
                         // onClick={this.testFunc}
@@ -44,7 +44,7 @@ class Post extends Component {
                     <button 
                         className='downvote' 
                         onClick={this.props.handleDownvote}
-                        disabled={this.props.disabledDownvote}
+                        // disabled={this.props.disabledDownvote}
                     >
                             <span className="material-icons">keyboard_arrow_down</span></button>
                 </div>
