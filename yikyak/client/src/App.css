@@ -785,3 +785,7 @@ input.loginField, input.signUpField {
   display: flex;
   justify-content: center;
 }
+
+.test {
+  word-wrap: break-word;
+}

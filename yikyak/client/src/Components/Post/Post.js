@@ -14,7 +14,7 @@ class Post extends Component {
             <div className='post'>
                 <div className='postMain'>
                     <div className='postText'>
-                        <p>{this.props.post}</p>
+                        <p className='test'>{this.props.post}</p>
                     </div>
                     <div className='postDetails'> 
                         <p className='postTimestamp'>{this.props.createdAt}</p> 
