@@ -287,8 +287,8 @@ class Dashboard extends Component {
           points={item.points}
           handleUpvote={() => this.handleUpvote(item._id)}
           handleDownvote={() => this.handleDownvote(item._id)}
-          disabledUpvote={this.state.disabledUpvote}
-          disabledDownvote={this.state.disabledDownvote}
+          // disabledUpvote={this.state.disabledUpvote}
+          // disabledDownvote={this.state.disabledDownvote}
           // handleCheck={() => this.testAxios(item._id)}
           // hasVoted={this.state.hasVoted}
           // voted={this.state.voted}
