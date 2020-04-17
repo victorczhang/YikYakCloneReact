@@ -332,19 +332,6 @@ class Dashboard extends Component {
               </div>
             </form>
           </div>
-          {/* <form onSubmit={this.onSubmit}>
-            <label>
-              <textarea
-                className='textareaPost'
-                maxLength='200'
-                onChange={this.handleChange}
-                placeholder="What's on your mind?" />
-            </label>
-            <div className='textareaBar'>
-              <p className='wordCount'>{this.state.charsLeft}</p>
-              <button className='sendButton'>Send</button>
-            </div>
-          </form> */}
         </div>
         <div className='mainContent'>
           <div className='feedSidebar'>

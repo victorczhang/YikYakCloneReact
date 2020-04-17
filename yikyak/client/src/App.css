@@ -114,7 +114,7 @@ li {
 
 .postText, .replyText {
   height: 60%;
-  width: 80%;
+  width: 90%;
   background: yellow;
   padding-top: 20px;
   /* padding-left: 20px; */
@@ -315,7 +315,7 @@ input.loginField, input.signUpField {
 .mainContent {
   display: grid;
   grid-template-columns: 250px auto;
-  width: 85%;
+  max-width: 85%;
   margin-left: 60px;
   margin-top: 40px;
   grid-gap: 20px;
