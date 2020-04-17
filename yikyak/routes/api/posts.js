@@ -291,8 +291,8 @@ router.post("/upvote/reply/id/:id", passport.authenticate('jwt', { session: fals
             },
             {
                 $inc: { "comments.$.points": 1 },
-                $push: { "comments.$.upvotedBy": req.user._id },
-                $pull: { "comments.$.downvotedBy": req.user._id },
+                $push: { "comments.$.upvotedBy": mongoose.Types.ObjectId(req.user._id) },
+                $pull: { "comments.$.downvotedBy": mongoose.Types.ObjectId(req.user._id) },
             }
         );
         return res.status(200).json({
@@ -315,12 +315,12 @@ router.post("/downvote/reply/id/:id", passport.authenticate('jwt', { session: fa
         const result = await Posts.findOneAndUpdate(
             { 
                 "comments._id": mongoose.Types.ObjectId(req.params.id),
-                "comments.$.downvotedBy" : { "$ne": req.user._id }
+                "comments.$.downvotedBy" : { "$ne": mongoose.Types.ObjectId(req.user._id) }
             },
             {
                 $inc: { "comments.$.points": -1 },
-                $pull: { "comments.$.upvotedBy": req.user._id },
-                $push: { "comments.$.downvotedBy": req.user._id },
+                $pull: { "comments.$.upvotedBy": mongoose.Types.ObjectId(req.user._id) },
+                $push: { "comments.$.downvotedBy": mongoose.Types.ObjectId(req.user._id) },
             }
         );
         return res.status(200).json({

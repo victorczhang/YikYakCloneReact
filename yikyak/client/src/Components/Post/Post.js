@@ -9,10 +9,10 @@ class Post extends Component {
         }
     }
 
-    testFunc = () => {
-        this.props.handleUpvote()
-        this.props.handleCheck()
-    }
+    // testFunc = () => {
+    //     this.props.handleUpvote()
+    //     this.props.handleCheck()
+    // }
     
     render() {
         return (

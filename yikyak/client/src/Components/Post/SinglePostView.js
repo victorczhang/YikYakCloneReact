@@ -162,7 +162,7 @@ class SinglePostView extends Component {
                         axios
                             .post(`/api/posts/downvote/${id}`)
                             .then(res => {
-                                console.log(res)
+                                // console.log(res)
                                 // ...item,
                                 // const {posts} = this.state
                                 // posts.push(res.data)
