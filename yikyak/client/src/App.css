@@ -465,7 +465,7 @@ input.loginField, input.signUpField {
   padding: 5px;
   border-radius: 4px;
   box-shadow: none;
-  border: 1px solid rgba(231, 231, 231, .4)
+  border: 1px solid rgba(231, 231, 231, .8)
 }
 
 .userNotifications {
@@ -484,7 +484,7 @@ input.loginField, input.signUpField {
   border-radius: 4px;
   font-weight: bold;
   box-shadow: none;
-  border: 1px solid rgba(231, 231, 231, .4)
+  border: 1px solid rgba(231, 231, 231, .8)
 }
 
 .dashboardUserPref {
