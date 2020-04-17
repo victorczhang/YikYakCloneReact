@@ -22,8 +22,8 @@ class Post extends Component {
                         <p>{this.props.post}</p>
                     </div>
                     <div className='postDetails'> 
-                        <p className='postTimestamp'>{this.props.createdAt}</p>
-                        <p className='postReplies'><Link to={`/post/${this.props.id}`}>{this.props.replies} replies</Link></p>
+                        <p className='postTimestamp'>{this.props.createdAt}</p> 
+                        <p className='postReplies'><Link to={`/post/${this.props.id}`}>{this.props.replies} {this.props.replies == 1 ? 'reply' : 'replies'}</Link></p>
                         {/* <button className='postControlColumn' 
                             // onClick={this.props.handleDelete}
                             >DEL
