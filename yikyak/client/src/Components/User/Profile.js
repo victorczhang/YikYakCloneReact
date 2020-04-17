@@ -106,7 +106,7 @@ class Profile extends Component {
                     <div className='dashboardBackground'>
                         {/* <h1>Green Background</h1> */}
                     </div>
-                    <div>
+                    <div className='loadingPage'>
                         <h1>Loading</h1>
                     </div>
                 </div>

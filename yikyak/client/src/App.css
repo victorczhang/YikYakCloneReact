@@ -773,10 +773,15 @@ input.loginField, input.signUpField {
   color: #30DBBD;
   background: none;
   border: none;
-  width: 20px;
-  height: 40px;
+  /* width: 20px; */
+  /* height: 40px; */
 }
 
 .featuredPostsContent, .followUsContent {
   padding-top: 15px;
+}
+
+.loadingPage {
+  display: flex;
+  justify-content: center;
 }
