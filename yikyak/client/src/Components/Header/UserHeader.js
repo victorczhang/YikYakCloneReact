@@ -47,7 +47,7 @@ class UserHeader extends Component {
                             value='new' 
                             id='newPostToggle' 
                             checked={this.state.new}
-                            defaultChecked={true}
+                            // defaultChecked={true}
                             onChange={this.handleChange}
                         />
                         <label htmlFor='newPostToggle'>New</label>
