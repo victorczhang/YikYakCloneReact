@@ -37,7 +37,7 @@ class UserPost extends Component {
                     <p className='postPoints'>{this.props.points}</p>
                     <button 
                         // className='downvote'
-                        className="material-icons"> 
+                        className="material-icons"
                         // onClick={this.props.handleDownvote}
                     >
                         keyboard_arrow_down

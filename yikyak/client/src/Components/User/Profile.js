@@ -55,7 +55,7 @@ class Profile extends Component {
                 isLoading: true
             })
             axios
-              .delete(`http://localhost:5000/api/posts/post/${id}`)
+              .delete(`/api/posts/post/${id}`)
               .then(res =>
                 console.log(res),
                 this.fetchPosts(),
@@ -133,7 +133,6 @@ class Profile extends Component {
                             <button className='settingsButton'>Privacy</button>
                             <button className='settingsButton'>Blocked Users</button>
                             <button className='settingsButton'>Contact Support</button>
-                            {/* <button className='settingsButton'></button> */}
                         </div>
                     </div>
                     <div>
@@ -148,9 +147,6 @@ class Profile extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* <div className='test2'>
-                        <h1>Hello 2</h1>
-                    </div> */}
                 </div>
             </div>
             )
@@ -162,7 +158,6 @@ class Profile extends Component {
                     <UserHeader />
                 </div>
                 <div className='dashboardBackground'>
-                    {/* <h1>Green Background</h1> */}
                 </div>
                 <div className='profileContent'>
                     <div className='profileSettings'>
