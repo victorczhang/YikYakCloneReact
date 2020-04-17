@@ -109,12 +109,12 @@ li {
 }
 
 .postMain, .replyMain {
-  width: 90%;
+  width: 100%;
 }
 
 .postText, .replyText {
   height: 60%;
-  width: 90%;
+  width: 100%;
   background: yellow;
   padding-top: 20px;
   /* padding-left: 20px; */
@@ -606,6 +606,11 @@ input.loginField, input.signUpField {
 
 .feedPost {
   border: 3px solid #30DBBD;
+  /* width: 100%; */
+}
+
+.feedContent {
+  width: 100%;
 }
 
 .userYakarma {
