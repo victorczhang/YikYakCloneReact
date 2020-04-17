@@ -110,7 +110,8 @@ class SinglePostView extends Component {
                     this.setState({replies})
 
                     this.setState({
-                        isLoading: false
+                        isLoading: false,
+                        reply: ''
                     })
                 })
         } 
@@ -333,6 +334,7 @@ class SinglePostView extends Component {
                             <textarea
                                 className='textareaReply'
                                 maxLength='200'
+                                value={this.state.reply}
                                 onChange={this.handleChange}
                                 placeholder="Leave a reply..." />
                         </label>
