@@ -34,15 +34,15 @@ class Post extends Component {
                         // onClick={this.testFunc}
                     >
                         keyboard_arrow_up
-                        {/* TEST */}
                     </button>
                     <p className='postPoints'><span>{this.props.points}</span></p>
                     <button 
-                        className='downvote' 
+                        // className='downvote' 
+                        className="material-icons"
                         onClick={this.props.handleDownvote}
-                        // disabled={this.props.disabledDownvote}
                     >
-                            <span className="material-icons">keyboard_arrow_down</span></button>
+                        keyboard_arrow_down
+                    </button>
                 </div>
             </div>
         )

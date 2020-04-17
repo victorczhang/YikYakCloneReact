@@ -28,17 +28,19 @@ class UserPost extends Component {
                 </div>
                 <div className='postScore'>
                     <button 
-                        className='upvote' 
+                        // className='upvote'
+                        className="material-icons" 
                         // onClick={this.props.handleUpvote}
                     >
-                            <span className="material-icons">keyboard_arrow_up</span>
+                            keyboard_arrow_up
                         </button>
                     <p className='postPoints'>{this.props.points}</p>
                     <button 
-                        className='downvote' 
+                        // className='downvote'
+                        className="material-icons"> 
                         // onClick={this.props.handleDownvote}
                     >
-                        <span className="material-icons">keyboard_arrow_down</span>
+                        keyboard_arrow_down
                     </button>
                 </div>
             </div>

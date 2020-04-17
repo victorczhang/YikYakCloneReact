@@ -771,6 +771,8 @@ input.loginField, input.signUpField {
 
 .material-icons {
   color: #30DBBD;
+  background: none;
+  border: none;
 }
 
 .featuredPostsContent, .followUsContent {
