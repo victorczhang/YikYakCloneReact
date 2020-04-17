@@ -8,12 +8,7 @@ class Post extends Component {
 
         }
     }
-
-    // testFunc = () => {
-    //     this.props.handleUpvote()
-    //     this.props.handleCheck()
-    // }
-    
+   
     render() {
         return (
             <div className='post'>
@@ -32,12 +27,13 @@ class Post extends Component {
                 </div>
                 <div className='postScore'>
                     <button 
-                        className = 'downvote'
+                        // className = 'downvote'
+                        className="material-icons"
                         onClick={this.props.handleUpvote}
                         // disabled={this.props.disabledUpvote}
                         // onClick={this.testFunc}
                     >
-                        <span className="material-icons">keyboard_arrow_up</span>
+                        keyboard_arrow_up
                         {/* TEST */}
                     </button>
                     <p className='postPoints'><span>{this.props.points}</span></p>
