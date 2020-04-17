@@ -113,6 +113,9 @@ class Dashboard extends Component {
           // ),
           // form.reset()
           // console.log(this.state.posts)
+          this.setState({
+            post: ''
+          })
           this.fetchPosts()
         })
       } 
@@ -123,55 +126,6 @@ class Dashboard extends Component {
       })
     }
   }
-
-  // disableUpvote = (id) => {
-  //   this.setState(prevState => {
-  //     const updatedPosts = prevState.posts.map(item => {
-  //       if (item._id === id) {
-  //         // try {
-  //         //   axios
-  //         //     .post(`http://localhost:5000/api/posts/upvote/${id}`)
-  //         //     .then(res => {
-  //         //       console.log(res)
-  //         //       // ...item,
-  //         //       // const {posts} = this.state
-  //         //       // posts.push(res.data)
-  //         //       // this.setState({posts})
-  //         //     })
-  //         // }
-  //         // catch (err) {
-  //         //   console.log(err)
-  //         // }
-  //         return {
-  //           ...item,
-  //           // voted: true,
-  //           voted: false
-  //           }
-  //         }
-  //       return item
-  //     })
-  //     return {
-  //       posts: updatedPosts
-  //     }
-  //   })
-  //   console.log(id)
-  //   console.log('disabled')
-    
-  // //   try {
-  // //     axios
-  // //       .post(`http://localhost:5000/api/posts/upvote/${id}`)
-  // //       .then(res =>
-  // //         console.log(res),
-  // //         this.fetchPosts(),
-  // //         console.log('Test Upvote'))
-  // //   }
-  // //   catch (err) {
-  // //     console.log(err)
-  // //   }
-  // //   this.fetchPosts()
-  // //   // console.log(id)
-  // //   // console.log(this.state.posts)
-  // }
 
   handleUpvote = (id) => {
     this.setState(prevState => {
@@ -301,6 +255,7 @@ class Dashboard extends Component {
                   className='textareaPost'
                   maxLength='200'
                   onChange={this.handleChange}
+                  value={this.state.post}
                   placeholder="What's on your mind?" />
               </label>
               <div className='textareaBar'>
