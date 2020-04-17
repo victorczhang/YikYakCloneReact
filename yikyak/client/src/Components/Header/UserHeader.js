@@ -8,7 +8,8 @@ class UserHeader extends Component {
     constructor() {
         super()
         this.state = {
-
+            new: true,
+            hot: false,
         }
     }
 
@@ -16,6 +17,15 @@ class UserHeader extends Component {
         e.preventDefault();
         this.props.logoutUser();
     };
+
+    handleChange = e => {
+        this.setState({
+            new: !this.state.new,
+            false: !this.state.hot
+        })
+        console.log(this.state.new)
+        console.log(this.state.hot)
+    }
 
     render() {
         const { user } = this.props.auth;
@@ -31,20 +41,30 @@ class UserHeader extends Component {
                 </div>
                 <div className='dashboardNewHot'>
                     <div className='newPostToggle'>
-                        <input type='radio' name='feedOption' value='new' id='newPostToggle' />
+                        <input 
+                            type='radio' 
+                            name='feedOption' 
+                            value='new' 
+                            id='newPostToggle' 
+                            checked={this.state.new}
+                            defaultChecked={true}
+                            onChange={this.handleChange}
+                        />
                         <label htmlFor='newPostToggle'>New</label>
                     </div>
                     <div className='hotPostToggle'>
-                        <input type='radio' name='feedOption' value='hot' id='hotPostToggle' defaultChecked />
+                        <input 
+                            type='radio' 
+                            name='feedOption' 
+                            value='hot' 
+                            id='hotPostToggle' 
+                            checked={this.state.hot}
+                            onChange={this.handleChange}
+                        />
                         <label htmlFor='hotPostToggle'>Hot</label>
                     </div>
-                    {/* <input type='radio' name='feedOption' value='new' id='newPostToggle' />
-                    <label for='newPostToggle'>New</label> */}
-                    {/* <input type='radio' name='feedOption' value='hot' id='hotPostToggle' />
-                    <label for='hotPostToggle'>Hot</label> */}
                 </div>
                 <div className='dashboardUserPref'>
-                    {/* <button className='userNotifications '><i className='material-icons md-24'>notifications</i></button> */}
                     <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
                     <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
                 </div>
