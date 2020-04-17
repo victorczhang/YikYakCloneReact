@@ -611,6 +611,7 @@ input.loginField, input.signUpField {
 
 .feedContent {
   width: 100%;
+  overflow: hidden;
 }
 
 .userYakarma {
