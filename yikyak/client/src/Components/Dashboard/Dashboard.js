@@ -26,6 +26,9 @@ class Dashboard extends Component {
     disableDownvote: false,
 
     totalYakarma: '',
+
+    new: true,
+    hot: false,
   }
 
   componentDidMount = () => {
@@ -200,10 +203,22 @@ class Dashboard extends Component {
     })
     // console.log(id)
   }
+
+  handleChange = e => {
+    this.setState({
+        new: !this.state.new,
+        hot: !this.state.hot
+    })
+    console.log(this.state.new)
+    console.log(this.state.hot)
+  }
   
   render() {
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
       obj2.createdAt.localeCompare(obj1.createdAt));
+
+    const hotPosts = this.state.posts.slice().sort((obj1, obj2) => 
+      obj2.points - obj1.points)
 
     const PostItemComponent = sortedPosts.map((item, i) =>
       <div 
@@ -218,15 +233,27 @@ class Dashboard extends Component {
           points={item.points}
           handleUpvote={() => this.handleUpvote(item._id)}
           handleDownvote={() => this.handleDownvote(item._id)}
-          // disabledUpvote={this.state.disabledUpvote}
-          // disabledDownvote={this.state.disabledDownvote}
-          // handleCheck={() => this.testAxios(item._id)}
-          // hasVoted={this.state.hasVoted}
-          // voted={this.state.voted}
-          // handleDelete={() => this.handleDelete(item._id)}
       />
       </div>
     )
+
+    const hotPostItemComponent = hotPosts.map((item, i) =>
+      <div 
+        key={i}
+        className='feedItem'
+      >
+        <Post
+          post={item.post}
+          id={item._id}
+          replies={item.replies}
+          createdAt={item.createdAt}
+          points={item.points}
+          handleUpvote={() => this.handleUpvote(item._id)}
+          handleDownvote={() => this.handleDownvote(item._id)}
+      />
+      </div>
+    )
+
 
     if (this.state.isLoading) {
       return (
@@ -239,7 +266,11 @@ class Dashboard extends Component {
     return (
       <div className='homePage'>
         <div>
-          <UserHeader />
+          <UserHeader 
+            hot={this.state.hot} 
+            new={this.state.new}
+            handleChange={this.handleChange()}
+          />
         </div>
         <div className='dashboardBackground'>
           {/* <b>Hey there,</b> {user.name.split(" ")[0]} */}
@@ -315,7 +346,7 @@ class Dashboard extends Component {
           </div>
           <div className='feedContent'>
             <div className='feedPost'>
-              {PostItemComponent}
+              { this.state.new ? {PostItemComponent} : {hotPostItemComponent} }
             </div>
           </div>
         </div>
