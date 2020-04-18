@@ -27,8 +27,8 @@ class Dashboard extends Component {
 
     totalYakarma: '',
 
-    new: true,
-    hot: false,
+    // new: true,
+    // hot: false,
   }
 
   componentDidMount = () => {
@@ -204,12 +204,12 @@ class Dashboard extends Component {
     // console.log(id)
   }
 
-  handleChange = () => {
-    this.setState({
-        new: !this.state.new,
-        hot: !this.state.hot
-    })
-  }
+  // handleChange = () => {
+  //   this.setState({
+  //       new: !this.state.new,
+  //       hot: !this.state.hot
+  //   })
+  // }
   
   render() {
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
@@ -231,7 +231,7 @@ class Dashboard extends Component {
           points={item.points}
           handleUpvote={() => this.handleUpvote(item._id)}
           handleDownvote={() => this.handleDownvote(item._id)}
-      />
+        />
       </div>
     )
 
