@@ -204,7 +204,7 @@ class Dashboard extends Component {
     // console.log(id)
   }
 
-  handleChange = e => {
+  handleChange = () => {
     this.setState({
         new: !this.state.new,
         hot: !this.state.hot
