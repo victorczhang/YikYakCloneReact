@@ -21,7 +21,7 @@ class UserHeader extends Component {
     handleChange = e => {
         this.setState({
             new: !this.state.new,
-            false: !this.state.hot
+            hot: !this.state.hot
         })
         console.log(this.state.new)
         console.log(this.state.hot)
@@ -44,7 +44,7 @@ class UserHeader extends Component {
                         <input 
                             type='radio' 
                             name='feedOption' 
-                            value='new' 
+                            value='new'
                             id='newPostToggle' 
                             checked={this.state.new}
                             // defaultChecked={true}
@@ -55,8 +55,8 @@ class UserHeader extends Component {
                     <div className='hotPostToggle'>
                         <input 
                             type='radio' 
-                            name='feedOption' 
-                            value='hot' 
+                            name='feedOption'
+                            value='hot'
                             id='hotPostToggle' 
                             checked={this.state.hot}
                             onChange={this.handleChange}
