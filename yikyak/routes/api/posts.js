@@ -338,10 +338,10 @@ router.post("/downvote/reply/id/:id", passport.authenticate('jwt', { session: fa
 
 // Check the posts a user has upvoted
 
-router.get('/upvotedPosts/:id',
+router.get('/upvotedPosts', passport.authenticate('jwt', { session: false }),
     async (req, res) => {
         const filter = {
-            'upvotedBy': mongoose.Types.ObjectId(req.params.id)
+            'upvotedBy': mongoose.Types.ObjectId(req.user._id)
         }
 
         Posts.find(filter, function (err, posts) {
@@ -364,10 +364,10 @@ router.get('/upvotedPosts/:id',
 
 // Check the posts a user has downvoted
 
-router.get('/downvotedPosts/:id',
+router.get('/downvotedPosts', passport.authenticate('jwt', { session: false }), 
     async (req, res) => {
         const filter = {
-            'downvotedBy': mongoose.Types.ObjectId(req.params.id)
+            'downvotedBy': mongoose.Types.ObjectId(req.user._id)
         }
 
         Posts.find(filter, function (err, posts) {

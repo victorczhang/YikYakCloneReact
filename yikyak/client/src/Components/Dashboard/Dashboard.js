@@ -34,6 +34,8 @@ class Dashboard extends Component {
   componentDidMount = () => {
     this.fetchPosts()
     this.getUserKarma()
+
+    this.handleGetUpvotedPosts()
   }
 
   getUserKarma = () => {
@@ -210,6 +212,19 @@ class Dashboard extends Component {
   //       hot: !this.state.hot
   //   })
   // }
+
+  handleGetUpvotedPosts = () => {
+    try {
+      axios
+        .get("/api/posts/upvotedPosts")
+        .then(res => {
+          console.log(res)
+        })
+      } 
+    catch (err) {
+      console.log(err)
+    }
+  }
   
   render() {
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
