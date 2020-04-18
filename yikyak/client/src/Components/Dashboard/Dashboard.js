@@ -209,8 +209,6 @@ class Dashboard extends Component {
         new: !this.state.new,
         hot: !this.state.hot
     })
-    console.log(this.state.new)
-    console.log(this.state.hot)
   }
   
   render() {
@@ -253,7 +251,6 @@ class Dashboard extends Component {
     //   />
     //   </div>
     // )
-
 
     if (this.state.isLoading) {
       return (
