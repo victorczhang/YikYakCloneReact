@@ -778,7 +778,8 @@ input.loginField, input.signUpField {
 /* } */
 
 .material-icons {
-  color: #30DBBD;
+  /* color: #30DBBD; */
+  color: rgba(138, 138, 138, 0.7);
   background: none;
   border: none;
   /* width: 20px; */
