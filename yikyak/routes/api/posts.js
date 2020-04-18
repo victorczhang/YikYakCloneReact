@@ -341,7 +341,7 @@ router.post("/downvote/reply/id/:id", passport.authenticate('jwt', { session: fa
 router.get('/upvotedPosts/:id',
     async (req, res) => {
         const filter = {
-            'upvotedBy': req.params.id
+            'upvotedBy': mongoose.Types.ObjectId(req.params.id)
         }
 
         Posts.find(filter, function (err, posts) {
@@ -367,7 +367,7 @@ router.get('/upvotedPosts/:id',
 router.get('/downvotedPosts/:id',
     async (req, res) => {
         const filter = {
-            'downvotedBy': req.params.id
+            'downvotedBy': mongoose.Types.ObjectId(req.params.id)
         }
 
         Posts.find(filter, function (err, posts) {
