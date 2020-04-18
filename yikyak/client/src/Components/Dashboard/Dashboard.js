@@ -346,7 +346,8 @@ class Dashboard extends Component {
           </div>
           <div className='feedContent'>
             <div className='feedPost'>
-              { this.state.new ? {PostItemComponent} : {hotPostItemComponent} }
+              {/* { this.state.new ? {PostItemComponent} : {hotPostItemComponent} } */}
+              { PostItemComponent }
             </div>
           </div>
         </div>
