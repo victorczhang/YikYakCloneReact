@@ -8,8 +8,8 @@ class UserHeader extends Component {
     constructor() {
         super()
         this.state = {
-            // new: true,
-            // hot: false,
+            new: true,
+            hot: false,
         }
     }
 
@@ -18,14 +18,14 @@ class UserHeader extends Component {
         this.props.logoutUser();
     };
 
-    // handleChange = e => {
-    //     this.setState({
-    //         new: !this.state.new,
-    //         hot: !this.state.hot
-    //     })
-    //     console.log(this.state.new)
-    //     console.log(this.state.hot)
-    // }
+    handleChange = e => {
+        this.setState({
+            new: !this.state.new,
+            hot: !this.state.hot
+        })
+        // console.log(this.state.new)
+        // console.log(this.state.hot)
+    }
 
     render() {
         const { user } = this.props.auth;
@@ -46,9 +46,9 @@ class UserHeader extends Component {
                             name='feedOption' 
                             value='new'
                             id='newPostToggle' 
-                            checked={this.props.new}
+                            checked={this.state.new}
                             // defaultChecked={true}
-                            onChange={this.props.handleChange}
+                            onChange={this.handleChange()}
                         />
                         <label htmlFor='newPostToggle'>New</label>
                     </div>
@@ -58,8 +58,8 @@ class UserHeader extends Component {
                             name='feedOption'
                             value='hot'
                             id='hotPostToggle' 
-                            checked={this.props.hot}
-                            onChange={this.props.handleChange}
+                            checked={this.state.hot}
+                            onChange={this.handleChange()}
                         />
                         <label htmlFor='hotPostToggle'>Hot</label>
                     </div>

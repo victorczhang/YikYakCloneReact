@@ -264,9 +264,9 @@ class Dashboard extends Component {
       <div className='homePage'>
         <div>
           <UserHeader 
-            hot={this.state.hot} 
-            new={this.state.new}
-            handleChange={this.handleChange()}
+            // hot={this.state.hot} 
+            // new={this.state.new}
+            // handleChange={this.handleChange()}
           />
         </div>
         <div className='dashboardBackground'>
