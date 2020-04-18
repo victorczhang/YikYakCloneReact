@@ -36,6 +36,7 @@ class Dashboard extends Component {
     this.getUserKarma()
 
     this.handleGetUpvotedPosts()
+    this.handleGetDownvotedPosts()
   }
 
   getUserKarma = () => {
@@ -217,6 +218,19 @@ class Dashboard extends Component {
     try {
       axios
         .get("/api/posts/upvotedPosts")
+        .then(res => {
+          console.log(res)
+        })
+      } 
+    catch (err) {
+      console.log(err)
+    }
+  }
+
+  handleGetDownvotedPosts = () => {
+    try {
+      axios
+        .get("/api/posts/downvotedPosts")
         .then(res => {
           console.log(res)
         })
