@@ -217,8 +217,8 @@ class Dashboard extends Component {
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
       obj2.createdAt.localeCompare(obj1.createdAt));
 
-    const hotPosts = this.state.posts.slice().sort((obj1, obj2) => 
-      obj2.points - obj1.points)
+    // const hotPosts = this.state.posts.slice().sort((obj1, obj2) => 
+    //   obj2.points - obj1.points)
 
     const PostItemComponent = sortedPosts.map((item, i) =>
       <div 
@@ -237,22 +237,22 @@ class Dashboard extends Component {
       </div>
     )
 
-    const hotPostItemComponent = hotPosts.map((item, i) =>
-      <div 
-        key={i}
-        className='feedItem'
-      >
-        <Post
-          post={item.post}
-          id={item._id}
-          replies={item.replies}
-          createdAt={item.createdAt}
-          points={item.points}
-          handleUpvote={() => this.handleUpvote(item._id)}
-          handleDownvote={() => this.handleDownvote(item._id)}
-      />
-      </div>
-    )
+    // const hotPostItemComponent = hotPosts.map((item, i) =>
+    //   <div 
+    //     key={i}
+    //     className='feedItem'
+    //   >
+    //     <Post
+    //       post={item.post}
+    //       id={item._id}
+    //       replies={item.replies}
+    //       createdAt={item.createdAt}
+    //       points={item.points}
+    //       handleUpvote={() => this.handleUpvote(item._id)}
+    //       handleDownvote={() => this.handleDownvote(item._id)}
+    //   />
+    //   </div>
+    // )
 
 
     if (this.state.isLoading) {
