@@ -335,27 +335,23 @@ router.post("/downvote/reply/id/:id", passport.authenticate('jwt', { session: fa
         });
     }
 });
-                    
-// Check if a user has voted on a post
 
-router.get('/votedPost/:id', passport.authenticate('jwt', { session: false }), 
+// Check the posts a user has upvoted
+
+router.get('/upvotedPosts/:id',
     async (req, res) => {
-        const filter = { 
-            _id: req.params.id, 
-            'upvotedBy': req.user._id 
-            // 'upvotedBy': 'test123'
+        const filter = {
+            'upvotedBy': req.params.id
         }
 
         Posts.find(filter, function (err, posts) {
-            // let hasVoted = false
-
             if (err) {
                 return res.status(404).json({
                     success: false,
                     error: err,
                     message: 'Post not found!',
                 })
-            } 
+            }
             else {
                 return res.status(200).json({
                     success: true,
@@ -364,8 +360,65 @@ router.get('/votedPost/:id', passport.authenticate('jwt', { session: false }),
                 })
             }
         })
-    // res.send('foo')
-})
+    })
+
+// Check the posts a user has downvoted
+
+router.get('/downvotedPosts/:id',
+    async (req, res) => {
+        const filter = {
+            'downvotedBy': req.params.id
+        }
+
+        Posts.find(filter, function (err, posts) {
+            if (err) {
+                return res.status(404).json({
+                    success: false,
+                    error: err,
+                    message: 'Post not found!',
+                })
+            }
+            else {
+                return res.status(200).json({
+                    success: true,
+                    message: 'Post found!',
+                    data: posts,
+                })
+            }
+        })
+    })
+                    
+                    
+// Check if a user has voted on a post
+
+// router.get('/votedPost/:id', passport.authenticate('jwt', { session: false }), 
+//     async (req, res) => {
+//         const filter = { 
+//             _id: req.params.id, 
+//             'upvotedBy': req.user._id 
+//             // 'upvotedBy': 'test123'
+//         }
+
+//         Posts.find(filter, function (err, posts) {
+//             // let hasVoted = false
+
+//             if (err) {
+//                 return res.status(404).json({
+//                     success: false,
+//                     error: err,
+//                     message: 'Post not found!',
+//                 })
+//             } 
+//             else {
+//                 return res.status(200).json({
+//                     success: true,
+//                     message: 'Post found!',
+//                     data: posts,
+//                 })
+//             }
+//         })
+//     // res.send('foo')
+// })
 
 router.get('/yakarma/:id', passport.authenticate('jwt', { session: false }), async (req, res) => {
     // console.log(typeof JSON.stringify(req.user._id))
