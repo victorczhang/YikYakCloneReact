@@ -107,17 +107,17 @@ class Dashboard extends Component {
 
     e.preventDefault()
 
-    if (this.state.post === '') {
-      alert('No text entered!')
-    } else {
-      const newPost = new Post()
-      newPost.post = this.state.post
-      newPost.user_id = user.id
-    }
+    // if (this.state.post === '') {
+    //   alert('No text entered!')
+    // } else {
+    //   const newPost = new Post()
+    //   newPost.post = this.state.post
+    //   newPost.user_id = user.id
+    // }
 
-    // const newPost = new Post()
-    // newPost.post = this.state.post
-    // newPost.user_id = user.id
+    const newPost = new Post()
+    newPost.post = this.state.post
+    newPost.user_id = user.id
 
     try {
       axios

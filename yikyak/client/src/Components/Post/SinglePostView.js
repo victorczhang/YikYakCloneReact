@@ -92,19 +92,19 @@ class SinglePostView extends Component {
 
         e.preventDefault()
 
-        if (this.state.reply === '') {
-            alert('No text entered!')
-        } else {
-            const newReply = new Reply()
-            newReply.reply = this.state.reply
-            newReply.user_id = user.id
-            newReply.post_id = this.props.match.params.id
-        }
+        // if (this.state.reply === '') {
+        //     alert('No text entered!')
+        // } else {
+        //     const newReply = new Reply()
+        //     newReply.reply = this.state.reply
+        //     newReply.user_id = user.id
+        //     newReply.post_id = this.props.match.params.id
+        // }
 
-        // const newReply = new Reply()
-        // newReply.reply = this.state.reply
-        // newReply.user_id = user.id
-        // newReply.post_id = this.props.match.params.id
+        const newReply = new Reply()
+        newReply.reply = this.state.reply
+        newReply.user_id = user.id
+        newReply.post_id = this.props.match.params.id
 
         try {
             this.setState({
