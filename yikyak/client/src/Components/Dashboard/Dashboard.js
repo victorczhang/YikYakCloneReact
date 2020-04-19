@@ -106,9 +106,18 @@ class Dashboard extends Component {
     const { user } = this.props.auth
 
     e.preventDefault()
-    const newPost = new Post()
-    newPost.post = this.state.post
-    newPost.user_id = user.id
+
+    if (this.state.post === '') {
+      alert('No text entered!')
+    } else {
+      const newPost = new Post()
+      newPost.post = this.state.post
+      newPost.user_id = user.id
+    }
+
+    // const newPost = new Post()
+    // newPost.post = this.state.post
+    // newPost.user_id = user.id
 
     try {
       axios

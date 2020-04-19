@@ -14,6 +14,9 @@ class Reply extends Component {
     }
 
     render() {
+        const date = new Date(this.props.createdAt)
+        const formattedTimestamp = (date.getMonth()+1) + '/' + date.getDate() + '/' +date.getFullYear()
+
         if (this.props.user.user.id === this.props.user_id) {
             return (
                 <div className='reply'>
@@ -22,7 +25,7 @@ class Reply extends Component {
                             <p>{this.props.reply}</p>
                         </div>
                         <div className='replyDetails'>
-                            <p className='replyTimestamp'>{this.props.createdAt}</p>
+                            <p className='replyTimestamp'>{formattedTimestamp}</p>
                             <button
                                 className='replyControlColumn'
                                 onClick={this.props.handleDelete}
@@ -57,7 +60,7 @@ class Reply extends Component {
                             <p>{this.props.reply}</p>
                         </div>
                         <div className='replyDetails'>
-                            <p className='replyTimestamp'>{this.props.createdAt}</p>
+                            <p className='replyTimestamp'>{formattedTimestamp}</p>
                             {/* <button 
                                             className='replyControlColumn'
                                             onClick={this.props.handleDelete}
