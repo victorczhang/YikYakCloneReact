@@ -258,6 +258,10 @@ class Dashboard extends Component {
     //   obj2.points - obj1.points)
 
     const PostItemComponent = sortedPosts.map((item, i) =>
+
+      // { date = new Date('2013-03-10T02:00:00Z') }
+      // { date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate() }
+
       <div 
         key={i}
         className='feedItem'
@@ -266,7 +270,7 @@ class Dashboard extends Component {
           post={item.post}
           id={item._id}
           replies={item.replies}
-          createdAt={item.createdAt}
+          createdAt={new Date(item.createdAt)}
           points={item.points}
           handleUpvote={() => this.handleUpvote(item._id)}
           handleDownvote={() => this.handleDownvote(item._id)}
