@@ -267,7 +267,7 @@ class SinglePostView extends Component {
         if (window.confirm('Are you sure you want to delete the reply?')) {
 
             const currentReplies = this.state.replies;
-            console.log(currentReplies)
+            // console.log(currentReplies)
 
             try {
                 this.setState({
@@ -278,23 +278,19 @@ class SinglePostView extends Component {
                     .then(res =>
                         console.log(res),
                         // this.fetchPosts(),
-                        // this.setState({
-                        //     isLoading: false
-                        // })
+                        this.setState({
+                            replies: currentReplies.filter(replies => replies._id !== id),
+                            isLoading: false
+                        })
                     )
             }
             catch (err) {
                 console.log(err)
-                // this.setState({
-                //     isLoading: false
-                // })
+                this.setState({
+                    isLoading: false
+                })
             }
         }
-        // this.fetchPosts()
-        // test comment
-        // another
-        // console.log(id)
-        // this.fetchReplies()
     }
 
     render() {
