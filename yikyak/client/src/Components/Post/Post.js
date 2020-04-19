@@ -10,6 +10,9 @@ class Post extends Component {
     }
    
     render() {
+        const date = new Date(this.props.createdAt)
+        const formattedTimestamp = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate()
+
         return (
             <div className='post'>
                 <div className='postMain'>
@@ -17,7 +20,7 @@ class Post extends Component {
                         <p className='postTextMain'>{this.props.post}</p>
                     </div>
                     <div className='postDetails'> 
-                        <p className='postTimestamp'>{this.props.createdAt}</p> 
+                        <p className='postTimestamp'>{formattedTimestamp}</p> 
                         <p className='postReplies'><Link to={`/post/${this.props.id}`}>{this.props.replies} {this.props.replies == 1 ? 'reply' : 'replies'}</Link></p>
                     </div>
                 </div>
