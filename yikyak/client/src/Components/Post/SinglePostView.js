@@ -336,26 +336,28 @@ class SinglePostView extends Component {
                     {/* <h1>Green Background</h1> */}
                 </div>
                 <div className='openPost'>
-                    {post}
-                </div>
-                <div className='newReply'>
-                    <form onSubmit={this.onSubmit}>
-                        <label>
-                            <textarea
-                                className='textareaReply'
-                                maxLength='200'
-                                value={this.state.reply}
-                                onChange={this.handleChange}
-                                placeholder="Leave a reply..." />
-                        </label>
-                        <div className='textareaBarReply'>
-                            <p className='wordCount'>{this.state.charsLeft}</p>
-                            <button className='sendButton'>Send</button>
-                        </div>
-                    </form>
-                </div>
-                <div className='feedReply'>
-                    {replies}
+                    <div>
+                        {post}
+                    </div>
+                    <div className='newReply'>
+                        <form onSubmit={this.onSubmit}>
+                            <label>
+                                <textarea
+                                    className='textareaReply'
+                                    maxLength='200'
+                                    value={this.state.reply}
+                                    onChange={this.handleChange}
+                                    placeholder="Leave a reply..." />
+                            </label>
+                            <div className='textareaBarReply'>
+                                <p className='wordCount'>{this.state.charsLeft}</p>
+                                <button className='sendButton'>Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className='feedReply'>
+                        {replies}
+                    </div>
                 </div>
             </div>
         )
