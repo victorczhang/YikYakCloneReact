@@ -114,17 +114,17 @@ class SinglePostView extends Component {
                 .post(`/api/posts/newReply/${this.props.match.params.id}`, newReply)
                 .then(res => {
                     // console.log(res)
-                    const {replies} = this.state
+                    const { replies } = this.state
                     replies.push(res.data)
                     // console.log(res.data)
-                    this.setState({replies})
+                    this.setState({ replies })
 
                     this.setState({
                         isLoading: false,
                         reply: ''
                     })
                 })
-        } 
+        }
         catch (err) {
             console.log(err)
             this.setState(
