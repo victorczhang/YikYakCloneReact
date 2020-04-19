@@ -270,7 +270,7 @@ class Dashboard extends Component {
           post={item.post}
           id={item._id}
           replies={item.replies}
-          createdAt={new Date(item.createdAt)}
+          createdAt={item.createdAt}
           points={item.points}
           handleUpvote={() => this.handleUpvote(item._id)}
           handleDownvote={() => this.handleDownvote(item._id)}
