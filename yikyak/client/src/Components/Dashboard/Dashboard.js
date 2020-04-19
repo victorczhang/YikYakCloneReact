@@ -78,7 +78,6 @@ class Dashboard extends Component {
         .then(res =>
           this.setState({
             posts: res.data.data,
-            // isLoading: false,
           })
         )
     } catch (err) {
