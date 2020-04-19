@@ -54,7 +54,7 @@ class Profile extends Component {
             console.log(currentPosts)
 
             this.setState({
-                posts: currentPosts.filter(posts => posts.id !== id),
+                posts: currentPosts.filter(posts => posts._id !== id),
             });
 
             try {
