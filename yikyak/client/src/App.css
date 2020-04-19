@@ -119,6 +119,7 @@ li {
   /* background: yellow; */
   padding-top: 20px;
   /* padding-left: 20px; */
+  line-height: 1.6em;
 }
 
 .postDetails, .replyDetails {
