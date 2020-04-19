@@ -65,7 +65,7 @@ class Profile extends Component {
                     .delete(`/api/posts/post/${id}`)
                     .then(res =>
                         console.log(res),
-                        this.fetchPosts(),
+                        // this.fetchPosts(),
                         this.setState({
                             isLoading: false
                         }))
@@ -77,7 +77,7 @@ class Profile extends Component {
                 })
             }
         }
-        // this.fetchPosts()
+        this.fetchPosts()
     }
 
     render() {
