@@ -51,11 +51,11 @@ class Profile extends Component {
         if (window.confirm('Are you sure you want to delete the post?')) {
 
             const currentPosts = this.state.posts;
-            console.log(currentPosts)
+            // console.log(currentPosts)
 
-            this.setState({
-                posts: currentPosts.filter(posts => posts._id !== id),
-            });
+            // this.setState({
+            //     posts: currentPosts.filter(posts => posts._id !== id),
+            // });
 
             try {
                 this.setState({
@@ -65,8 +65,8 @@ class Profile extends Component {
                     .delete(`/api/posts/post/${id}`)
                     .then(res =>
                         console.log(res),
-                        // this.fetchPosts(),
                         this.setState({
+                            posts: currentPosts.filter(posts => posts._id !== id),
                             isLoading: false
                         }))
             }
@@ -77,7 +77,7 @@ class Profile extends Component {
                 })
             }
         }
-        this.fetchPosts()
+        // this.fetchPosts()
     }
 
     render() {
