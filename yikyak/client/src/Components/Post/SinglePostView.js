@@ -265,27 +265,31 @@ class SinglePostView extends Component {
 
     handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete the reply?')) {
-          try {
-            this.setState({
-                isLoading: true
-            })
-            axios
-                .post(`/api/posts/${this.props.match.params.id}/reply/${id}`)
-                .then(res =>
-                    console.log(res),
-                    // this.fetchPosts(),
-                    // this.setState({
-                    //     isLoading: false
-                    // })
+
+            const currentReplies = this.state.replies;
+            console.log(currentReplies)
+
+            try {
+                this.setState({
+                    isLoading: true
+                })
+                axios
+                    .post(`/api/posts/${this.props.match.params.id}/reply/${id}`)
+                    .then(res =>
+                        console.log(res),
+                        // this.fetchPosts(),
+                        // this.setState({
+                        //     isLoading: false
+                        // })
                     )
-          }
-          catch (err) {
-            console.log(err)
-            // this.setState({
-            //     isLoading: false
-            // })
-          }
-        } 
+            }
+            catch (err) {
+                console.log(err)
+                // this.setState({
+                //     isLoading: false
+                // })
+            }
+        }
         // this.fetchPosts()
         // test comment
         // another
