@@ -11,7 +11,7 @@ class Post extends Component {
    
     render() {
         const date = new Date(this.props.createdAt)
-        const formattedTimestamp = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear()
+        const formattedTimestamp = (date.getMonth()+1) + '/' + date.getDate() + '/' +date.getFullYear()
 
         return (
             <div className='post'>
