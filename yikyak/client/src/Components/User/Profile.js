@@ -50,27 +50,34 @@ class Profile extends Component {
 
     handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete the post?')) {
-          try {
+
+            const currentPosts = this.state.posts;
+
             this.setState({
-                isLoading: true
-            })
-            axios
-              .delete(`/api/posts/post/${id}`)
-              .then(res =>
-                console.log(res),
-                // this.fetchPosts(),
+                posts: currentPosts.filter(posts => posts.id !== id),
+            });
+
+            try {
+                this.setState({
+                    isLoading: true
+                })
+                axios
+                    .delete(`/api/posts/post/${id}`)
+                    .then(res =>
+                        console.log(res),
+                        this.fetchPosts(),
+                        this.setState({
+                            isLoading: false
+                        }))
+            }
+            catch (err) {
+                console.log(err)
                 this.setState({
                     isLoading: false
-                }))
-          }
-          catch (err) {
-            console.log(err)
-            this.setState({
-                isLoading: false
-            })
-          }
-        } 
-        this.fetchPosts()
+                })
+            }
+        }
+        // this.fetchPosts()
     }
 
     render() {
