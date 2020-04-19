@@ -26,7 +26,6 @@ class Profile extends Component {
 
     async fetchPosts() {
         const { user } = this.props.auth
-        // console.log(user.id)
     
         try {
           this.setState(
@@ -52,6 +51,7 @@ class Profile extends Component {
         if (window.confirm('Are you sure you want to delete the post?')) {
 
             const currentPosts = this.state.posts;
+            console.log(currentPosts)
 
             this.setState({
                 posts: currentPosts.filter(posts => posts.id !== id),
