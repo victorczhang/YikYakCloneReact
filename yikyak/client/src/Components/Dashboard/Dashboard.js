@@ -29,6 +29,11 @@ class Dashboard extends Component {
 
     // new: true,
     // hot: false,
+
+    hasVoted: false,
+
+    upvotedPosts: [],
+    downvotedPosts: [],
   }
 
   componentDidMount = () => {
@@ -219,7 +224,7 @@ class Dashboard extends Component {
       axios
         .get("/api/posts/upvotedPosts")
         .then(res => {
-          console.log(res)
+          console.log(res.data.data)
         })
       } 
     catch (err) {
@@ -232,7 +237,7 @@ class Dashboard extends Component {
       axios
         .get("/api/posts/downvotedPosts")
         .then(res => {
-          console.log(res)
+          console.log(res.data.data)
         })
       } 
     catch (err) {
