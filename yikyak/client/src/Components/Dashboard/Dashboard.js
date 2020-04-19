@@ -339,8 +339,8 @@ class Dashboard extends Component {
                   placeholder="What's on your mind?" />
               </label>
               <div className='textareaBar'>
-                <p className='wordCount'>{this.state.charsLeft}</p>
-                <button className='sendButton'>Send</button>
+                <div><p className='wordCount'>{this.state.charsLeft}</p></div>
+                <div><button className='sendButton'>Send</button></div>
               </div>
             </form>
           </div>

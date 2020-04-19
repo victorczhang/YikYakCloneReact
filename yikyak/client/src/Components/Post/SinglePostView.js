@@ -350,8 +350,8 @@ class SinglePostView extends Component {
                                     placeholder="Leave a reply..." />
                             </label>
                             <div className='textareaBarReply'>
-                                <p className='wordCount'>{this.state.charsLeft}</p>
-                                <button className='sendButton'>Send</button>
+                                <div><p className='wordCount'>{this.state.charsLeft}</p></div>
+                                <div><button className='sendButton'>Send</button></div>
                             </div>
                         </form>
                     </div>
