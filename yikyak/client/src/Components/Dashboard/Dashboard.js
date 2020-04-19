@@ -224,6 +224,9 @@ class Dashboard extends Component {
         .get("/api/posts/upvotedPosts")
         .then(res => {
           console.log(res.data.data)
+          this.setState({
+            upvotedPosts: res.data.data
+          })
         })
       } 
     catch (err) {
@@ -237,6 +240,9 @@ class Dashboard extends Component {
         .get("/api/posts/downvotedPosts")
         .then(res => {
           console.log(res.data.data)
+          this.setState({
+            downvotedPosts: res.data.data
+          })
         })
       } 
     catch (err) {

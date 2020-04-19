@@ -19,25 +19,17 @@ class Post extends Component {
                     <div className='postDetails'> 
                         <p className='postTimestamp'>{this.props.createdAt}</p> 
                         <p className='postReplies'><Link to={`/post/${this.props.id}`}>{this.props.replies} {this.props.replies == 1 ? 'reply' : 'replies'}</Link></p>
-                        {/* <button className='postControlColumn' 
-                            // onClick={this.props.handleDelete}
-                            >DEL
-                        </button> */}
                     </div>
                 </div>
                 <div className='postScore'>
-                    <button 
-                        // className = 'downvote'
+                    <button
                         className="material-icons"
                         onClick={this.props.handleUpvote}
-                        // disabled={this.props.disabledUpvote}
-                        // onClick={this.testFunc}
                     >
                         keyboard_arrow_up
                     </button>
                     <p className='postPoints'><span>{this.props.points}</span></p>
                     <button 
-                        // className='downvote' 
                         className="material-icons"
                         onClick={this.props.handleDownvote}
                     >
