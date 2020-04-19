@@ -336,7 +336,7 @@ class SinglePostView extends Component {
                     {/* <h1>Green Background</h1> */}
                 </div>
                 <div className='openPost'>
-                    <div>
+                    <div className='currentPost'>
                         {post}
                     </div>
                     <div className='newReply'>
