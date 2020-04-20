@@ -65,7 +65,7 @@ class UserHeader extends Component {
                     </div>
                 </div>
                 <div className='dashboardUserPref'>
-                    <div><button className='material-icons md-24'>notifications</button></div>
+                    <div className='userNotifications'><button className='material-icons md-24'>notifications</button></div>
                     <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
                     <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
                 </div>
