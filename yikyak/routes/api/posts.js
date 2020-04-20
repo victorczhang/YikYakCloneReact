@@ -288,7 +288,7 @@ router.post("/upvote/reply/id/:id", passport.authenticate('jwt', { session: fals
         const result = await Posts.findOneAndUpdate(
             { 
                 "comments._id": mongoose.Types.ObjectId(req.params.id),
-                "comments.$.upvotedBy" : { "$ne": mongoose.Types.ObjectId(req.user._id) }
+                "comments.upvotedBy" : { "$ne": mongoose.Types.ObjectId(req.user._id) }
             },
             {
                 $inc: { "comments.$.points": 1 },
