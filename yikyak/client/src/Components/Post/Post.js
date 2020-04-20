@@ -26,7 +26,7 @@ class Post extends Component {
                 </div>
                 <div className='postScore'>
                     <button
-                        style={{color: this.state.hasVoted ? rgba(138, 138, 138, 0.7) : rgb(48,219,189)}}
+                        style={{color: this.state.hasVoted ? 'rgba(138, 138, 138, 0.7)' : 'rgb(48,219,189)'}}
                         className="material-icons"
                         onClick={this.props.handleUpvote}
                     >
@@ -34,7 +34,7 @@ class Post extends Component {
                     </button>
                     <p className='postPoints'><span>{this.props.points}</span></p>
                     <button
-                        style={{color: this.state.hasVoted ? rgba(138, 138, 138, 0.7) : rgb(48,219,189)}}
+                        style={{color: this.state.hasVoted ? 'rgba(138, 138, 138, 0.7)' : 'rgb(48,219,189)'}}
                         className="material-icons"
                         onClick={this.props.handleDownvote}
                     >
