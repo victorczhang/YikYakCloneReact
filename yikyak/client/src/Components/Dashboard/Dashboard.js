@@ -261,12 +261,14 @@ class Dashboard extends Component {
   
   render() {
     const foo = this.state.upvotedPosts.slice()
+    const bar = this.state.posts.slice()
     const test2 = foo.map(function(item, i) {
-      if (item._id === this.state.posts[i]._id) {
+      if (item._id === bar._id) {
         console.log('ding!')
       }
     })
 
+    console.log(test2)
 
 
 
