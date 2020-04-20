@@ -34,6 +34,9 @@ class Dashboard extends Component {
 
     upvotedPosts: [],
     downvotedPosts: [],
+
+    upvotedPostIDs: [],
+    downvotedPostIDs: [],
   }
 
   componentDidMount = () => {
@@ -263,14 +266,14 @@ class Dashboard extends Component {
     const foo = this.state.upvotedPosts.slice()
     const bar = this.state.posts.slice()
 
-    const romanSculptures = []
+    // const romanSculptures = []
 
     foo.map(function(item, i) {
-      romanSculptures.push(item._id)
+      upvotedPostIDs.push(item._id)
     })
 
     // console.log(test2)
-    console.log(romanSculptures)
+    console.log(upvotedPostIDs)
 
 
 
