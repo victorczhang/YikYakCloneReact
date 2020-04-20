@@ -102,7 +102,7 @@ class Reply extends Component {
                         >
                             keyboard_arrow_up
                         </button>
-                        <p className='replyPoints'>{this.props.points}</p>
+                        <div><p className='replyPoints'>{this.props.points}</p></div>
                         <button 
                             className="material-icons"
                             onClick={this.props.handleReplyDownvote}

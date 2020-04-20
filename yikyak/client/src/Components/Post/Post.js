@@ -58,7 +58,7 @@ class Post extends Component {
                     >
                         keyboard_arrow_up
                     </button>
-                    <p className='postPoints'><span>{this.props.points}</span></p>
+                    <div><p className='postPoints'>{this.props.points}</p></div>
                     <button
                         style={{color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         className="material-icons"
