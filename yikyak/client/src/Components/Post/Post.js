@@ -31,7 +31,7 @@ class Post extends Component {
 
     onClickDownvote = e => {
         this.handleDownvoteChange()
-        this.props.handleUpvote()
+        this.props.handleDownvote()
     }
 
     render() {

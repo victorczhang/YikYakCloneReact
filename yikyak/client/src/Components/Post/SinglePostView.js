@@ -13,7 +13,7 @@ class SinglePostView extends Component {
         this.state = {
             charsLeft: 200,
             isLoading: false,
-            reply: '',
+            reply: "",
             data: [],
             replies: [],
 

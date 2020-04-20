@@ -10,7 +10,34 @@ class Reply extends Component {
         this.state = {
             posts: [],
             isLoading: false,
+
+            hasUpvoted: false,
+            hasDownvoted: false,
         }
+    }
+
+    handleUpvoteChange = () => {
+        this.setState({ 
+            hasUpvoted: true,
+            hasDownvoted: false 
+        })
+    }
+
+    handleDownvoteChange = () => {
+        this.setState({ 
+            hasUpvoted: false,
+            hasDownvoted: true,
+        })
+    }
+
+    onClickUpvote = e => {
+        this.handleUpvoteChange()
+        this.props.handleReplyUpvote()
+    }
+
+    onClickDownvote = e => {
+        this.handleDownvoteChange()
+        this.props.handleReplyDownvote()
     }
 
     render() {
@@ -28,7 +55,7 @@ class Reply extends Component {
                             <p className='replyTimestamp'>{formattedTimestamp}</p>
                             <button
                                 className='replyControlColumn'
-                                onClick={this.props.handleDelete}
+                                onClick={this.onClickUpvote}
                             >DELETE</button>
                         </div>
                     </div>
@@ -44,7 +71,7 @@ class Reply extends Component {
                         <button 
                             // className='downvote'
                             className="material-icons"
-                            onClick={this.props.handleReplyDownvote}
+                            onClick={this.onClickDownvote}
                         >
                             keyboard_arrow_down
                         </button>
@@ -71,6 +98,7 @@ class Reply extends Component {
                         <button 
                             className="material-icons"
                             onClick={this.props.handleReplyUpvote}
+                            style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         >
                             keyboard_arrow_up
                         </button>
@@ -78,6 +106,7 @@ class Reply extends Component {
                         <button 
                             className="material-icons"
                             onClick={this.props.handleReplyDownvote}
+                            style={{color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         >
                             keyboard_arrow_down
                         </button>
