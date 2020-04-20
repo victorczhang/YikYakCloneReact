@@ -5,16 +5,26 @@ class Post extends Component {
     constructor() {
         super()
         this.state = {
-            hasVoted: false,
+            hasUpvoted: false,
+            hasDownvoted: false,
         }
     }
    
-    handleChange = () => {
-        this.setState({ hasVoted: !this.state.hasVoted })
+    handleUpvoteChange = () => {
+        this.setState({ hasUpvoted: !this.state.hasUpvoted })
     }
 
-    onClickHandler = e => {
-        this.handleChange()
+    handleDownvoteChange = () => {
+        this.setState({ hasDownvoted: !this.state.hasDownvoted })
+    }
+
+    onClickUpvote = e => {
+        this.handleUpvoteChange()
+        this.props.handleUpvote()
+    }
+
+    onClickDownvote = e => {
+        this.handleDownvoteChange()
         this.props.handleUpvote()
     }
 
@@ -38,7 +48,7 @@ class Post extends Component {
                         style={{color: this.state.hasVoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         className="material-icons"
                         // onClick={this.props.handleUpvote}
-                        onClick={this.onClickHandler}
+                        onClick={this.onClickUpvote}
                     >
                         keyboard_arrow_up
                     </button>
@@ -46,7 +56,8 @@ class Post extends Component {
                     <button
                         style={{color: this.state.hasVoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         className="material-icons"
-                        onClick={this.props.handleDownvote}
+                        // onClick={this.props.handleDownvote}
+                        onClick={this.onClickDownvote}
                     >
                         keyboard_arrow_down
                     </button>
