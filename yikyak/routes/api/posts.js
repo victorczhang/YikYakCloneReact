@@ -316,7 +316,7 @@ router.post("/downvote/reply/id/:id", passport.authenticate('jwt', { session: fa
         const result = await Posts.findOneAndUpdate(
             { 
                 "comments._id": mongoose.Types.ObjectId(req.params.id),
-                "comments.$.downvotedBy" : { "$ne": mongoose.Types.ObjectId(req.user._id) }
+                "comments.downvotedBy" : { "$ne": mongoose.Types.ObjectId(req.user._id) }
             },
             {
                 $inc: { "comments.$.points": -1 },
