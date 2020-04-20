@@ -266,14 +266,14 @@ class Dashboard extends Component {
     const foo = this.state.upvotedPosts.slice()
     const bar = this.state.posts.slice()
 
-    // const romanSculptures = []
+    const romanSculptures = []
 
     foo.map(function(item, i) {
-      upvotedPostIDs.push(item._id)
+      romanSculptures.push(item._id)
     })
 
     // console.log(test2)
-    console.log(upvotedPostIDs)
+    console.log(romanSculptures)
 
 
 
