@@ -55,7 +55,7 @@ class Reply extends Component {
                             <p className='replyTimestamp'>{formattedTimestamp}</p>
                             <button
                                 className='replyControlColumn'
-                                onClick={this.onClickUpvote}
+                                onClick={this.props.handleDelete}
                             >DELETE</button>
                         </div>
                     </div>
@@ -63,13 +63,13 @@ class Reply extends Component {
                         <button 
                             style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                             className="material-icons"
-                            onClick={this.props.handleReplyUpvote}
+                            onClick={this.onClickUpvote}
                         >
                             keyboard_arrow_up
                         </button>
                         <p className='replyPoints'>{this.props.points}</p>
                         <button 
-                            style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
+                            style={{color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                             className="material-icons"
                             onClick={this.onClickDownvote}
                         >
