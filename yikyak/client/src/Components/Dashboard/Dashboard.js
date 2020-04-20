@@ -283,10 +283,11 @@ class Dashboard extends Component {
 
     const PostItemComponent = sortedPosts.map((item, i) =>
       <div 
-        key={i}
+        // key={i}
         className='feedItem'
       >
         <Post
+          key={i}
           post={item.post}
           id={item._id}
           replies={item.replies}

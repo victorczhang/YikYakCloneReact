@@ -9,6 +9,15 @@ class Post extends Component {
         }
     }
    
+    handleChange = () => {
+        this.setState({ hasVoted: !this.state.hasVoted })
+    }
+
+    onClickHandler = e => {
+        this.handleChange()
+        this.props.handleUpvote
+    }
+
     render() {
         const date = new Date(this.props.createdAt)
         const formattedTimestamp = (date.getMonth()+1) + '/' + date.getDate() + '/' +date.getFullYear()
@@ -28,7 +37,8 @@ class Post extends Component {
                     <button
                         style={{color: this.state.hasVoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         className="material-icons"
-                        onClick={this.props.handleUpvote}
+                        // onClick={this.props.handleUpvote}
+                        onClick={this.onClickHandler}
                     >
                         keyboard_arrow_up
                     </button>
