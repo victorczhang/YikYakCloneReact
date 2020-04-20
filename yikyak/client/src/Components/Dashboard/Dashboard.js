@@ -260,6 +260,17 @@ class Dashboard extends Component {
   }
   
   render() {
+    const foo = this.state.upvotedPosts.slice()
+    const test2 = foo.map(function(item, i) {
+      if (item._id === this.state.posts[i]._id) {
+        console.log('ding!')
+      }
+    })
+
+
+
+
+
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
       obj2.createdAt.localeCompare(obj1.createdAt));
 
