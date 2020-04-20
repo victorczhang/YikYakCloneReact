@@ -5,7 +5,7 @@ class Post extends Component {
     constructor() {
         super()
         this.state = {
-
+            hasVoted: false,
         }
     }
    
@@ -26,13 +26,15 @@ class Post extends Component {
                 </div>
                 <div className='postScore'>
                     <button
+                        style={{color: this.state.hasVoted ? rgba(138, 138, 138, 0.7) : rgb(48,219,189)}}
                         className="material-icons"
                         onClick={this.props.handleUpvote}
                     >
                         keyboard_arrow_up
                     </button>
                     <p className='postPoints'><span>{this.props.points}</span></p>
-                    <button 
+                    <button
+                        style={{color: this.state.hasVoted ? rgba(138, 138, 138, 0.7) : rgb(48,219,189)}}
                         className="material-icons"
                         onClick={this.props.handleDownvote}
                     >

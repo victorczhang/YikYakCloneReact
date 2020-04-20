@@ -263,20 +263,17 @@ class Dashboard extends Component {
   }
   
   render() {
-    const foo = this.state.upvotedPosts.slice()
-    const bar = this.state.posts.slice()
+    // const foo = this.state.upvotedPosts.slice()
+    // const bar = this.state.posts.slice()
 
-    const romanSculptures = []
+    // const romanSculptures = []
 
-    foo.map(function(item, i) {
-      romanSculptures.push(item._id)
-    })
+    // foo.map(function(item, i) {
+    //   romanSculptures.push(item._id)
+    // })
 
-    // console.log(test2)
-    console.log(romanSculptures)
-
-
-
+    // // console.log(test2)
+    // console.log(romanSculptures)
 
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
       obj2.createdAt.localeCompare(obj1.createdAt));
@@ -285,10 +282,6 @@ class Dashboard extends Component {
     //   obj2.points - obj1.points)
 
     const PostItemComponent = sortedPosts.map((item, i) =>
-
-      // { date = new Date('2013-03-10T02:00:00Z') }
-      // { date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate() }
-
       <div 
         key={i}
         className='feedItem'
