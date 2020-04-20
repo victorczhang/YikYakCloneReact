@@ -15,7 +15,7 @@ class Post extends Component {
 
     onClickHandler = e => {
         this.handleChange()
-        this.props.handleUpvote
+        this.props.handleUpvote()
     }
 
     render() {
