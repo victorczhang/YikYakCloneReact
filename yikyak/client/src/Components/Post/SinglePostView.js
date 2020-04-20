@@ -327,6 +327,22 @@ class SinglePostView extends Component {
             </div>
         )
 
+        if (this.state.isLoading) {
+            return (
+                <div>
+                    <div>
+                        <UserHeader />
+                    </div>
+                    <div className='dashboardBackground'>
+                        {/* <h1>Green Background</h1> */}
+                    </div>
+                    <div className='loadingPage'>
+                        <h1>Loading</h1>
+                    </div>
+                </div>
+            )
+        }
+
         return (
             <div>
                 <div>

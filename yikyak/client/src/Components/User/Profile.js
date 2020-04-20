@@ -123,39 +123,39 @@ class Profile extends Component {
         if (this.state.posts.length < 1 && !this.state.isLoading) {
             return (
                 <div className='profilePage'>
-                <div>
-                    <UserHeader />
-                </div>
-                <div className='dashboardBackground'>
-                    {/* <h1>Green Background</h1> */}
-                </div>
-                <div className='profileContent'>
-                    <div className='profileSettings'>
-                        <div className='settingsHeading'>
-                            <h1>Settings</h1>
-                        </div>
-                        <div className='settingsList'>
-                            <button className='settingsButton'>Change Username</button>
-                            <button className='settingsButton'>Change Password</button>
-                            <button className='settingsButton'>Privacy</button>
-                            <button className='settingsButton'>Blocked Users</button>
-                            <button className='settingsButton'>Contact Support</button>
-                        </div>
-                    </div>
                     <div>
-                        <div className='profileHeading'>
-                            <h1>My Posts</h1>
+                        <UserHeader />
+                    </div>
+                    <div className='dashboardBackground'>
+                        {/* <h1>Green Background</h1> */}
+                    </div>
+                    <div className='profileContent'>
+                        <div className='profileSettings'>
+                            <div className='settingsHeading'>
+                                <h1>Settings</h1>
+                            </div>
+                            <div className='settingsList'>
+                                <button className='settingsButton'>Change Username</button>
+                                <button className='settingsButton'>Change Password</button>
+                                <button className='settingsButton'>Privacy</button>
+                                <button className='settingsButton'>Blocked Users</button>
+                                <button className='settingsButton'>Contact Support</button>
+                            </div>
                         </div>
-                        <div> 
-                            <div className='noPostsMsg'>
-                                <div>
-                                    <h1>You have no posts!</h1>
+                        <div>
+                            <div className='profileHeading'>
+                                <h1>My Posts</h1>
+                            </div>
+                            <div>
+                                <div className='noPostsMsg'>
+                                    <div>
+                                        <h1>You have no posts!</h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             )
         }
 
