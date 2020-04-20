@@ -61,7 +61,7 @@ class Reply extends Component {
                     </div>
                     <div className='replyScore'>
                         <button 
-                            // className='upvote'
+                            style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                             className="material-icons"
                             onClick={this.props.handleReplyUpvote}
                         >
@@ -69,7 +69,7 @@ class Reply extends Component {
                         </button>
                         <p className='replyPoints'>{this.props.points}</p>
                         <button 
-                            // className='downvote'
+                            style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                             className="material-icons"
                             onClick={this.onClickDownvote}
                         >
@@ -97,7 +97,7 @@ class Reply extends Component {
                     <div className='replyScore'>
                         <button 
                             className="material-icons"
-                            onClick={this.props.handleReplyUpvote}
+                            onClick={this.onClickUpvote}
                             style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         >
                             keyboard_arrow_up
@@ -105,7 +105,7 @@ class Reply extends Component {
                         <div><p className='replyPoints'>{this.props.points}</p></div>
                         <button 
                             className="material-icons"
-                            onClick={this.props.handleReplyDownvote}
+                            onClick={this.onClickDownvote}
                             style={{color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         >
                             keyboard_arrow_down
