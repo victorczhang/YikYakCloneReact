@@ -11,11 +11,17 @@ class Post extends Component {
     }
    
     handleUpvoteChange = () => {
-        this.setState({ hasUpvoted: !this.state.hasUpvoted })
+        this.setState({ 
+            hasUpvoted: true,
+            hasDownvoted: false 
+        })
     }
 
     handleDownvoteChange = () => {
-        this.setState({ hasDownvoted: !this.state.hasDownvoted })
+        this.setState({ 
+            hasUpvoted: false,
+            hasDownvoted: true,
+        })
     }
 
     onClickUpvote = e => {
