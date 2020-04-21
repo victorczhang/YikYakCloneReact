@@ -809,7 +809,7 @@ input.loginField, input.signUpField {
   height: min-content;
   width: 200px;
   text-align: center;
-  top: 40px;
+  top: 60px;
   right: 165px;
   padding: 7px;
   /* border: 1px solid black; */
