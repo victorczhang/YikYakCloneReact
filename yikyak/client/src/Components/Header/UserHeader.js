@@ -76,16 +76,18 @@ class UserHeader extends Component {
                         </div>
                     </div>
                     <div className='dashboardUserPref'>
-                        <div>
-                            <button
-                                className='userNotifications'
-                                onClick={this.showMenu}
-                            >
-                                <i className='material-icons md-24'>notifications</i>
-                            </button>
-                        </div>
-                        <div className='errorNotice'>
-                            <p>We are aware of current issues</p>
+                        <div className='alignTest'>
+                            <div>
+                                <button
+                                    className='userNotifications'
+                                    onClick={this.showMenu}
+                                >
+                                    <i className='material-icons md-24'>notifications</i>
+                                </button>
+                            </div>
+                            <div className='errorNotice'>
+                                <p>We are aware of current issues</p>
+                            </div>
                         </div>
                         <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
                         <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
