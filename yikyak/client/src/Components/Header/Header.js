@@ -15,7 +15,7 @@ class Header extends Component {
                 <div className='left-nav'>
                     <div className='logo'>
                         <ul>
-                            <li><img src='https://cdn.freebiesupply.com/logos/large/2x/yik-yak-logo-black-and-white.png'></img></li>
+                            <li><img src='https://cdn.freebiesupply.com/logos/large/2x/yik-yak-logo-black-and-white.png' width='100px'></img></li>
                         </ul>
                     </div>
                     <div className='navbar'>
