@@ -802,3 +802,11 @@ input.loginField, input.signUpField {
 .postTextMain {
   word-wrap: break-word;
 }
+
+.errorNotice {
+  position: absolute;
+  background: orange;
+  height: 100px;
+  top: 60px;
+  right: 160px;
+}
