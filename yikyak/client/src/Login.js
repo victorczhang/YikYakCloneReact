@@ -53,7 +53,7 @@ class Login extends Component {
             <div className='loginPage'>
                 <div className='loginForm'>
                     <div id='yyloginlogo'>
-                        <Link to='/'><h1>YikYak Logo</h1></Link>
+                        <Link to='/'><img src='https://cdn.freebiesupply.com/logos/large/2x/yik-yak-logo-black-and-white.png' width='100px'/></Link>
                     </div>
                     <div className='loginCopy'>
                         <h1>Welcome Back</h1>
