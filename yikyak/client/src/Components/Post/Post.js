@@ -52,6 +52,7 @@ class Post extends Component {
                 <div className='postScore'>
                     <button
                         style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
+                        disabled={this.state.hasUpvoted ? 'disabled' : '' }
                         className="material-icons"
                         // onClick={this.props.handleUpvote}
                         onClick={this.onClickUpvote}
