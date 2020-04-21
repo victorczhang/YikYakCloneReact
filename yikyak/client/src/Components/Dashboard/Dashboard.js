@@ -228,6 +228,9 @@ class Dashboard extends Component {
         new: !this.state.new,
         hot: !this.state.hot
     })
+
+    console.log(this.state.new)
+    console.log(this.state.hot)
   }
 
   handleGetUpvotedPosts = () => {
@@ -318,8 +321,8 @@ class Dashboard extends Component {
         <div className='homePage'>
           <div>
             <UserHeader
-              // hot={this.state.hot} 
-              // new={this.state.new}
+              hot={this.state.hot} 
+              new={this.state.new}
               handleRadioChange={() => this.handleRadioChange()}
             />
           </div>
@@ -411,8 +414,8 @@ class Dashboard extends Component {
         <div className='homePage'>
           <div>
             <UserHeader
-              // hot={this.state.hot} 
-              // new={this.state.new}
+              hot={this.state.hot} 
+              new={this.state.new}
               handleRadioChange={() => this.handleRadioChange()}
             />
           </div>
