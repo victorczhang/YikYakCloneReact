@@ -81,11 +81,11 @@ class UserHeader extends Component {
                                 className='userNotifications'
                                 onClick={this.showMenu}
                             >
-                                <i className='material-icons md-24'><span className='pulse'>notifications</span></i>
+                                <i className='material-icons md-24'>notifications</i>
                             </button>
                         </div>
                         <div className='errorNotice'>
-                            <p>We are aware of current issues</p>
+                            <p>We are aware of the current issues regarding upvoting and downvoting posts.</p>
                         </div>
                         <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
                         <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
