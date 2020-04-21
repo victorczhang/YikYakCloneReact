@@ -805,8 +805,10 @@ input.loginField, input.signUpField {
 
 .errorNotice {
   position: absolute;
-  background: orange;
-  height: 100px;
+  background: white;
+  height: min-content;
   top: 60px;
-  right: 160px;
+  right: 165px;
+  padding: 7px;
+  border: 1px solid #30DBBD;
 }
