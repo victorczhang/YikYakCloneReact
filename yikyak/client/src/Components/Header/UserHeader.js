@@ -110,7 +110,7 @@ class UserHeader extends Component {
                             name='feedOption' 
                             value='new'
                             id='newPostToggle' 
-                            checked={this.props.new}
+                            // checked={this.props.new}
                             // defaultChecked={true}
                             onClick={this.handleRadioChange}
                         />
@@ -122,7 +122,7 @@ class UserHeader extends Component {
                             name='feedOption'
                             value='hot'
                             id='hotPostToggle' 
-                            checked={this.props.hot}
+                            // checked={this.props.hot}
                             onClick={this.handleRadioChange}
                         />
                         <label htmlFor='hotPostToggle'>Hot</label>
