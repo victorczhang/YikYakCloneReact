@@ -10,6 +10,8 @@ class UserHeader extends Component {
         this.state = {
             new: true,
             hot: false,
+
+            showMenu: false,
         }
     }
 
@@ -27,9 +29,23 @@ class UserHeader extends Component {
     //     // console.log(this.state.hot)
     // }
 
+    showMenu = e => {
+        event.preventDefault()
+
+        this.setState({
+            showMenu: !this.state.showMenu
+        })
+    }
+
     render() {
         const { user } = this.props.auth;
 
+        if (this.state.showMenu) {
+            <div className='errorNotice'>
+                <p>We are aware of the UI issues</p>
+            </div>
+        }
+        
         return (
             <div className='dashboardHeader'>
                 <div className='dashboardLogo'>
@@ -65,7 +81,13 @@ class UserHeader extends Component {
                     </div>
                 </div>
                 <div className='dashboardUserPref'>
-                    <div className='userNotifications'><button><i className='material-icons md-24'>notifications</i></button></div>
+                    <div className='userNotifications'>
+                        <button
+                            onClick={this.showMenu}
+                        >
+                            <i className='material-icons md-24'>notifications</i>
+                        </button>
+                    </div>
                     <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
                     <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
                 </div>
