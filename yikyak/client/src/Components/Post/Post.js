@@ -63,6 +63,7 @@ class Post extends Component {
                     <button
                         style={{color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         className="material-icons"
+                        disabled={this.state.hasDownvoted ? 'disabled' : '' }
                         // onClick={this.props.handleDownvote}
                         onClick={this.onClickDownvote}
                     >

@@ -62,6 +62,7 @@ class Reply extends Component {
                     <div className='replyScore'>
                         <button 
                             style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
+                            disabled={this.state.hasUpvoted ? 'disabled' : '' }
                             className="material-icons"
                             onClick={this.onClickUpvote}
                         >
@@ -70,6 +71,7 @@ class Reply extends Component {
                         <p className='replyPoints'>{this.props.points}</p>
                         <button 
                             style={{color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
+                            disabled={this.state.hasDownvoted ? 'disabled' : '' }
                             className="material-icons"
                             onClick={this.onClickDownvote}
                         >
@@ -97,6 +99,7 @@ class Reply extends Component {
                     <div className='replyScore'>
                         <button 
                             className="material-icons"
+                            disabled={this.state.hasUpvoted ? 'disabled' : '' }
                             onClick={this.onClickUpvote}
                             style={{color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         >
@@ -105,6 +108,7 @@ class Reply extends Component {
                         <div><p className='replyPoints'>{this.props.points}</p></div>
                         <button 
                             className="material-icons"
+                            disabled={this.state.hasDownvoted ? 'disabled' : '' }
                             onClick={this.onClickDownvote}
                             style={{color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.7)' }}
                         >
