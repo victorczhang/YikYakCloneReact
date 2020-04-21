@@ -41,9 +41,56 @@ class UserHeader extends Component {
         const { user } = this.props.auth;
 
         if (this.state.showMenu) {
-            <div className='errorNotice'>
-                <p>We are aware of the UI issues</p>
-            </div>
+            return (
+                <div className='dashboardHeader'>
+                    <div className='dashboardLogo'>
+                        <Link to='/dashboard'><i className='material-icons md-24'>home</i></Link>
+                    </div>
+                    <div className='dashboardFeedSelection'>
+                        {/* <p id='nearby'>Nearby</p>
+                    <p id='myHerd'>My Herd</p> */}
+                    </div>
+                    <div className='dashboardNewHot'>
+                        <div className='newPostToggle'>
+                            <input
+                                type='radio'
+                                name='feedOption'
+                                value='new'
+                                id='newPostToggle'
+                                // checked={this.state.new}
+                                defaultChecked={true}
+                            // onChange={this.handleChange()}
+                            />
+                            <label htmlFor='newPostToggle'>New</label>
+                        </div>
+                        <div className='hotPostToggle'>
+                            <input
+                                type='radio'
+                                name='feedOption'
+                                value='hot'
+                                id='hotPostToggle'
+                            // checked={this.state.hot}
+                            // onChange={this.handleChange()}
+                            />
+                            <label htmlFor='hotPostToggle'>Hot</label>
+                        </div>
+                    </div>
+                    <div className='dashboardUserPref'>
+                        <div className='userNotifications'>
+                            <button
+                                onClick={this.showMenu}
+                            >
+                                <i className='material-icons md-24'>notifications</i>
+                            </button>
+                        </div>
+                        <div className='errorNotice'>
+                            <p>We are aware of current issues</p>
+                        </div>
+                        <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
+                        <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
+                    </div>
+                </div>
+            )
         }
         
         return (
