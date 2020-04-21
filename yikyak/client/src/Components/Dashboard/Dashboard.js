@@ -27,8 +27,8 @@ class Dashboard extends Component {
 
     totalYakarma: '',
 
-    // new: true,
-    // hot: false,
+    new: true,
+    hot: false,
 
     hasVoted: false,
 
@@ -158,12 +158,12 @@ class Dashboard extends Component {
               .post(`/api/posts/upvote/${id}`)
               .then(res => {
                 console.log(res)
-                if (!this.state.disabledUpvote) {
-                  this.setState({
-                    disabledUpvote: true,
-                    disabledDownvote: false
-                  })
-                }
+                // if (!this.state.disabledUpvote) {
+                //   this.setState({
+                //     disabledUpvote: true,
+                //     disabledDownvote: false
+                //   })
+                // }
                 // console.log(this.state.disabledUpvote)
                 // console.log(this.state.disableDownvote)
               })
@@ -195,12 +195,12 @@ class Dashboard extends Component {
               .post(`/api/posts/downvote/${id}`)
               .then(res => {
                 console.log(res)
-                if (!this.state.disabledDownvote) {
-                  this.setState({
-                    disabledUpvote: false,
-                    disabledDownvote: true
-                  })
-                }
+                // if (!this.state.disabledDownvote) {
+                //   this.setState({
+                //     disabledUpvote: false,
+                //     disabledDownvote: true
+                //   })
+                // }
                 // console.log(this.state.disabledUpvote)
                 // console.log(this.state.disableDownvote)
               })
@@ -223,12 +223,12 @@ class Dashboard extends Component {
     // console.log(id)
   }
 
-  // handleChange = () => {
-  //   this.setState({
-  //       new: !this.state.new,
-  //       hot: !this.state.hot
-  //   })
-  // }
+  handleRadioChange = () => {
+    this.setState({
+        new: !this.state.new,
+        hot: !this.state.hot
+    })
+  }
 
   handleGetUpvotedPosts = () => {
     try {
@@ -263,23 +263,11 @@ class Dashboard extends Component {
   }
   
   render() {
-    // const foo = this.state.upvotedPosts.slice()
-    // const bar = this.state.posts.slice()
-
-    // const romanSculptures = []
-
-    // foo.map(function(item, i) {
-    //   romanSculptures.push(item._id)
-    // })
-
-    // // console.log(test2)
-    // console.log(romanSculptures)
-
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
       obj2.createdAt.localeCompare(obj1.createdAt));
 
-    // const hotPosts = this.state.posts.slice().sort((obj1, obj2) => 
-    //   obj2.points - obj1.points)
+    const hotPosts = this.state.posts.slice().sort((obj1, obj2) => 
+      obj2.points - obj1.points)
 
     const PostItemComponent = sortedPosts.map((item, i) =>
       <div 
@@ -299,22 +287,23 @@ class Dashboard extends Component {
       </div>
     )
 
-    // const hotPostItemComponent = hotPosts.map((item, i) =>
-    //   <div 
-    //     key={i}
-    //     className='feedItem'
-    //   >
-    //     <Post
-    //       post={item.post}
-    //       id={item._id}
-    //       replies={item.replies}
-    //       createdAt={item.createdAt}
-    //       points={item.points}
-    //       handleUpvote={() => this.handleUpvote(item._id)}
-    //       handleDownvote={() => this.handleDownvote(item._id)}
-    //   />
-    //   </div>
-    // )
+    const HotItemComponent = hotPosts.map((item, i) =>
+      <div 
+        // key={i}
+        className='feedItem'
+      >
+        <Post
+          key={i}
+          post={item.post}
+          id={item._id}
+          replies={item.replies}
+          createdAt={item.createdAt}
+          points={item.points}
+          handleUpvote={() => this.handleUpvote(item._id)}
+          handleDownvote={() => this.handleDownvote(item._id)}
+        />
+      </div>
+    )
 
     if (this.state.isLoading) {
       return (
@@ -330,7 +319,7 @@ class Dashboard extends Component {
           <UserHeader 
             // hot={this.state.hot} 
             // new={this.state.new}
-            // handleChange={this.handleChange()}
+            handleRadioChange={() => this.handleRadioChange()}
           />
         </div>
         <div className='dashboardBackground'>
@@ -408,7 +397,7 @@ class Dashboard extends Component {
           <div className='feedContent'>
             <div className='feedPost'>
               {/* { this.state.new ? {PostItemComponent} : {hotPostItemComponent} } */}
-              { PostItemComponent }
+              {this.state.new ? { PostItemComponent } : {HotItemComponent}}
             </div>
           </div>
         </div>

@@ -112,7 +112,7 @@ class UserHeader extends Component {
                             id='newPostToggle' 
                             // checked={this.state.new}
                             defaultChecked={true}
-                            // onChange={this.handleChange()}
+                            onChange={this.handleRadioChange}
                         />
                         <label htmlFor='newPostToggle'>New</label>
                     </div>
@@ -123,7 +123,7 @@ class UserHeader extends Component {
                             value='hot'
                             id='hotPostToggle' 
                             // checked={this.state.hot}
-                            // onChange={this.handleChange()}
+                            onChange={this.handleRadioChange}
                         />
                         <label htmlFor='hotPostToggle'>Hot</label>
                     </div>
