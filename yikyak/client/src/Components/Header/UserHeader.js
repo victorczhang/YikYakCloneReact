@@ -30,7 +30,7 @@ class UserHeader extends Component {
     // }
 
     showMenu = e => {
-        event.preventDefault()
+        e.preventDefault()
 
         this.setState({
             showMenu: !this.state.showMenu
