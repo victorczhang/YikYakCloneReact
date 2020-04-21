@@ -313,96 +313,191 @@ class Dashboard extends Component {
       )
     }
 
-    return (
-      <div className='homePage'>
-        <div>
-          <UserHeader 
-            // hot={this.state.hot} 
-            // new={this.state.new}
-            handleRadioChange={() => this.handleRadioChange()}
-          />
-        </div>
-        <div className='dashboardBackground'>
-          {/* <b>Hey there,</b> {user.name.split(" ")[0]} */}
-        </div>
-        <div className='newPost'>
-          <div className='leftPost'>
-            {/* <h1>Test</h1> */}
+    if (this.state.new) {
+      return (
+        <div className='homePage'>
+          <div>
+            <UserHeader
+              // hot={this.state.hot} 
+              // new={this.state.new}
+              handleRadioChange={() => this.handleRadioChange()}
+            />
           </div>
-          <div className='textareaGrid'>
-            <form onSubmit={this.onSubmit}>
-              <label>
-                <textarea
-                  className='textareaPost'
-                  maxLength='200'
-                  onChange={this.handleChange}
-                  value={this.state.post}
-                  placeholder="What's on your mind?" />
-              </label>
-              <div className='textareaBar'>
-                <div><p className='wordCount'>{this.state.charsLeft}</p></div>
-                <div><button className='sendButton'>Send</button></div>
-              </div>
-            </form>
+          <div className='dashboardBackground'>
+            {/* <b>Hey there,</b> {user.name.split(" ")[0]} */}
           </div>
-        </div>
-        <div className='mainContent'>
-          <div className='feedSidebar'>
-            <div className='userYakarma'>
-              <p id='userPoints'>{this.state.totalYakarma}</p>
-              <p id='userPointsLabel'>Yakarma</p>
+          <div className='newPost'>
+            <div className='leftPost'>
+              {/* <h1>Test</h1> */}
             </div>
-            <div className='featuredPosts'>
-              <div className='featuredPostsHeading'>
-                <p>Featured Posts</p>
-              </div>
-              <div className='featuredPostsList'>
-                <div className='featuredPostsContent'>
-                  <p>Why I'm Thankful For Technology</p>
+            <div className='textareaGrid'>
+              <form onSubmit={this.onSubmit}>
+                <label>
+                  <textarea
+                    className='textareaPost'
+                    maxLength='200'
+                    onChange={this.handleChange}
+                    value={this.state.post}
+                    placeholder="What's on your mind?" />
+                </label>
+                <div className='textareaBar'>
+                  <div><p className='wordCount'>{this.state.charsLeft}</p></div>
+                  <div><button className='sendButton'>Send</button></div>
                 </div>
-                <div className='featuredPostsContent'>
-                  <p>TBT: Family Photos</p>
-                </div>
-                <div className='featuredPostsContent'>
-                  <p>Serve Your Herd</p>
-                </div>
-                <div className='featuredPostsContent'>
-                  <p>Throwdown Thursday</p>
-                </div>
-              </div>
-            </div>
-            <div className='followUs'>
-              <div className='followUsHeading'>
-                <p>Follow Us</p>
-              </div>
-              <div className='followUsList'>
-                <div className='followUsContent'>
-                  <p>Follow us on Twitter</p>
-                </div>
-                <div className='followUsContent'>
-                  <p>Like us on Facebook</p>
-                </div>
-                <div className='followUsContent'>
-                  <p>Follow us on Instagram!</p>
-                </div>
-                <div className='followUsContent'>
-                  <p>Find your herd</p>
-                </div>
-                <div className='followUsContent'>
-                  <p>Other Top Yaks</p>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
-          <div className='feedContent'>
-            <div className='feedPost'>
-              {/* { this.state.new ? {PostItemComponent} : {hotPostItemComponent} } */}
-              {this.state.new ? { PostItemComponent } : {HotItemComponent}}
+          <div className='mainContent'>
+            <div className='feedSidebar'>
+              <div className='userYakarma'>
+                <p id='userPoints'>{this.state.totalYakarma}</p>
+                <p id='userPointsLabel'>Yakarma</p>
+              </div>
+              <div className='featuredPosts'>
+                <div className='featuredPostsHeading'>
+                  <p>Featured Posts</p>
+                </div>
+                <div className='featuredPostsList'>
+                  <div className='featuredPostsContent'>
+                    <p>Why I'm Thankful For Technology</p>
+                  </div>
+                  <div className='featuredPostsContent'>
+                    <p>TBT: Family Photos</p>
+                  </div>
+                  <div className='featuredPostsContent'>
+                    <p>Serve Your Herd</p>
+                  </div>
+                  <div className='featuredPostsContent'>
+                    <p>Throwdown Thursday</p>
+                  </div>
+                </div>
+              </div>
+              <div className='followUs'>
+                <div className='followUsHeading'>
+                  <p>Follow Us</p>
+                </div>
+                <div className='followUsList'>
+                  <div className='followUsContent'>
+                    <p>Follow us on Twitter</p>
+                  </div>
+                  <div className='followUsContent'>
+                    <p>Like us on Facebook</p>
+                  </div>
+                  <div className='followUsContent'>
+                    <p>Follow us on Instagram!</p>
+                  </div>
+                  <div className='followUsContent'>
+                    <p>Find your herd</p>
+                  </div>
+                  <div className='followUsContent'>
+                    <p>Other Top Yaks</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='feedContent'>
+              <div className='feedPost'>
+                {/* { this.state.new ? {PostItemComponent} : {hotPostItemComponent} } */}
+                {PostItemComponent}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
+
+    if (this.state.hot) {
+      return (
+        <div className='homePage'>
+          <div>
+            <UserHeader
+              // hot={this.state.hot} 
+              // new={this.state.new}
+              handleRadioChange={() => this.handleRadioChange()}
+            />
+          </div>
+          <div className='dashboardBackground'>
+            {/* <b>Hey there,</b> {user.name.split(" ")[0]} */}
+          </div>
+          <div className='newPost'>
+            <div className='leftPost'>
+              {/* <h1>Test</h1> */}
+            </div>
+            <div className='textareaGrid'>
+              <form onSubmit={this.onSubmit}>
+                <label>
+                  <textarea
+                    className='textareaPost'
+                    maxLength='200'
+                    onChange={this.handleChange}
+                    value={this.state.post}
+                    placeholder="What's on your mind?" />
+                </label>
+                <div className='textareaBar'>
+                  <div><p className='wordCount'>{this.state.charsLeft}</p></div>
+                  <div><button className='sendButton'>Send</button></div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div className='mainContent'>
+            <div className='feedSidebar'>
+              <div className='userYakarma'>
+                <p id='userPoints'>{this.state.totalYakarma}</p>
+                <p id='userPointsLabel'>Yakarma</p>
+              </div>
+              <div className='featuredPosts'>
+                <div className='featuredPostsHeading'>
+                  <p>Featured Posts</p>
+                </div>
+                <div className='featuredPostsList'>
+                  <div className='featuredPostsContent'>
+                    <p>Why I'm Thankful For Technology</p>
+                  </div>
+                  <div className='featuredPostsContent'>
+                    <p>TBT: Family Photos</p>
+                  </div>
+                  <div className='featuredPostsContent'>
+                    <p>Serve Your Herd</p>
+                  </div>
+                  <div className='featuredPostsContent'>
+                    <p>Throwdown Thursday</p>
+                  </div>
+                </div>
+              </div>
+              <div className='followUs'>
+                <div className='followUsHeading'>
+                  <p>Follow Us</p>
+                </div>
+                <div className='followUsList'>
+                  <div className='followUsContent'>
+                    <p>Follow us on Twitter</p>
+                  </div>
+                  <div className='followUsContent'>
+                    <p>Like us on Facebook</p>
+                  </div>
+                  <div className='followUsContent'>
+                    <p>Follow us on Instagram!</p>
+                  </div>
+                  <div className='followUsContent'>
+                    <p>Find your herd</p>
+                  </div>
+                  <div className='followUsContent'>
+                    <p>Other Top Yaks</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='feedContent'>
+              <div className='feedPost'>
+                {/* { this.state.new ? {PostItemComponent} : {hotPostItemComponent} } */}
+                {HotItemComponent}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 
