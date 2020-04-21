@@ -81,7 +81,7 @@ class UserHeader extends Component {
                                 className='userNotifications'
                                 onClick={this.showMenu}
                             >
-                                <i className='material-icons md-24'>notifications</i>
+                                <i className='material-icons md-24'><span className='pulse'>notifications</span></i>
                             </button>
                         </div>
                         <div className='errorNotice'>
