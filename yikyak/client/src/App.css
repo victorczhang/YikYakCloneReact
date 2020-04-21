@@ -812,7 +812,8 @@ input.loginField, input.signUpField {
   top: 40px;
   right: 165px;
   padding: 7px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  box-shadow: 0px 3px 4px rgba(184, 184, 184, 0.6)
 }
 
 @keyframes pulse {
