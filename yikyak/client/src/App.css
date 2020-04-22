@@ -832,11 +832,12 @@ input.loginField, input.signUpField {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .featuresImgContainer {
   overflow: hidden;
+  text-align: center;
   height: 100%;
 }
 
@@ -846,18 +847,24 @@ input.loginField, input.signUpField {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-top: 40px;
 }
 
 .landingImg {
   padding-left: 100px;
   padding-top: 100px;
-  width: 50%;
+  width: 60%;
 }
 
 .featuresImgCrop {
   overflow: hidden;
-  height: 75%;
-  padding-top: 180px;
+  height: 100%;
+  width: 100%;
+  /* padding-top: 180px; */
+}
+
+.iPhoneZoom {
+  height: 175%;
 }
 
 .featuresChatBubble {
@@ -865,7 +872,7 @@ input.loginField, input.signUpField {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 180px;
+  /* padding-top: 180px; */
 }
 
 .featuresYakarma {

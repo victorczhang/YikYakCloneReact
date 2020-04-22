@@ -18,8 +18,8 @@ class Features extends Component {
                 </div>
                 <div className='featuresLanding'>
                     <div className='featuresLandingCopy'>
-                        <h1>Get a live feed of what </h1>
-                        <h1>people are saying around you.</h1>
+                        <h1>Get a live feed of what people are saying around you.</h1>
+                        {/* <h1>people are saying around you.</h1> */}
                     </div>
                     <div>
                         <div className='featuresImgContainer'>
@@ -33,7 +33,10 @@ class Features extends Component {
                 </div>
                 <div className='featuresChatSection'>
                     <div className='featuresImgCrop'>
-                        <img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/phones/compose@2x.png' width='300px' />
+                        <img 
+                        src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/phones/compose@2x.png' 
+                        className='iPhoneZoom'
+                        />
                     </div>
                     <div className='featuresChatBubble'>
                         <div className='featuresImgContainer'>

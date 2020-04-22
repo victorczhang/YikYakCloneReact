@@ -17,8 +17,10 @@ class LandingPage extends Component {
                 <div className='landingPage'>
                     <div>
                         <div className='landingPageCopy'>
-                            <p>Get a life feed of what</p>
-                            <p>everyone's saying around you</p>
+                            <div>
+                                <p>Get a life feed of what</p>
+                                <p>everyone's saying around you</p>
+                            </div>
                         </div>
                         <div className='landingPagePhone'>
                             <form>
