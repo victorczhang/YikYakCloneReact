@@ -18,15 +18,16 @@ class Features extends Component {
                 </div>
                 <div className='featuresLanding'>
                     <div className='featuresLandingCopy'>
-                        <h1>Get a Get a live feed of what people are saying around you.</h1>
+                        <h1>Get a live feed of what</h1>
+                        <h1>people are saying around you.</h1>
                     </div>
                     <div>
                         <div className='featuresImgContainer'>
                             <img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/phones/timeline@2x.png' />
                         </div>
-                        <div className='featuresImgContainer'>
+                        {/* <div className='featuresImgContainer'>
                             <img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/phones/detail-header@2x.png' />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className='featuresChatSection'>
@@ -34,12 +35,12 @@ class Features extends Component {
                         <img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/phones/compose@2x.png' width='300px' />
                     </div>
                     <div>
-                        <div className='featuresImgContainer'><img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/features/features-1-chatbubble-01.svg' width='100px' /></div>
+                        <div className='featuresImgContainer'><img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/features/features-1-chatbubble-01.svg' width='200px' /></div>
                         <h1>Join the conversation.</h1>
                         <p>Share your thoughts with people around you.</p>
                     </div>
                 </div>
-                <div>
+                <div className='featuresYakarma'>
                     <h1>Earn Yakarma Points</h1>
                 </div>
             </div>

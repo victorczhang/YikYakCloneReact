@@ -832,6 +832,7 @@ input.loginField, input.signUpField {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 
 .featuresImgContainer {
@@ -843,4 +844,12 @@ input.loginField, input.signUpField {
   height: 100vh;
   background: white;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featuresYakarma {
+  height: 100vh;
+  background: #30DBBD;
+  justify-content: center;
 }
