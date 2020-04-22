@@ -99,82 +99,85 @@ class Jobs extends Component {
                     ref={this.myRef}
                     className='openPositions'>
                     
-                    <div className='jobContainer'>
-                        <div className='jobPosting'>
-                            <div>
-                                <h1>Job Title</h1>
-                                <h1>Job Desc.</h1>
-                            </div>
-                            <div>
-                                <h1>Locataion</h1>
+                    <div className='jobContainer' >
+                        <div class='campusRep'>
+                            <div className='jobPosting'>
+                                <div>
+                                    <h1>Job Title</h1>
+                                    <h1>Job Desc.</h1>
+                                </div>
+                                <div>
+                                    <h1>Locataion</h1>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <div className='jobPosting'>
-                            <div>
-                                <h1>Job Title</h1>
-                                <h1>Job Desc.</h1>
+                        <div class='eng'>
+                            <div className='jobPosting'>
+                                <div>
+                                    <h1>Job Title</h1>
+                                    <h1>Job Desc.</h1>
+                                </div>
+                                <div>
+                                    <h1>Locataion</h1>
+                                </div>
                             </div>
-                            <div>
-                                <h1>Locataion</h1>
+                            <div className='jobPosting'>
+                                <div>
+                                    <h1>Job Title</h1>
+                                    <h1>Job Desc.</h1>
+                                </div>
+                                <div>
+                                    <h1>Locataion</h1>
+                                </div>
                             </div>
-                        </div>
-                        <div className='jobPosting'>
-                            <div>
-                                <h1>Job Title</h1>
-                                <h1>Job Desc.</h1>
+                            <div className='jobPosting'>
+                                <div>
+                                    <h1>Job Title</h1>
+                                    <h1>Job Desc.</h1>
+                                </div>
+                                <div>
+                                    <h1>Locataion</h1>
+                                </div>
                             </div>
-                            <div>
-                                <h1>Locataion</h1>
-                            </div>
-                        </div>
-                        <div className='jobPosting'>
-                            <div>
-                                <h1>Job Title</h1>
-                                <h1>Job Desc.</h1>
-                            </div>
-                            <div>
-                                <h1>Locataion</h1>
-                            </div>
-                        </div>
-                        <div className='jobPosting'>
-                            <div>
-                                <h1>Job Title</h1>
-                                <h1>Job Desc.</h1>
-                            </div>
-                            <div>
-                                <h1>Locataion</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className='jobPosting'>
-                            <div>
-                                <h1>Job Title</h1>
-                                <h1>Job Desc.</h1>
-                            </div>
-                            <div>
-                                <h1>Locataion</h1>
+                            <div className='jobPosting'>
+                                <div>
+                                    <h1>Job Title</h1>
+                                    <h1>Job Desc.</h1>
+                                </div>
+                                <div>
+                                    <h1>Locataion</h1>
+                                </div>
                             </div>
                         </div>
-                        <div className='jobPosting'>
-                            <div>
-                                <h1>Job Title</h1>
-                                <h1>Job Desc.</h1>
+
+                        <div class='finance'>
+                            <div className='jobPosting'>
+                                <div>
+                                    <h1>Job Title</h1>
+                                    <h1>Job Desc.</h1>
+                                </div>
+                                <div>
+                                    <h1>Locataion</h1>
+                                </div>
                             </div>
-                            <div>
-                                <h1>Locataion</h1>
+                            <div className='jobPosting'>
+                                <div>
+                                    <h1>Job Title</h1>
+                                    <h1>Job Desc.</h1>
+                                </div>
+                                <div>
+                                    <h1>Locataion</h1>
+                                </div>
                             </div>
-                        </div>
-                        <div className='jobPosting'>
-                            <div>
-                                <h1>Job Title</h1>
-                                <h1>Job Desc.</h1>
-                            </div>
-                            <div>
-                                <h1>Locataion</h1>
+                            <div className='jobPosting'>
+                                <div>
+                                    <h1>Job Title</h1>
+                                    <h1>Job Desc.</h1>
+                                </div>
+                                <div>
+                                    <h1>Locataion</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
