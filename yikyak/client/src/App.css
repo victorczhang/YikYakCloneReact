@@ -917,22 +917,23 @@ input.loginField, input.signUpField {
 .companyDesc {
   text-align: center;
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 .jobsLandingCopy {
   color: white;
   font-size: 36px;
-  padding: 5px 0px 20px 0px;
+  /* padding: 5px 0px 20px 0px; */
 }
 
 .jobsLandingCopyContainer {
   width: 100%;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .viewPositionsContainer {
   width: 100%;
-  padding: 0 20px 20px 20px;
+  padding: 10px 0 20px 0;
 }
 
 .viewPositions {
