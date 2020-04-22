@@ -977,7 +977,7 @@ input.loginField, input.signUpField {
 
 .benefitsHeading {
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 
 .benefitsContainer {
@@ -1001,7 +1001,7 @@ img.benefitsGraphic {
 }
 
 .benefitsSection {
-  padding: 30px 0 30px 0;
+  padding: 30px 0 50px 0;
 }
 
 .benefitsCopy {
@@ -1022,4 +1022,8 @@ img.benefitsGraphic {
 
 .atlantaDesc {
   width: 70%;
+}
+
+.atlantaHeading {
+  width: 100%;
 }

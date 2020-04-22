@@ -78,7 +78,7 @@ class Jobs extends Component {
                     </div>
                 </div>
                 <div className='atlantaBlurb'>
-                    <div>
+                    <div className='atlantaHeading'>
                         <h2>Atlanta Represent</h2>
                     </div>
                     <div className='atlantaDesc'>
