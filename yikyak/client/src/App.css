@@ -1041,5 +1041,9 @@ img.benefitsGraphic {
 }
 
 .openPositions {
-  height: 50vh;
+  height: 100vh;
+}
+
+.jobPosting {
+  display: flex
 }

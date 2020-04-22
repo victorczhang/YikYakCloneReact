@@ -98,7 +98,86 @@ class Jobs extends Component {
                 <div 
                     ref={this.myRef}
                     className='openPositions'>
-                    <h1>Open Job 1</h1>
+                    
+                    <div>
+                        <div className='jobPosting'>
+                            <div>
+                                <h1>Job Title</h1>
+                                <h1>Job Desc.</h1>
+                            </div>
+                            <div>
+                                <h1>Locataion</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className='jobPosting'>
+                            <div>
+                                <h1>Job Title</h1>
+                                <h1>Job Desc.</h1>
+                            </div>
+                            <div>
+                                <h1>Locataion</h1>
+                            </div>
+                        </div>
+                        <div className='jobPosting'>
+                            <div>
+                                <h1>Job Title</h1>
+                                <h1>Job Desc.</h1>
+                            </div>
+                            <div>
+                                <h1>Locataion</h1>
+                            </div>
+                        </div>
+                        <div className='jobPosting'>
+                            <div>
+                                <h1>Job Title</h1>
+                                <h1>Job Desc.</h1>
+                            </div>
+                            <div>
+                                <h1>Locataion</h1>
+                            </div>
+                        </div>
+                        <div className='jobPosting'>
+                            <div>
+                                <h1>Job Title</h1>
+                                <h1>Job Desc.</h1>
+                            </div>
+                            <div>
+                                <h1>Locataion</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='jobPosting'>
+                            <div>
+                                <h1>Job Title</h1>
+                                <h1>Job Desc.</h1>
+                            </div>
+                            <div>
+                                <h1>Locataion</h1>
+                            </div>
+                        </div>
+                        <div className='jobPosting'>
+                            <div>
+                                <h1>Job Title</h1>
+                                <h1>Job Desc.</h1>
+                            </div>
+                            <div>
+                                <h1>Locataion</h1>
+                            </div>
+                        </div>
+                        <div className='jobPosting'>
+                            <div>
+                                <h1>Job Title</h1>
+                                <h1>Job Desc.</h1>
+                            </div>
+                            <div>
+                                <h1>Locataion</h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
