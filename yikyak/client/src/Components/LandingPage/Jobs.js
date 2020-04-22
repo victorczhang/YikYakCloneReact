@@ -216,7 +216,7 @@ class Jobs extends Component {
                         </div>
                     </div>
                     <div className='jobFooter'>
-                        <h1>Keep on the lookout! We're always looking to expand the YikYak family.</h1>
+                        <h2>We're always looking to add to our herd so stay tuned for more postings!</h2>
                     </div>
                 </div>
             </div>
