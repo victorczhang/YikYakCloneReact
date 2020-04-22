@@ -826,6 +826,7 @@ input.loginField, input.signUpField {
 .featuresLanding {
   display: flex;
   height: 100vh;
+  justify-content: center;
 }
 
 .featuresLandingCopy {
@@ -851,8 +852,8 @@ input.loginField, input.signUpField {
 }
 
 .landingImg {
-  padding-left: 100px;
-  padding-top: 100px;
+  /* padding-left: 100px; */
+  /* padding-top: 100px; */
   width: 60%;
 }
 
@@ -880,4 +881,9 @@ input.loginField, input.signUpField {
   background: #30DBBD;
   display: flex;
   justify-content: center;
+}
+
+.featuresYakarmaCopy {
+  padding-top: 30px;
+  color: white;
 }

@@ -49,7 +49,9 @@ class Features extends Component {
                     </div>
                 </div>
                 <div className='featuresYakarma'>
-                    <h1>Earn Yakarma Points</h1>
+                    <div className='featuresYakarmaCopy'>
+                        <h1>Earn Yakarma Points</h1>
+                    </div>
                 </div>
             </div>
         )
