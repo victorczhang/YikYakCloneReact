@@ -974,3 +974,14 @@ input.loginField, input.signUpField {
   /* margin: 0 auto; */
   width: 85%;
 }
+
+.benefitsContainer {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.benefitsItem {
+  width: 33%;
+}

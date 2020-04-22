@@ -50,23 +50,23 @@ class Jobs extends Component {
                 </div>
                 <div>
                     <div><h1>Benefits</h1></div>
-                    <div>
-                        <div>
+                    <div className='benefitsContainer'>
+                        <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_hotlanta.svg' />
                         </div>
-                        <div>
+                        <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_salary.svg' />
                         </div>
-                        <div>
+                        <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_snacks.svg' />
                         </div>
-                        <div>
+                        <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_vacay.svg' />
                         </div>
-                        <div>
+                        <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_benefits.svg' />
                         </div>
-                        <div>
+                        <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_benefits.svg' />
                         </div>
                     </div>
