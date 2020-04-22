@@ -55,8 +55,8 @@ class Features extends Component {
                             <p>Get rewarded for posting awesome Yaks.</p>
                         </div>
                         <div className='featuresYakarmaPoints'>
-                            <p>1337</p>
-                            <p>Yakarma</p>
+                            <h2>1337</h2>
+                            <h3>Yakarma</h3>
                         </div>
                     </div>
                 </div>

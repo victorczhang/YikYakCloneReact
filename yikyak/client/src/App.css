@@ -887,3 +887,9 @@ input.loginField, input.signUpField {
   padding-top: 30px;
   color: white;
 }
+
+.featuresYakarmaPoints {
+  padding-top: 30px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
