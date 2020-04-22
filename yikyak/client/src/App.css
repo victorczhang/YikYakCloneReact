@@ -905,15 +905,65 @@ input.loginField, input.signUpField {
 }
 
 .jobsLanding {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background: #30DBBD;
-  height: 30%;
+  /* height: 30vh; */
+}
+
+.jobsLandingCopy {
+  color: white;
+  font-size: 36px;
+  padding: 20px;
+}
+
+.jobsLandingCopyContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+.viewPositionsContainer {
+  width: 100%;
+  padding: 0 20px 20px 20px;
 }
 
 .viewPositions {
   background: white;
   border-radius: 6px;
-  height: 100px;
+  height: 50px;
   width: 200px;
-  color: paleturquoise;
+  color: powderblue;
+  box-shadow: none;
+}
+
+.yikYakDesc {
+  padding: 30px 0 0 0;
+  text-align: center;
+}
+
+.companyCopy {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px 0 30px 0;
+}
+
+.missionStatement {
+  width: 70%;
+  padding: 30px 0 30px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.missionStatementDesc {
+  padding-top: 10px 0 30px 0;
+  width: 70%;
+  text-align: center;
+}
+
+.yakJobGraphic {
+  margin: 0 auto;
+  width: 85%;
 }
