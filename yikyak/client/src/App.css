@@ -886,10 +886,12 @@ input.loginField, input.signUpField {
 .featuresYakarmaCopy {
   padding-top: 30px;
   color: white;
+  text-align: center;
 }
 
 .featuresYakarmaPoints {
   padding-top: 30px;
   border: 1px solid black;
   border-radius: 20px;
+  text-align: center;
 }
