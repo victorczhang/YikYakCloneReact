@@ -5,9 +5,14 @@ import { Link } from 'react-router-dom'
 class Jobs extends Component {
     constructor() {
         super()
+        this.myRef = React.createRef()
         this.state = {
 
         }
+    }
+
+    scrollToMyRef = () => {
+        window.scrollTo(0, this.myRef.current.offsetTop)
     }
 
     render() {
@@ -21,7 +26,9 @@ class Jobs extends Component {
                         <p className='jobsLandingCopy'>Join the Herd</p>
                     </div>
                     <div className='viewPositionsContainer'>
-                        <button className='viewPositions'>View Open Positions</button>
+                        <button 
+                        onClick={this.scrollToMyRef}
+                        className='viewPositions'>View Open Positions</button>
                     </div>
                 </div>
                 <div className='companyDesc'>
@@ -88,7 +95,9 @@ class Jobs extends Component {
                         <p>Silicon Valley isn’t the only incubator for startups. Yik Yak proudly leads the thriving startup scene here in Atlanta. Home to world-renowned Fortune 500 companies, southern charm, and the best chicken and waffles, Atlanta is a hot spot for music, art, and hundreds of top restaurants. And you can’t beat that beautiful skyline.</p>
                     </div>
                 </div>
-                <div className='openPositions'>
+                <div 
+                    ref={this.myRef}
+                    className='openPositions'>
                     <h1>Open Job 1</h1>
                 </div>
             </div>
