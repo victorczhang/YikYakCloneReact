@@ -99,7 +99,7 @@ class Jobs extends Component {
                     ref={this.myRef}
                     className='openPositions'>
                     
-                    <div>
+                    <div className='jobContainer'>
                         <div className='jobPosting'>
                             <div>
                                 <h1>Job Title</h1>

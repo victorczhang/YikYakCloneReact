@@ -1045,5 +1045,11 @@ img.benefitsGraphic {
 }
 
 .jobPosting {
-  display: flex
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.jobContainer {
+  width: 80%;
+  margin: 0 auto;
 }
