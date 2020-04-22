@@ -970,6 +970,6 @@ input.loginField, input.signUpField {
 }
 
 .yakJobGraphic {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 85%;
 }
