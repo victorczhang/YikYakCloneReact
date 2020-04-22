@@ -50,7 +50,14 @@ class Features extends Component {
                 </div>
                 <div className='featuresYakarma'>
                     <div className='featuresYakarmaCopy'>
-                        <h1>Earn Yakarma Points</h1>
+                        <h1>Earn Yakarma points</h1>
+                    </div>
+                    <div className='featuresYakarmaSubcopy'>
+                        <p>Get rewarded for posting awesome Yaks.</p>
+                    </div>
+                    <div className='featuresYakarmaPoints'>
+                        <p>1337</p>
+                        <p>Yakarma</p>
                     </div>
                 </div>
             </div>
