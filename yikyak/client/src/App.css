@@ -957,6 +957,7 @@ input.loginField, input.signUpField {
   width: 70%;
   margin: 0 auto;
   padding: 10px 0 30px 0;
+  line-height: 1.6em;
 }
 
 .missionStatement {
@@ -971,6 +972,7 @@ input.loginField, input.signUpField {
   width: 70%;
   text-align: center;
   margin: 0 auto;
+  line-height: 1.6em;
 }
 
 .yakJobGraphic {
@@ -1064,4 +1066,9 @@ img.benefitsGraphic {
   padding-bottom: 30px;
   text-align: center;
   margin: 0 auto;
+}
+
+.jobFooter {
+  text-align: center;
+  padding-top: 50px;
 }
