@@ -18,7 +18,7 @@ class Features extends Component {
                 </div>
                 <div className='featuresLanding'>
                     <div className='featuresLandingCopy'>
-                        <h1>Get a live feed of what</h1>
+                        <h1>Get a live feed of what </h1>
                         <h1>people are saying around you.</h1>
                     </div>
                     <div>
