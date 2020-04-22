@@ -859,12 +859,12 @@ input.loginField, input.signUpField {
 .featuresImgCrop {
   overflow: hidden;
   height: 100%;
-  width: 100%;
+  /* width: 50%; */
   /* padding-top: 180px; */
 }
 
 .iPhoneZoom {
-  height: 175%;
+  height: 120%;
 }
 
 .featuresChatBubble {
