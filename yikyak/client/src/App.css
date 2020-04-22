@@ -922,7 +922,7 @@ input.loginField, input.signUpField {
 .jobsLandingCopy {
   color: white;
   font-size: 36px;
-  padding: 20px;
+  padding: 5px 0px 20px 0px;
 }
 
 .jobsLandingCopyContainer {
