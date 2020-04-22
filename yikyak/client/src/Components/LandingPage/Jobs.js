@@ -39,9 +39,7 @@ class Jobs extends Component {
                         <p>At Yik Yak, we're building the most authentic way for people to connect with their communities and find their herds. Proudly based in Atlanta, our tight-knit team works hard to foster rich communities, build the best mobile experiences, and push the boundaries on what it means to be a social platform.</p>
                     </div>
                     <div>
-                        <h1>Photo 1</h1>
-                        <h1>Photo 2</h1>
-                        <h1>Photo 3</h1>
+                        <img src='https://pbs.twimg.com/media/CRNxrOYWsAElD1n.png' />
                     </div>
                 </div>
                 <div className='missionStatement'>
