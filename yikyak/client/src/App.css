@@ -941,8 +941,11 @@ input.loginField, input.signUpField {
   border-radius: 6px;
   height: 50px;
   width: 200px;
-  color: powderblue;
+  color: #36a29e;
+  font-size: 14px;
+  font-weight: bold;
   box-shadow: none;
+  border: none;
 }
 
 .yikYakDesc {
