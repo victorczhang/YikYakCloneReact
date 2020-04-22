@@ -23,7 +23,8 @@ class Features extends Component {
                     </div>
                     <div>
                         <div className='featuresImgContainer'>
-                            <img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/phones/timeline@2x.png' />
+                            <img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/phones/timeline@2x.png'
+                            className='landingImg' />
                         </div>
                         {/* <div className='featuresImgContainer'>
                             <img src='https://web.archive.org/web/20151210202710im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/phones/detail-header@2x.png' />

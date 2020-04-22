@@ -844,8 +844,13 @@ input.loginField, input.signUpField {
   height: 100vh;
   background: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.landingImg {
+  padding-left: 100px;
+  padding-top: 100px;
 }
 
 .featuresImgCrop {
