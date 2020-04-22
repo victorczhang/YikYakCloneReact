@@ -100,83 +100,84 @@ class Jobs extends Component {
                     className='openPositions'>
                     
                     <div className='jobContainer' >
-                        <div class='campusRep'>
+                        <div class='jobSection'>
                             <div className='jobPosting'>
                                 <div>
-                                    <h1>Job Title</h1>
-                                    <h1>Job Desc.</h1>
+                                    <p>USA Campus Representative</p>
+                                    {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>Locataion</h1>
+                                    <p>Universities and Colleges inside the USA</p>
+                                </div>
+                            </div>
+
+                            <div className='jobPosting'>
+                                <div>
+                                    <p>International Campus Representative</p>
+                                    {/* <h1>Job Desc.</h1> */}
+                                </div>
+                                <div>
+                                    <p>Universities and Colleges outside the USA</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class='eng'>
+                        <div class='jobSection'>
                             <div className='jobPosting'>
                                 <div>
-                                    <h1>Job Title</h1>
-                                    <h1>Job Desc.</h1>
+                                    <p>UX Designer</p>
+                                    {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>Locataion</h1>
+                                    <h1>Atlanta, GA</h1>
                                 </div>
                             </div>
                             <div className='jobPosting'>
                                 <div>
-                                    <h1>Job Title</h1>
-                                    <h1>Job Desc.</h1>
+                                    <p>Lead, User Experience and Design</p>
+                                    {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>Locataion</h1>
-                                </div>
-                            </div>
-                            <div className='jobPosting'>
-                                <div>
-                                    <h1>Job Title</h1>
-                                    <h1>Job Desc.</h1>
-                                </div>
-                                <div>
-                                    <h1>Locataion</h1>
+                                    <p>Atlanta, GA</p>
                                 </div>
                             </div>
                             <div className='jobPosting'>
                                 <div>
-                                    <h1>Job Title</h1>
-                                    <h1>Job Desc.</h1>
+                                    <p>Product Designer</p>
+                                    {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>Locataion</h1>
+                                    <p>Atlanta, GA</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class='finance'>
+                        <div class='jobSection'>
                             <div className='jobPosting'>
                                 <div>
-                                    <h1>Job Title</h1>
-                                    <h1>Job Desc.</h1>
+                                    <p>Android Developer</p>
+                                    {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>Locataion</h1>
+                                    <p>San Francisco, CA</p>
                                 </div>
                             </div>
                             <div className='jobPosting'>
                                 <div>
-                                    <h1>Job Title</h1>
-                                    <h1>Job Desc.</h1>
+                                    <p>Full Stack Web Engineer</p>
+                                    {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>Locataion</h1>
+                                    <p>San Francisco, CA</p>
                                 </div>
                             </div>
                             <div className='jobPosting'>
                                 <div>
-                                    <h1>Job Title</h1>
-                                    <h1>Job Desc.</h1>
+                                    <p>iOS Engineer</p>
+                                    {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>Locataion</h1>
+                                    <h1>San Francisco, CA</h1>
                                 </div>
                             </div>
                         </div>
