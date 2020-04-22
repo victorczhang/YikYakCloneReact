@@ -77,6 +77,14 @@ class Jobs extends Component {
                         </div>
                     </div>
                 </div>
+                <div className='atlantaBlurb'>
+                    <div>
+                        <h2>Atlanta Represent</h2>
+                    </div>
+                    <div>
+                        <p>Silicon Valley isn’t the only incubator for startups. Yik Yak proudly leads the thriving startup scene here in Atlanta. Home to world-renowned Fortune 500 companies, southern charm, and the best chicken and waffles, Atlanta is a hot spot for music, art, and hundreds of top restaurants. And you can’t beat that beautiful skyline.</p>
+                    </div>
+                </div>
                 <div className='openPositions'>
                     <h1>Open Job 1</h1>
                 </div>

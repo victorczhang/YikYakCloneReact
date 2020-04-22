@@ -987,6 +987,7 @@ input.loginField, input.signUpField {
   grid-template-columns: 150px 150px 150px;
   text-align: center;
   grid-column-gap: 15%;
+  align-items: center;
 }
 
 .benefitsItem {
@@ -994,10 +995,15 @@ input.loginField, input.signUpField {
 }
 
 img.benefitsGraphic {
-  height: 150px;
+  /* height: 150px; */
 }
 
 .benefitsCopy {
   padding-top: 5px;
 }
 
+.atlantaBlurb {
+  background-image: url('https://web.archive.org/web/20151205142842im_/https://s3.amazonaws.com/yikyakwebsite/atlanta/3.jpg');
+  color: white;
+  /* height: 30vh */
+}
