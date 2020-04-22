@@ -49,25 +49,31 @@ class Jobs extends Component {
                     <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/jobs_illo_x2.png' />
                 </div>
                 <div>
-                    <div><h1>Benefits</h1></div>
+                    <div className='benefitsHeading'><h1>Benefits</h1></div>
                     <div className='benefitsContainer'>
                         <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_hotlanta.svg' />
+                            <p>Work at Atlanta's hottest company</p>
                         </div>
                         <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_salary.svg' />
+                            <p>Competitive Salary</p>
                         </div>
                         <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_snacks.svg' />
+                            <p>Catered lunch daily and unlimited snacks</p>
                         </div>
                         <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_vacay.svg' />
+                            <p>Flexible vacation and sick days</p>
                         </div>
                         <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_benefits.svg' />
+                            <p>Full coverage for medical, dental, and vision for employees and their families</p>
                         </div>
                         <div className='benefitsItem'>
                             <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_benefits.svg' />
+                            <p>Access to whatever tools and equipment you need</p>
                         </div>
                     </div>
                 </div>

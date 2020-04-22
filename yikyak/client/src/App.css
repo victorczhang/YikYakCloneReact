@@ -975,13 +975,20 @@ input.loginField, input.signUpField {
   width: 85%;
 }
 
+.benefitsHeading {
+  text-align: center;
+}
+
 .benefitsContainer {
-  width: 75%;
+  /* width: 100%; */
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 150px 150px 150px;
+  text-align: center;
+  grid-gap: 100px;
 }
 
 .benefitsItem {
-  width: 33%;
+  /* width: 33%; */
 }
