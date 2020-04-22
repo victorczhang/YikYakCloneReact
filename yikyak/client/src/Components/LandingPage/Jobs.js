@@ -16,12 +16,12 @@ class Jobs extends Component {
                <div>
                 <Header />
                </div>
-               <div>
+               <div className='jobsLanding'>
                    <div>
                        <p>Join the Herd</p>
                    </div>
                    <div>
-                       <button>View Open Positions</button>
+                       <button className='viewPositions'>View Open Positions</button>
                    </div>
                </div>
                <div>

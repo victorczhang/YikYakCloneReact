@@ -834,6 +834,7 @@ input.loginField, input.signUpField {
   justify-content: center;
   align-items: center;
   /* width: 50%; */
+  color: white;
 }
 
 .featuresImgContainer {
@@ -901,4 +902,18 @@ input.loginField, input.signUpField {
 
 .featuresPoints {
   line-height: 150px;
+}
+
+.jobsLanding {
+  text-align: center;
+  background: #30DBBD;
+  height: 30%;
+}
+
+.viewPositions {
+  background: white;
+  border-radius: 6px;
+  height: 100px;
+  width: 200px;
+  color: paleturquoise;
 }
