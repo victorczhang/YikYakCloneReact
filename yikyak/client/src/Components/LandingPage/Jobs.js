@@ -129,7 +129,7 @@ class Jobs extends Component {
                                     {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>Atlanta, GA</h1>
+                                    <p>Atlanta, GA</p>
                                 </div>
                             </div>
                             <div className='jobPosting'>
@@ -177,7 +177,7 @@ class Jobs extends Component {
                                     {/* <h1>Job Desc.</h1> */}
                                 </div>
                                 <div>
-                                    <h1>San Francisco, CA</h1>
+                                    <p>San Francisco, CA</p>
                                 </div>
                             </div>
                         </div>
