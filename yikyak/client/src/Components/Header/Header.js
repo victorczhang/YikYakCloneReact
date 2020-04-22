@@ -23,8 +23,8 @@ class Header extends Component {
                             <Link to='/'><li>Home</li></Link>
                             <Link to='/features'><li>Features</li></Link>
                             <Link to='/jobs'><li>Jobs</li></Link>
-                            <Link to='/blog'><li>Blog</li></Link>
-                            <Link to='/support'><li>Support</li></Link>
+                            {/* <Link to='/blog'><li>Blog</li></Link>
+                            <Link to='/support'><li>Support</li></Link> */}
                         </ul>
                     </div>
                 </div>

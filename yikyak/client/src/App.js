@@ -66,9 +66,9 @@ class App extends Component {
           <div className='App'>
             <Route exact path='/' component={LandingPage} />
             <Route exact path='/features' component={Features} /> 
-            <Route exact path='/blog' component={Blog} /> 
+            {/* <Route exact path='/blog' component={Blog} />  */}
             <Route exact path='/jobs' component={Jobs} /> 
-            <Route exact path='/support' component={Support} /> 
+            {/* <Route exact path='/support' component={Support} />  */}
 
             <Route exact path='/login' render={() => <Login handleAuth={this.handleAuth} />} />
             <Route exact path='/register' render={() => <Register handleAuth={this.handleAuth} />} />
