@@ -52,32 +52,32 @@ class Jobs extends Component {
                     <div className='benefitsHeading'><h1>Benefits</h1></div>
                     <div className='benefitsContainer'>
                         <div className='benefitsItem'>
-                            <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_hotlanta.svg' />
-                            <p>Work at Atlanta's hottest company</p>
+                            <img className='benefitsGraphic' src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_hotlanta.svg' />
+                            <p className='benefitsCopy'>Work at Atlanta's hottest company</p>
                         </div>
                         <div className='benefitsItem'>
-                            <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_salary.svg' />
-                            <p>Competitive Salary</p>
+                            <img className='benefitsGraphic' src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_salary.svg' />
+                            <p className='benefitsCopy'>Competitive Salary</p>
                         </div>
                         <div className='benefitsItem'>
-                            <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_snacks.svg' />
-                            <p>Catered lunch daily and unlimited snacks</p>
+                            <img className='benefitsGraphic' src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_snacks.svg' />
+                            <p className='benefitsCopy'>Catered lunch daily and unlimited snacks</p>
                         </div>
                         <div className='benefitsItem'>
-                            <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_vacay.svg' />
-                            <p>Flexible vacation and sick days</p>
+                            <img className='benefitsGraphic' src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_vacay.svg' />
+                            <p className='benefitsCopy'>Flexible vacation and sick days</p>
                         </div>
                         <div className='benefitsItem'>
-                            <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_benefits.svg' />
-                            <p>Full coverage for medical, dental, and vision for employees and their families</p>
+                            <img className='benefitsGraphic' src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_benefits.svg' />
+                            <p className='benefitsCopy'>Full coverage for medical, dental, and vision for employees and their families</p>
                         </div>
                         <div className='benefitsItem'>
-                            <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_benefits.svg' />
-                            <p>Access to whatever tools and equipment you need</p>
+                            <img className='benefitsGraphic' src='https://web.archive.org/web/20150713091747im_/http://s3.amazonaws.com/yikyakwebsite/icons/job_cons_equipment.svg' />
+                            <p className='benefitsCopy'>Access to whatever tools and equipment you need</p>
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className='openPositions'>
                     <h1>Open Job 1</h1>
                 </div>
             </div>

@@ -986,9 +986,18 @@ input.loginField, input.signUpField {
   justify-content: center;
   grid-template-columns: 150px 150px 150px;
   text-align: center;
-  grid-gap: 100px;
+  grid-column-gap: 15%;
 }
 
 .benefitsItem {
   /* width: 33%; */
 }
+
+img.benefitsGraphic {
+  height: 150px;
+}
+
+.benefitsCopy {
+  padding-top: 5px;
+}
+
