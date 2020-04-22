@@ -11,9 +11,9 @@ class Jobs extends Component {
         }
     }
 
-    scrollToMyRef = () => {
-        window.scrollTo(0, this.myRef.current.offsetTop)
-    }
+    // scrollToMyRef = () => {
+    //     window.scrollTo(0, this.myRef.current.offsetTop)
+    // }
 
     render() {
         return (
@@ -27,7 +27,7 @@ class Jobs extends Component {
                     </div>
                     <div className='viewPositionsContainer'>
                         <button 
-                        onClick={this.scrollToMyRef}
+                        onClick={() => {this.myRef.current.scrollIntoView({behavior: 'smooth'})}}
                         className='viewPositions'>View Open Positions</button>
                     </div>
                 </div>
