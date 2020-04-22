@@ -1002,7 +1002,8 @@ input.loginField, input.signUpField {
 }
 
 img.benefitsGraphic {
-  /* height: 150px; */
+  height: 100px;
+  width: 150px;
 }
 
 .benefitsSection {
