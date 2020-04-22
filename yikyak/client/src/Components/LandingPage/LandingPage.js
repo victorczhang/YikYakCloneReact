@@ -32,8 +32,8 @@ class LandingPage extends Component {
                         </div>
                     </div>
                     <div>
-                        <iframe 
-                        src='https://www.youtube.com/watch?v=BN7mcLkPQFY'
+                        <iframe width='700px' 
+                        src='https://www.youtube.com/embed/BN7mcLkPQFY'
                         frameBorder='0'
                         allow='autoplay; encrypted-media'
                         allowFullScreen
