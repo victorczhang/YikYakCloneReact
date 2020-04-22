@@ -1005,5 +1005,7 @@ img.benefitsGraphic {
 .atlantaBlurb {
   background-image: url('https://web.archive.org/web/20151205142842im_/https://s3.amazonaws.com/yikyakwebsite/atlanta/3.jpg');
   color: white;
-  /* height: 30vh */
+  height: 30vh;
+  background-size: cover;
+  text-align: center
 }
