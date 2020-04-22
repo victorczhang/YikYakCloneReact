@@ -1047,6 +1047,7 @@ img.benefitsGraphic {
 .jobPosting {
   display: flex;
   justify-content: space-between;
+  padding-top: 10px;
 }
 
 .jobContainer {
@@ -1056,4 +1057,9 @@ img.benefitsGraphic {
 
 .jobSection {
   padding-top: 50px;
+}
+
+.openPositionsHeader {
+  text-align: center;
+  margin: 0 auto;
 }

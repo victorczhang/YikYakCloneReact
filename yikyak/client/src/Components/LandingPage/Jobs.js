@@ -100,6 +100,11 @@ class Jobs extends Component {
                     className='openPositions'>
                     
                     <div className='jobContainer' >
+                        <div className='openPositionsHeader'>
+                            <h1>Open Positions</h1>
+                        </div>
+
+
                         <div class='jobSection'>
                             <div className='jobPosting'>
                                 <div>
