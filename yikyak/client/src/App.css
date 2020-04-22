@@ -1039,3 +1039,7 @@ img.benefitsGraphic {
   width: 100%;
   padding: 20px;
 }
+
+.openPositions {
+  height: 50vh;
+}
