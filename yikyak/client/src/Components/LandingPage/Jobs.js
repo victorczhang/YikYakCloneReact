@@ -106,6 +106,10 @@ class Jobs extends Component {
 
 
                         <div class='jobSection'>
+                            <div>
+                                <h1>Campus Representative</h1>
+                            </div>
+
                             <div className='jobPosting'>
                                 <div>
                                     <p>USA Campus Representative</p>
@@ -128,6 +132,10 @@ class Jobs extends Component {
                         </div>
 
                         <div class='jobSection'>
+                            <div>
+                                <h1>Design</h1>
+                            </div>
+
                             <div className='jobPosting'>
                                 <div>
                                     <p>UX Designer</p>
@@ -158,6 +166,10 @@ class Jobs extends Component {
                         </div>
 
                         <div class='jobSection'>
+                            <div>
+                                <h1>Engineering</h1>
+                            </div>
+
                             <div className='jobPosting'>
                                 <div>
                                     <p>Android Developer</p>
@@ -186,6 +198,9 @@ class Jobs extends Component {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div>
+                        <h1>Keep on the lookout! We're always looking to expand the YikYak family.</h1>
                     </div>
                 </div>
             </div>

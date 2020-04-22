@@ -1060,6 +1060,8 @@ img.benefitsGraphic {
 }
 
 .openPositionsHeader {
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
   margin: 0 auto;
 }
