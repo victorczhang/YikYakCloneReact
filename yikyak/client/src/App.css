@@ -971,8 +971,13 @@ input.loginField, input.signUpField {
 }
 
 .yakJobGraphic {
-  /* margin: 0 auto; */
-  width: 85%;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 95%;
+}
+
+.yakImg {
+  width: 100%;
 }
 
 .benefitsHeading {

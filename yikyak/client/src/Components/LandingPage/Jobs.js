@@ -46,7 +46,10 @@ class Jobs extends Component {
                     </div>
                 </div>
                 <div className='yakJobGraphic'>
-                    <img src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/jobs_illo_x2.png' />
+                    <img 
+                    className='yakImg'
+                    src='https://web.archive.org/web/20151212071920im_/http://s3.amazonaws.com/yikyakwebsite/jobs_illo_x2.png' 
+                    />
                 </div>
                 <div className='benefitsSection'>
                     <div className='benefitsHeading'><h1>Benefits</h1></div>
