@@ -848,8 +848,21 @@ input.loginField, input.signUpField {
   align-items: center;
 }
 
+.featuresImgCrop {
+  overflow: hidden;
+  height: 75%;
+}
+
+.featuresChatBubble {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .featuresYakarma {
   height: 100vh;
   background: #30DBBD;
+  display: flex;
   justify-content: center;
 }
