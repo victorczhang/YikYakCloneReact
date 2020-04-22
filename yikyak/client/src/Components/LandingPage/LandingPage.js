@@ -33,17 +33,6 @@ class LandingPage extends Component {
                         <a><img src='https://web.archive.org/web/20151216174926im_/http://yikyakwebsite.s3.amazonaws.com/wp-content/uploads/sites/2/sites/2/2015/04/XEidbtAxLe4Fj6BPtQIAoeOLFNtqMWhGk0ufYr4U30Q.jpg' width='600px'></img></a>
                     </div>
                 </div>
-                {/* <div>
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                </div> */}
             </div>
         )
     }

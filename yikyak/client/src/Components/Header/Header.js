@@ -20,11 +20,11 @@ class Header extends Component {
                     </div>
                     <div className='navbar'>
                         <ul>
-                            <li>Home</li>
-                            <li>Features</li>
-                            <li>Jobs</li>
-                            <li>Blog</li>
-                            <li>Support</li>
+                            <Link to='/'><li>Home</li></Link>
+                            <Link to='/features'><li>Features</li></Link>
+                            <Link to='/jobs'><li>Jobs</li></Link>
+                            <Link to='/blog'><li>Blog</li></Link>
+                            <Link to='/support'><li>Support</li></Link>
                         </ul>
                     </div>
                 </div>

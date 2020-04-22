@@ -15,6 +15,11 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import SinglePostView from './Components/Post/SinglePostView'
 import Profile from './Components/User/Profile'
 
+import Blog from "./Components/LandingPage/Blog"
+import Features from "./Components/LandingPage/Features"
+import Jobs from './Components/LandingPage/Jobs'
+import Support from './Components/LandingPage/Support'
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -60,6 +65,11 @@ class App extends Component {
         <Router>
           <div className='App'>
             <Route exact path='/' component={LandingPage} />
+            <Route exact path='/features' component={Features} /> 
+            <Route exact path='/blog' component={Blog} /> 
+            <Route exact path='/jobs' component={Jobs} /> 
+            <Route exact path='/support' component={Support} /> 
+
             <Route exact path='/login' render={() => <Login handleAuth={this.handleAuth} />} />
             <Route exact path='/register' render={() => <Register handleAuth={this.handleAuth} />} />
             <Switch>
