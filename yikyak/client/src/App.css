@@ -833,6 +833,7 @@ input.loginField, input.signUpField {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   /* width: 50%; */
   color: white;
 }
