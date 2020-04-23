@@ -32,18 +32,18 @@ class LandingPage extends Component {
                         </div>
                     </div>
                     <div>
-                    <iframe 
-                        // width="1280" 
-                        // height="520" 
-                        width="640"
-                        height="360"
-                        src="https://www.youtube.com/embed/XQQhmpZseIc" 
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; 
-                        gyroscope; picture-in-picture" 
-                        allowfullscreen
-                    >
-                    </iframe>
+                        <iframe 
+                            // width="1280" 
+                            // height="520" 
+                            width="640"
+                            height="360"
+                            src="https://www.youtube.com/embed/XQQhmpZseIc" 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; 
+                            gyroscope; picture-in-picture" 
+                            allowfullscreen
+                        >
+                        </iframe>
                         {/* <a><img src='https://web.archive.org/web/20151216174926im_/http://yikyakwebsite.s3.amazonaws.com/wp-content/uploads/sites/2/sites/2/2015/04/XEidbtAxLe4Fj6BPtQIAoeOLFNtqMWhGk0ufYr4U30Q.jpg' width='600px'></img></a> */}
                     </div>
                 </div>
