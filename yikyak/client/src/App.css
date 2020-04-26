@@ -910,9 +910,9 @@ input.loginField, input.signUpField {
   padding: 10px;
 }
 
-.featuresPoints {
-  line-height: 150px;
-}
+/* .featuresPoints { */
+  /* line-height: 150px; */
+/* } */
 
 .jobsLanding {
   display: flex;
