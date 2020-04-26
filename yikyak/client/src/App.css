@@ -44,6 +44,10 @@
   background: #30DBBD;
   height: calc(100vh - 80px);
   /* height: 100vh; */
+  background-image: url('https://web.archive.org/web/20150528171840im_/http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/global/mountains@2x.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
 }
 
 .landingPageCopy {
