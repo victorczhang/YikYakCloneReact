@@ -1082,3 +1082,11 @@ img.benefitsGraphic {
   text-align: center;
   padding-top: 50px;
 }
+
+.featuresYakarmaVertical {
+  background-image: linear-gradient(#FFF, #FFF);
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 50%;
+}
