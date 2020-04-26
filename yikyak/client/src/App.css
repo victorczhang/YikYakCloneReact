@@ -898,11 +898,16 @@ input.loginField, input.signUpField {
 .featuresYakarmaPoints {
   /* padding-top: 50px; */
   border: 3px solid white;
-  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
   text-align: center;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   margin: 30px auto 0 auto;
+  padding: 10px;
 }
 
 .featuresPoints {

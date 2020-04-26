@@ -56,7 +56,7 @@ class Features extends Component {
                         </div>
                         <div className='featuresYakarmaPoints'>
                             <h1 className='featuresPoints'>
-                                1337
+                                1337 Yakarma
                             </h1>
                             {/* <h2>Yakarma</h2> */}
                         </div>
