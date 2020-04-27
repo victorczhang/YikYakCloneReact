@@ -46,11 +46,11 @@ class UserHeader extends Component {
                     <div className='dashboardLogo'>
                         <Link to='/dashboard'><i className='material-icons md-24'>home</i></Link>
                     </div>
-                    <div className='dashboardFeedSelection'>
+                    {/* <div className='dashboardFeedSelection'> */}
                         {/* <p id='nearby'>Nearby</p>
                     <p id='myHerd'>My Herd</p> */}
-                    </div>
-                    <div className='dashboardNewHot'>
+                    {/* </div> */}
+                    {/* <div className='dashboardNewHot'> */}
                         {/* <div className='newPostToggle'>
                             <input
                                 type='radio'
@@ -73,8 +73,8 @@ class UserHeader extends Component {
                             // onChange={this.handleChange()}
                             />
                             <label htmlFor='hotPostToggle'>Hot</label> */}
-                        </div>
-                    </div>
+                        {/* </div> */}
+                    {/* </div> */}
                     <div className='dashboardUserPref'>
                         <div>
                             <button
