@@ -50,8 +50,8 @@ class UserHeader extends Component {
                         {/* <p id='nearby'>Nearby</p>
                     <p id='myHerd'>My Herd</p> */}
                     </div>
-                    {/* <div className='dashboardNewHot'>
-                        <div className='newPostToggle'>
+                    <div className='dashboardNewHot'>
+                        {/* <div className='newPostToggle'>
                             <input
                                 type='radio'
                                 name='feedOption'
@@ -63,8 +63,8 @@ class UserHeader extends Component {
                             />
                             <label htmlFor='newPostToggle'>New</label>
                         </div>
-                        <div className='hotPostToggle'>
-                            <input
+                        <div className='hotPostToggle'> */}
+                            {/* <input
                                 type='radio'
                                 name='feedOption'
                                 value='hot'
@@ -72,8 +72,8 @@ class UserHeader extends Component {
                             // checked={this.state.hot}
                             // onChange={this.handleChange()}
                             />
-                            <label htmlFor='hotPostToggle'>Hot</label>
-                        </div> */}
+                            <label htmlFor='hotPostToggle'>Hot</label> */}
+                        </div>
                     </div>
                     <div className='dashboardUserPref'>
                         <div>
