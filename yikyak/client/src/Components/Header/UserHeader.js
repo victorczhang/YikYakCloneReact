@@ -50,7 +50,7 @@ class UserHeader extends Component {
                         {/* <p id='nearby'>Nearby</p>
                     <p id='myHerd'>My Herd</p> */}
                     </div>
-                    <div className='dashboardNewHot'>
+                    {/* <div className='dashboardNewHot'>
                         <div className='newPostToggle'>
                             <input
                                 type='radio'
@@ -73,7 +73,7 @@ class UserHeader extends Component {
                             // onChange={this.handleChange()}
                             />
                             <label htmlFor='hotPostToggle'>Hot</label>
-                        </div>
+                        </div> */}
                     </div>
                     <div className='dashboardUserPref'>
                         <div>
