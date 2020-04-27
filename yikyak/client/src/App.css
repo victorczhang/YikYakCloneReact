@@ -840,6 +840,7 @@ input.loginField, input.signUpField {
   text-align: center;
   /* width: 50%; */
   color: white;
+  width: 50%;
 }
 
 .featuresImgContainer {
