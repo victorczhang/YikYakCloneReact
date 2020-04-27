@@ -319,9 +319,9 @@ class Dashboard extends Component {
       <div className='homePage'>
         <div>
           <UserHeader
-            hot={this.state.hot}
-            new={this.state.new}
-            handleRadioChange={() => this.handleRadioChange()}
+            // hot={this.state.hot}
+            // new={this.state.new}
+            // handleRadioChange={() => this.handleRadioChange()}
           />
         </div>
         <div className='dashboardBackground'>
