@@ -46,35 +46,35 @@ class UserHeader extends Component {
                     <div className='dashboardLogo'>
                         <Link to='/dashboard'><i className='material-icons md-24'>home</i></Link>
                     </div>
-                    {/* <div className='dashboardFeedSelection'> */}
+                    <div className='dashboardFeedSelection'>
                         {/* <p id='nearby'>Nearby</p>
-                    <p id='myHerd'>My Herd</p> */}
-                    {/* </div> */}
-                    {/* <div className='dashboardNewHot'> */}
+                        <p id='myHerd'>My Herd</p> */}
+                    </div>
+                    <div className='dashboardNewHot'>
                         {/* <div className='newPostToggle'>
                             <input
                                 type='radio'
                                 name='feedOption'
                                 value='new'
                                 id='newPostToggle'
-                                // checked={this.state.new}
+                                checked={this.state.new}
                                 defaultChecked={true}
-                            // onChange={this.handleChange()}
+                                onChange={this.handleChange()}
                             />
                             <label htmlFor='newPostToggle'>New</label>
                         </div>
-                        <div className='hotPostToggle'> */}
-                            {/* <input
+                        <div className='hotPostToggle'>
+                            <input
                                 type='radio'
                                 name='feedOption'
                                 value='hot'
                                 id='hotPostToggle'
-                            // checked={this.state.hot}
-                            // onChange={this.handleChange()}
+                                checked={this.state.hot}
+                                onChange={this.handleChange()}
                             />
-                            <label htmlFor='hotPostToggle'>Hot</label> */}
-                        {/* </div> */}
-                    {/* </div> */}
+                            <label htmlFor='hotPostToggle'>Hot</label>
+                        </div> */}
+                    </div>
                     <div className='dashboardUserPref'>
                         <div>
                             <button
@@ -104,7 +104,7 @@ class UserHeader extends Component {
                     <p id='myHerd'>My Herd</p> */}
                 </div>
                 <div className='dashboardNewHot'>
-                    <div className='newPostToggle'>
+                    {/* <div className='newPostToggle'>
                         <input 
                             type='radio' 
                             name='feedOption' 
@@ -126,7 +126,7 @@ class UserHeader extends Component {
                             // onChange={this.handleRadioChange}
                         />
                         <label htmlFor='hotPostToggle'>Hot</label>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='dashboardUserPref'>
                     <div>
