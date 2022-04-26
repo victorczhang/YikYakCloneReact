@@ -140,7 +140,7 @@ class Dashboard extends Component {
           })
           this.fetchPosts()
         })
-      } 
+      }
     catch (err) {
       console.log(err)
       this.setState({ 
