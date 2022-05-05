@@ -23,11 +23,9 @@ class LandingPage extends Component {
                             </div>
                         </div>
                         <div className='landingPagePhone'>
-                            <form>
-                                <label>
-                                    <input id='landingPhone' type='tel' placeholder='Enter cell # (678) 999-8212' />
-                                </label>
-                                <button id='submitPhone'>Submit</button>
+                            <form> 
+                                <input id='landingPhone' type='tel' placeholder='(678) 999 - 8212' />
+                                <button id='submitPhone'>Submit</button>                    
                             </form>
                         </div>
                     </div>
