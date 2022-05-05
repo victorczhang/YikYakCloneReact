@@ -13,6 +13,7 @@ const session = require('express-session')
 // import App from './client/src/App'
 
 const cors = require('cors');
+const keys = require("./config/keys");
 const app = express();
 
 app.use(cors({
@@ -30,7 +31,7 @@ app.use(
 app.use(bodyParser.json());
 
 // DB Config
-const db = require("./config/keys").ATLAS_URI;
+const db = process.env.ATLAS_URI || keys.ATLAS_URI;
 // Connect to MongoDB
 mongoose
   .connect(
@@ -43,7 +44,7 @@ mongoose
 // Passport middleware
 
 app.use(session({ 
-  secret: 'keyboard cat',
+  secret: process.env.secretOrKey || keys.secretOrKey,
   resave: true,
   saveUninitialized: false
 }));
