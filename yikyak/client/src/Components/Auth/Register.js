@@ -131,7 +131,7 @@ class Register extends Component {
                   type="submit"
                   className='signUpConfirm'
                 >
-                  Sign up
+                  Sign Up
                 </button>
               </div>
             </form>

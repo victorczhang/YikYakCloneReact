@@ -362,16 +362,26 @@ input.loginField, input.signUpField {
 .loginConfirm, .signUpConfirm {
   width: 100%;
   height: 40px;
-  margin-top: 10px;
+  margin-top: 30px;
   border-radius: 5px;
   border: none;
-  background: white;
+  /* outline: 5px solid white; */
   font-size: 16px;
   font-weight: bold;
+
+  background: white;
+  background-size: 0% 100%;
 }
 
-.loginConfirm:hover {
-  background: orange;
+.loginConfirm:hover, .signUpConfirm:hover {
+  background-size: 0% 100%;
+  color: white;
+  background-image: linear-gradient(#44DEC3, #44DEC3);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: background-size .35s, color .35s;
+  border: 3px solid white;
 }
 
 .forgotPassText {
@@ -395,6 +405,10 @@ input.loginField, input.signUpField {
   padding-top: 3em;
   font-size: 14px;
   text-align: center;
+}
+
+.signUpCopy p a:hover, .existingAcctCopy p a:hover {
+  color: white;
 }
 
 .loginHeading, .signUpHeading {
