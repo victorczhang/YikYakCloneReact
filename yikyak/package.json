@@ -62,5 +62,6 @@
     "nodemon": "^2.0.2"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "https://localhost:5000"
 }
