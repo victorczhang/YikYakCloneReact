@@ -18,7 +18,7 @@ const Replies = require("../../models/Replies");
 
 // Make a new post
 
-router.post('/newPost', (req, res) => {
+router.post('/add', (req, res) => {
     const body = req.body
     // const user = req.user
 
@@ -65,7 +65,7 @@ router.post('/newPost', (req, res) => {
 
 // Get all posts
 
-router.get('/allPosts', (req, res) => {
+router.get('/all', (req, res) => {
     // const user = req.user
 
     Posts.find({}, (err, posts) => {

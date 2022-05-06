@@ -370,6 +370,10 @@ input.loginField, input.signUpField {
   font-weight: bold;
 }
 
+.loginConfirm:hover {
+  background: orange;
+}
+
 .forgotPassText {
   text-align: right;
   font-size: 14px;

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -10,11 +12,10 @@ const profile = require('./routes/api/profile')
 
 const session = require('express-session')
 
-// import App from './client/src/App'
-
 const cors = require('cors');
 const keys = require("./config/keys");
 const app = express();
+const port = process.env.PORT || 5000;
 
 app.use(cors({
   origin: true,
@@ -72,6 +73,5 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
 
