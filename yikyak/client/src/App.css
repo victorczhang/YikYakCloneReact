@@ -273,7 +273,7 @@ a:visited {
   margin: 0.5em;
   font-size: 14px;
   font-weight: bold;
-  transition: outline 0.10s ease;
+  transition: outline 0.05s ease;
   border: none;
 }
 
@@ -301,14 +301,14 @@ a:visited {
   font-size: 16px;
   font-weight: bold;
   color: white;
-  transition: outline 0.10s ease;
+  transition: outline 0.05s ease;
   outline: 2px solid white;
 }
 
 .loginButton:hover {
   color: black;
   background: white;
-  outline-width: 4px;
+  outline-width: 5px;
 }
 
 .loginPage, .signUpPage {
