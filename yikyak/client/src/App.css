@@ -1196,3 +1196,10 @@ img.benefitsGraphic {
   background-position: center center;
   /* height: 50%; */
 }
+
+iframe {
+  /* min-width: 640px;
+  min-height: 360px; */
+  min-height: 53.33vh;
+  min-width: 45vw;
+}

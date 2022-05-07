@@ -33,8 +33,6 @@ class LandingPage extends Component {
                         <iframe 
                             // width="1280" 
                             // height="520" 
-                            width="640"
-                            height="360"
                             src="https://www.youtube.com/embed/XQQhmpZseIc" 
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; 
