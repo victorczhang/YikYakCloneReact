@@ -207,6 +207,10 @@ a:link {
   /* font-weight: 500; */
 }
 
+a:link:hover {
+  color: rgba(88, 88, 88, .5);
+}
+
 a:visited {
   /* padding-left: 10px; */
   color: rgb(87, 87, 87);
@@ -240,6 +244,11 @@ a:visited {
   border: none;
   /* color: white; */
   color: #db3041;
+  background: white;
+}
+
+.postControlColumn:hover {
+  color: rgba(219,48,65, .5);
 }
 
 .postScore, .replyScore {
@@ -347,6 +356,10 @@ input.loginField, input.signUpField {
   text-indent: 10px;
   font-size: 16px;
 }
+
+/* .loginInputs form div {
+  padding-top: 10px;
+} */
 
 /* button.login, button.signup {
   width: 400px;
@@ -511,10 +524,19 @@ input.loginField, input.signUpField {
 }
 
 .sendButton {
-  color: #30DBBD;
+  /* color: #30DBBD; */
+  color: grey;
   background: none;
   border: none;
   font-weight: 600;
+}
+
+.sendButton.active {
+  color: #30DBBD;
+}
+
+.sendButton.active:hover {
+  color: rgba(48,219,189, .5);
 }
 
 .feedSidebar {
@@ -854,7 +876,7 @@ input.loginField, input.signUpField {
   background: white;
   /* border: 2px solid grey; */
   border: none;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   text-align: left;
   padding-left: 5px;
   /* margin: 5px auto 0 auto; */
@@ -865,9 +887,8 @@ input.loginField, input.signUpField {
 }
 
 .settingsButton:hover {
-  background: #30DBBD;
-  overflow: hidden;
-  color: white;
+  border-bottom: 4px solid rgb(48,219,189);
+  background: white;
 }
 
 .myPosts {

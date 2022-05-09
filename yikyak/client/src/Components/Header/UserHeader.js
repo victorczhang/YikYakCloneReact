@@ -79,7 +79,7 @@ class UserHeader extends Component {
                         <div>
                             <button
                                 className='userNotifications'
-                                onClick={this.showMenu}
+                                // onClick={this.showMenu}
                             >
                                 <i className='material-icons md-24'>notifications</i>
                             </button>
@@ -132,7 +132,7 @@ class UserHeader extends Component {
                     <div>
                         <button
                             className='userNotifications'
-                            onClick={this.showMenu}
+                            // onClick={this.showMenu}
                         >
                             <i className='material-icons md-24'>notifications</i>
                         </button>

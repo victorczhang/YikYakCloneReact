@@ -33,17 +33,13 @@ class Dashboard extends Component {
     hasVoted: false,
 
     upvotedPosts: [],
-    downvotedPosts: [],
-
-    upvotedPostIDs: [],
-    downvotedPostIDs: [],
+    downvotedPosts: []
   }
 
   componentDidMount = () => {
     this.fetchPosts()
     this.getUserKarma()
 
-    this.handleGetUpvotedPosts()
     this.handleGetDownvotedPosts()
   }
 
@@ -75,12 +71,16 @@ class Dashboard extends Component {
     }
 
   async fetchPosts() {
+    this.setState({
+      isLoading: true
+    })
     try {
       await axios
         .get("/api/posts/allPosts")
         .then(res =>
           this.setState({
             posts: res.data.data,
+            isLoading: false
           })
         )
     } catch (err) {
@@ -158,14 +158,6 @@ class Dashboard extends Component {
               .post(`/api/posts/upvote/${id}`)
               .then(res => {
                 console.log(res)
-                // if (!this.state.disabledUpvote) {
-                //   this.setState({
-                //     disabledUpvote: true,
-                //     disabledDownvote: false
-                //   })
-                // }
-                // console.log(this.state.disabledUpvote)
-                // console.log(this.state.disableDownvote)
               })
           }
           catch (err) {
@@ -182,8 +174,6 @@ class Dashboard extends Component {
         posts: updatedPosts
       }
     })
-    // console.log(this.state.disabledUpvote)
-    // console.log(this.state.disableDownvote)
   }
 
   handleDownvote = (id) => {
@@ -195,14 +185,6 @@ class Dashboard extends Component {
               .post(`/api/posts/downvote/${id}`)
               .then(res => {
                 console.log(res)
-                // if (!this.state.disabledDownvote) {
-                //   this.setState({
-                //     disabledUpvote: false,
-                //     disabledDownvote: true
-                //   })
-                // }
-                // console.log(this.state.disabledUpvote)
-                // console.log(this.state.disableDownvote)
               })
           }
           catch (err) {
@@ -220,7 +202,6 @@ class Dashboard extends Component {
         posts: updatedPosts
       }
     })
-    // console.log(id)
   }
 
   handleRadioChange = () => {
@@ -233,28 +214,45 @@ class Dashboard extends Component {
     console.log(this.state.hot)
   }
 
-  handleGetUpvotedPosts = () => {
-    try {
-      axios
-        .get("/api/posts/upvotedPosts")
-        .then(res => {
-          console.log(res.data.data)
-          this.setState({
-            upvotedPosts: res.data.data
-          })
-        })
-      } 
-    catch (err) {
-      console.log(err)
-    }
-  }
+  // handleGetUpvotedPosts = () => {
+  //   try {
+  //     axios
+  //       .all(
+  //         [
+  //           axios.get("/api/posts/upvotedPosts"),
+  //           axios.get("/api/posts/allPosts")
+  //         ]
+  //       )
+  //       .then(axios.spread((res1, res2) => {
+  //         this.setState({
+  //           upvotedPosts: res1.data.data,
+  //           posts: res2.data.data
+  //         })
+
+  //         let posts = this.state.posts;
+  //         let upvotedPosts = this.state.upvotedPosts;
+
+  //         for (let i = 0; i < posts.length; i++) {
+  //           for (let j = 0; j < upvotedPosts.length; j++) {
+  //             if (upvotedPosts[j]["_id"] === posts[i]["_id"]) {
+  //               console.log("Match made")
+  //             } 
+  //           }
+  //         }
+  //       })
+  //     )
+  //   } 
+  //   catch (err) {
+  //     console.log(err)
+  //   }
+  // }
 
   handleGetDownvotedPosts = () => {
     try {
       axios
         .get("/api/posts/downvotedPosts")
         .then(res => {
-          console.log(res.data.data)
+          // console.log(res.data.data)
           this.setState({
             downvotedPosts: res.data.data
           })
@@ -266,11 +264,14 @@ class Dashboard extends Component {
   }
   
   render() {
+    let inputActive = this.state.charsLeft;
+    let sendButtonClass = inputActive <= 199 ? "sendButton active" : "sendButton";
+
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
       obj2.createdAt.localeCompare(obj1.createdAt));
 
-    const hotPosts = this.state.posts.slice().sort((obj1, obj2) => 
-      obj2.points - obj1.points)
+    // const hotPosts = this.state.posts.slice().sort((obj1, obj2) => 
+    //   obj2.points - obj1.points)
 
     const PostItemComponent = sortedPosts.map((item, i) =>
       <div 
@@ -281,6 +282,7 @@ class Dashboard extends Component {
           key={i}
           post={item.post}
           id={item._id}
+          auth={this.props.auth}
           replies={item.replies}
           createdAt={item.createdAt}
           points={item.points}
@@ -290,23 +292,34 @@ class Dashboard extends Component {
       </div>
     )
 
-    const HotItemComponent = hotPosts.map((item, i) =>
-      <div 
-        // key={i}
-        className='feedItem'
-      >
-        <Post
-          key={i}
-          post={item.post}
-          id={item._id}
-          replies={item.replies}
-          createdAt={item.createdAt}
-          points={item.points}
-          handleUpvote={() => this.handleUpvote(item._id)}
-          handleDownvote={() => this.handleDownvote(item._id)}
-        />
-      </div>
-    )
+    const feedPost =
+      this.state.isLoading ?
+        <div className='feedPost'>
+          <p>Loading</p>
+        </div>
+        :
+        <div className='feedPost'>
+          {/* { this.state.new ? {PostItemComponent} : {hotPostItemComponent} } */}
+          {PostItemComponent}
+        </div>
+
+    // const HotItemComponent = hotPosts.map((item, i) =>
+    //   <div 
+    //     // key={i}
+    //     className='feedItem'
+    //   >
+    //     <Post
+    //       key={i}
+    //       post={item.post}
+    //       id={item._id}
+    //       replies={item.replies}
+    //       createdAt={item.createdAt}
+    //       points={item.points}
+    //       handleUpvote={() => this.handleUpvote(item._id)}
+    //       handleDownvote={() => this.handleDownvote(item._id)}
+    //     />
+    //   </div>
+    // )
 
     if (this.state.isLoading) {
       return (
@@ -343,7 +356,7 @@ class Dashboard extends Component {
               </label>
               <div className='textareaBar'>
                 <div><p className='wordCount'>{this.state.charsLeft}</p></div>
-                <div><button className='sendButton'>Send</button></div>
+                <div><button className={sendButtonClass}>Send</button></div>
               </div>
             </form>
           </div>
@@ -397,10 +410,7 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className='feedContent'>
-            <div className='feedPost'>
-              {/* { this.state.new ? {PostItemComponent} : {hotPostItemComponent} } */}
-              {PostItemComponent}
-            </div>
+            {feedPost}
           </div>
         </div>
       </div>
