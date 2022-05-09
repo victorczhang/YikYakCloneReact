@@ -523,6 +523,10 @@ input.loginField, input.signUpField {
   font-size: 17px;
 }
 
+.wordCount {
+  font-weight: 800;
+}
+
 .sendButton {
   /* color: #30DBBD; */
   color: grey;
@@ -914,8 +918,16 @@ input.loginField, input.signUpField {
   /* height: 40px; */
 }
 
+.material-icons:hover {
+  color: rgba(48,219,189,.5);
+}
+
 .featuredPostsContent, .followUsContent {
   padding-top: 15px;
+}
+
+.featuredPostsContent:hover, .followUsContent:hover {
+  color:rgba(50, 50, 50, 0.5);
 }
 
 .loadingPage {
@@ -1223,4 +1235,24 @@ iframe {
   min-height: 360px; */
   min-height: 53.33vh;
   min-width: 45vw;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedPost.loading {
+  height: 100%;
+  border: none;
+}
+
+.myPosts.loading {
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding-top: 50px;
 }

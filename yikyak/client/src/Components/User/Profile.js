@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import UserHeader from '../Header/UserHeader'
 import { logoutUser } from "../../actions/authActions";
 import UserPost from '../Post/UserPost'
+import Loader from '../Loader/Loader'
 // import Replies from '../Replies/Reply'
 import Reply from '../Replies/Reply'
 // import ReplyMode from './'
@@ -106,19 +107,18 @@ class Profile extends Component {
 
         if (this.state.isLoading) {
             return (
-                <div className='profilePage'>
-                    <div>
-                        <UserHeader />
-                    </div>
-                    <div className='dashboardBackground'>
-                        {/* <h1>Green Background</h1> */}
-                    </div>
-                    <div className='loadingPage'>
-                        <h1>Loading</h1>
-                    </div>
-                </div>
+                <Loader />
             )
         }
+
+        let myPosts = this.state.isLoading ? 
+            <div className='myPosts loading'>
+                <Loader />
+            </div>
+            :
+            <div className='myPosts'>
+                {PostItemComponent}
+            </div>
 
         if (this.state.posts.length < 1 && !this.state.isLoading) {
             return (
@@ -185,9 +185,7 @@ class Profile extends Component {
                             <h1>My Posts</h1>
                         </div>
                         <div> 
-                            <div className='myPosts'>
-                                {PostItemComponent}
-                            </div>
+                            {myPosts}
                         </div>
                     </div>
                     {/* <div className='test2'>

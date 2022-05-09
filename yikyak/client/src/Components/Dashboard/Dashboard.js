@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Post from '../Post/Post'
 import UserHeader from '../Header/UserHeader'
-
+import Loader from '../Loader/Loader'
 import axios from "axios";
 
 class Dashboard extends Component {
@@ -294,8 +294,8 @@ class Dashboard extends Component {
 
     const feedPost =
       this.state.isLoading ?
-        <div className='feedPost'>
-          <p>Loading</p>
+        <div className="feedPost loading">
+          <Loader />
         </div>
         :
         <div className='feedPost'>
@@ -323,9 +323,7 @@ class Dashboard extends Component {
 
     if (this.state.isLoading) {
       return (
-        <div>
-          <h1>Loading</h1>
-        </div>
+        <Loader/>
       )
     }
     return (
