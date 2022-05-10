@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const ReplySchema = new Schema({
-  reply: {
+const CommentSchema = new Schema({
+  comment: {
     type: String,
     required: true
   },
@@ -34,4 +34,4 @@ const ReplySchema = new Schema({
   }
 });
 
-module.exports = Reply = mongoose.model("reply", ReplySchema);
+module.exports = Comments = mongoose.model("comments", CommentSchema);

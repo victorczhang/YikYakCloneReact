@@ -1,13 +1,36 @@
 import React, {Component} from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import axios from 'axios'
 
 class UserPost extends Component {
     constructor() {
         super()
         this.state = {
-
+            numOfComments: 0
         }
     }
+
+    componentDidMount = () => {
+        this.getNumOfComments(this.props.id);
+    }
+
+    getNumOfComments = (id) => {
+        try {
+          axios
+            .get(`/api/comments/count/id/${id}`)
+            .then(res => {
+              if (res.data.data > 0) {
+                this.setState({
+                    numOfComments: res.data.data
+                })
+              }
+            })
+        }
+        catch (err) {
+          console.log(err)
+        }
+        // console.log(req.user._id)
+      }
     
     render() {
         const date = new Date(this.props.createdAt)
@@ -21,7 +44,7 @@ class UserPost extends Component {
                     </div>
                     <div className='postDetails'> 
                         <p className='postTimestamp'>{formattedTimestamp}</p>
-                        <p className='postReplies'><Link to={`/post/${this.props.id}`}>{this.props.replies} {this.props.replies == 1 ? 'reply' : 'replies'}</Link></p>
+                        <p className='postReplies'><Link to={`/post/${this.props.id}`}>{this.state.numOfComments} {this.state.numOfComments == 1 ? 'comment' : 'comments'}</Link></p>
                         <button className='postControlColumn' 
                             onClick={this.props.handleDelete}
                         >

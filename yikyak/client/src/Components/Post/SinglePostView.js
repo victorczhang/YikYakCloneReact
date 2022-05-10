@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 import UserHeader from '../Header/UserHeader'
 import { logoutUser } from "../../actions/authActions";
 import Post from '../Post/Post'
-import Reply from '../Replies/Reply'
+import Comments from '../Comments/Comments'
+import Loader from '../Loader/Loader'
 
 class SinglePostView extends Component {
     constructor() {
@@ -13,9 +14,9 @@ class SinglePostView extends Component {
         this.state = {
             charsLeft: 200,
             isLoading: false,
-            reply: "",
+            comment: "",
             data: [],
-            replies: [],
+            allComments: [],
 
             replyCount: 0,
             points: '',
@@ -24,28 +25,22 @@ class SinglePostView extends Component {
 
     componentDidMount() {
         this.fetchPost()
-        this.fetchReplies()
+        this.fetchComments()
     }
 
-    async fetchReplies() {
+    async fetchComments() {
         try {
             this.setState(
                 { isLoading: true }
             )
             axios
-                .get(`/api/posts/allReplies/${this.props.match.params.id}`)
+                .get(`/api/comments/all/${this.props.match.params.id}`)
                 .then(res => 
-                    // {
-                        // const {posts} = this.state
-                        // // console.log(res.data)
-                        // posts.push(res.data)
-                        // this.setState({posts})
-                    // }
-                    // console.log(res.data.data[0].comments)
                     this.setState({
-                        replies: res.data.data[0].comments,
+                        allComments: res.data.data,
                         isLoading: false,
                     }),
+                    console.log(this.state.allComments)
                 )
         } catch (err) {
             this.setState({
@@ -83,46 +78,37 @@ class SinglePostView extends Component {
         this.setState(
             {
                 charsLeft: 200 - input.length,
-                reply: input
+                comment: input
             })
     }
 
     onSubmit = e => {
         const { user } = this.props.auth
-
         e.preventDefault()
-
-        // if (this.state.reply === '') {
-        //     alert('No text entered!')
-        // } else {
-        //     const newReply = new Reply()
-        //     newReply.reply = this.state.reply
-        //     newReply.user_id = user.id
-        //     newReply.post_id = this.props.match.params.id
-        // }
-
-        const newReply = new Reply()
-        newReply.reply = this.state.reply
-        newReply.user_id = user.id
-        newReply.post_id = this.props.match.params.id
+        const newComment = new Comments()
+        newComment.comment = this.state.comment
+        newComment.user_id = user.id
+        newComment.post_id = this.props.match.params.id
 
         try {
             this.setState({
                 isLoading: true
             })
             axios
-                .post(`/api/posts/newReply/${this.props.match.params.id}`, newReply)
+                .post("/api/comments/new", newComment)
                 .then(res => {
                     // console.log(res)
-                    const { replies } = this.state
-                    replies.push(res.data)
+                    const { allComments } = this.state
+                    allComments.push(res.data)
                     // console.log(res.data)
-                    this.setState({ replies })
+                    this.setState({ allComments })
 
                     this.setState({
                         isLoading: false,
-                        reply: ''
+                        charsLeft: 200,
+                        comment: ''
                     })
+                    this.fetchComments();
                 })
         }
         catch (err) {
@@ -197,13 +183,13 @@ class SinglePostView extends Component {
         })
     }
 
-    handleReplyUpvote = (id) => {
+    handleCommentUpvote = (id) => {
         this.setState(prevState => {
-            const updatedReplies = prevState.replies.map(item => {
+            const updatedComments = prevState.allComments.map(item => {
                 if (item._id === id) {
                     try {
                         axios
-                            .post(`/api/posts/upvote/reply/id/${id}`)
+                            .post(`/api/comments/upvote/${id}`)
                             .then(res => {
                                 // console.log(res.data.data[0].comments[0])
                                 console.log(res)
@@ -225,18 +211,18 @@ class SinglePostView extends Component {
                 return item
             })
             return {
-                replies: updatedReplies
+                allComments: updatedComments
             }
         })
     }
 
-    handleReplyDownvote = (id) => {
+    handleCommentDownvote = (id) => {
         this.setState(prevState => {
-            const updatedReplies = prevState.replies.map(item => {
+            const updatedComments = prevState.allComments.map(item => {
                 if (item._id === id) {
                     try {
                         axios
-                            .post(`/api/posts/downvote/reply/id/${id}`)
+                            .post(`/api/comments/downvote/${id}`)
                             .then(res => {
                                 // console.log(res.data.data[0].comments[0])
                                 console.log(res)
@@ -258,28 +244,24 @@ class SinglePostView extends Component {
                 return item
             })
             return {
-                replies: updatedReplies
+                allComments: updatedComments
             }
         })
     }
 
     handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete the reply?')) {
-
-            const currentReplies = this.state.replies;
-            // console.log(currentReplies)
-
+            const currentComments = this.state.comment;
             try {
                 this.setState({
                     isLoading: true
                 })
                 axios
-                    .post(`/api/posts/${this.props.match.params.id}/reply/${id}`)
+                    .put(`/api/comments/delete/id/${id}`)
                     .then(res =>
                         console.log(res),
-                        // this.fetchPosts(),
                         this.setState({
-                            replies: currentReplies.filter(replies => replies._id !== id),
+                            allComments: currentComments.filter(comments => comments._id !== id),
                             isLoading: false
                         })
                     )
@@ -292,14 +274,17 @@ class SinglePostView extends Component {
             }
         }
     }
-
+    
     render() {
+        let inputActive = this.state.charsLeft;
+        let sendButtonClass = inputActive <= 199 ? "sendButton active" : "sendButton";
         const post = this.state.data.slice().map((item, i) =>
             <Post
                 key={i}
                 post={item.post}
                 id={item._id}
-                replies={item.replies}
+                auth={this.props.auth.user.id}
+                replies={item.comment}
                 createdAt={item.createdAt}
                 points={item.points}
                 handleUpvote={() => this.handleUpvote(item._id)}
@@ -307,22 +292,22 @@ class SinglePostView extends Component {
             />
         )
 
-        const replies = this.state.replies.slice().map((item, i) =>
+        const comments = this.state.allComments.slice().map((item, i) =>
             <div 
                 key={i}
                 className='replyItem'
             >
-                <Reply
+                <Comments
                     // key={i}
-                    reply={item.reply}
+                    comment={item.comment}
                     id={item._id}
                     user_id={item.user_id}
                     createdAt={item.createdAt}
                     points={item.points}
                     handleDelete={() => this.handleDelete(item._id)}
                     user={this.props.auth}
-                    handleReplyUpvote={() => this.handleReplyUpvote(item._id)}
-                    handleReplyDownvote={() => this.handleReplyDownvote(item._id)}
+                    handleCommentUpvote={() => this.handleCommentUpvote(item._id)}
+                    handleCommentDownvote={() => this.handleCommentDownvote(item._id)}
                 />
             </div>
         )
@@ -337,7 +322,7 @@ class SinglePostView extends Component {
                         {/* <h1>Green Background</h1> */}
                     </div>
                     <div className='loadingPage'>
-                        <h1>Loading</h1>
+                        <Loader />
                     </div>
                 </div>
             )
@@ -361,18 +346,18 @@ class SinglePostView extends Component {
                                 <textarea
                                     className='textareaReply'
                                     maxLength='200'
-                                    value={this.state.reply}
+                                    value={this.state.comment}
                                     onChange={this.handleChange}
                                     placeholder="Leave a reply..." />
                             </label>
                             <div className='textareaBarReply'>
                                 <div><p className='wordCount'>{this.state.charsLeft}</p></div>
-                                <div><button className='sendButton'>Send</button></div>
+                                <div><button className={sendButtonClass}>Send</button></div>
                             </div>
                         </form>
                     </div>
                     <div className='feedReply'>
-                        {replies}
+                        {comments}
                     </div>
                 </div>
             </div>

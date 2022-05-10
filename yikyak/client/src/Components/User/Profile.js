@@ -6,8 +6,7 @@ import UserHeader from '../Header/UserHeader'
 import { logoutUser } from "../../actions/authActions";
 import UserPost from '../Post/UserPost'
 import Loader from '../Loader/Loader'
-// import Replies from '../Replies/Reply'
-import Reply from '../Replies/Reply'
+import Comments from '../Comments/Comments'
 // import ReplyMode from './'
 // import Dashboard from '../Dashboard/Dashboard'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";

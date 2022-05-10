@@ -933,6 +933,7 @@ input.loginField, input.signUpField {
 .loadingPage {
   display: flex;
   justify-content: center;
+  padding-top: 50px;
 }
 
 .postTextMain {

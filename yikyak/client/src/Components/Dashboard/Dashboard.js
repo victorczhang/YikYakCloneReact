@@ -18,7 +18,6 @@ class Dashboard extends Component {
 
     postId: '',
     postText: '',
-    replyCount: '',
     points: '',
     deleted: '',
 
@@ -39,36 +38,34 @@ class Dashboard extends Component {
   componentDidMount = () => {
     this.fetchPosts()
     this.getUserKarma()
-
-    this.handleGetDownvotedPosts()
   }
 
   getUserKarma = () => {
     const { user } = this.props.auth;
     // console.log(user)
 
-      try {
-        axios
-          .get(`/api/posts/yakarma/${user.id}`)
-          .then(res => {
-            if (res.data.data.length > 0) {
-              this.setState({
-                totalYakarma: res.data.data[0].points
-              })
-            }
-            else {
-              this.setState({
-                totalYakarma: 0
-              })
-            }
-            // console.log(res.data.data[0].points)
-          })
-      }
-      catch (err) {
-        console.log(err)
-      }
-      // console.log(req.user._id)
+    try {
+      axios
+        .get(`/api/posts/yakarma/${user.id}`)
+        .then(res => {
+          if (res.data.data.length > 0) {
+            this.setState({
+              totalYakarma: res.data.data[0].points
+            })
+          }
+          else {
+            this.setState({
+              totalYakarma: 0
+            })
+          }
+          // console.log(res.data.data[0].points)
+        })
     }
+    catch (err) {
+      console.log(err)
+    }
+    // console.log(req.user._id)
+  }
 
   async fetchPosts() {
     this.setState({
@@ -107,17 +104,7 @@ class Dashboard extends Component {
 
   onSubmit = e => {
     const { user } = this.props.auth
-
     e.preventDefault()
-
-    // if (this.state.post === '') {
-    //   alert('No text entered!')
-    // } else {
-    //   const newPost = new Post()
-    //   newPost.post = this.state.post
-    //   newPost.user_id = user.id
-    // }
-
     const newPost = new Post()
     newPost.post = this.state.post
     newPost.user_id = user.id
@@ -126,25 +113,20 @@ class Dashboard extends Component {
       axios
         .post("/api/posts/newPost", newPost)
         .then(res => {
-          const {posts} = this.state
-          // console.log(res.data)
+          const { posts } = this.state
           posts.push(res.data)
-          this.setState({posts})
-          // this.setState(
-          //   {isLoading: false}
-          // ),
-          // form.reset()
-          // console.log(this.state.posts)
+          this.setState({ posts })
           this.setState({
-            post: ''
+            post: '',
+            charsLeft: 200
           })
           this.fetchPosts()
         })
-      }
+    }
     catch (err) {
       console.log(err)
-      this.setState({ 
-        isLoading: false 
+      this.setState({
+        isLoading: false
       })
     }
   }
@@ -166,8 +148,8 @@ class Dashboard extends Component {
           return {
             ...item,
             points: item.points + 1
-            }
           }
+        }
         return item
       })
       return {
@@ -194,8 +176,8 @@ class Dashboard extends Component {
             ...item,
             // voted: true,
             points: item.points - 1
-            }
           }
+        }
         return item
       })
       return {
@@ -206,63 +188,14 @@ class Dashboard extends Component {
 
   handleRadioChange = () => {
     this.setState({
-        new: !this.state.new,
-        hot: !this.state.hot
+      new: !this.state.new,
+      hot: !this.state.hot
     })
 
     console.log(this.state.new)
     console.log(this.state.hot)
   }
 
-  // handleGetUpvotedPosts = () => {
-  //   try {
-  //     axios
-  //       .all(
-  //         [
-  //           axios.get("/api/posts/upvotedPosts"),
-  //           axios.get("/api/posts/allPosts")
-  //         ]
-  //       )
-  //       .then(axios.spread((res1, res2) => {
-  //         this.setState({
-  //           upvotedPosts: res1.data.data,
-  //           posts: res2.data.data
-  //         })
-
-  //         let posts = this.state.posts;
-  //         let upvotedPosts = this.state.upvotedPosts;
-
-  //         for (let i = 0; i < posts.length; i++) {
-  //           for (let j = 0; j < upvotedPosts.length; j++) {
-  //             if (upvotedPosts[j]["_id"] === posts[i]["_id"]) {
-  //               console.log("Match made")
-  //             } 
-  //           }
-  //         }
-  //       })
-  //     )
-  //   } 
-  //   catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-
-  handleGetDownvotedPosts = () => {
-    try {
-      axios
-        .get("/api/posts/downvotedPosts")
-        .then(res => {
-          // console.log(res.data.data)
-          this.setState({
-            downvotedPosts: res.data.data
-          })
-        })
-      } 
-    catch (err) {
-      console.log(err)
-    }
-  }
-  
   render() {
     let inputActive = this.state.charsLeft;
     let sendButtonClass = inputActive <= 199 ? "sendButton active" : "sendButton";
@@ -274,7 +207,7 @@ class Dashboard extends Component {
     //   obj2.points - obj1.points)
 
     const PostItemComponent = sortedPosts.map((item, i) =>
-      <div 
+      <div
         // key={i}
         className='feedItem'
       >
@@ -282,7 +215,7 @@ class Dashboard extends Component {
           key={i}
           post={item.post}
           id={item._id}
-          auth={this.props.auth}
+          auth={this.props.auth.user.id}
           replies={item.replies}
           createdAt={item.createdAt}
           points={item.points}
@@ -323,16 +256,16 @@ class Dashboard extends Component {
 
     if (this.state.isLoading) {
       return (
-        <Loader/>
+        <Loader />
       )
     }
     return (
       <div className='homePage'>
         <div>
           <UserHeader
-            // hot={this.state.hot}
-            // new={this.state.new}
-            // handleRadioChange={() => this.handleRadioChange()}
+          // hot={this.state.hot}
+          // new={this.state.new}
+          // handleRadioChange={() => this.handleRadioChange()}
           />
         </div>
         <div className='dashboardBackground'>

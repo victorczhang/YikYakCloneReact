@@ -7,7 +7,7 @@ const passport = require("passport");
 
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts")
-const reply = require('./routes/api/reply')
+const comments = require('./routes/api/comments')
 const profile = require('./routes/api/profile')
 
 const session = require('express-session')
@@ -60,7 +60,7 @@ require("./config/passport")(passport)
 app.use("/api/users", users)
 app.use("/api/profile", profile)
 app.use("/api/posts", posts)
-app.use("/api/reply", reply)
+app.use("/api/comments", comments)
 
 // app.get('/', function (req, res) { res.send('pong') });
 

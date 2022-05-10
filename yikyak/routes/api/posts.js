@@ -7,7 +7,7 @@ const passport = require("passport");
 
 // Load Posts model
 const Posts = require("../../models/Posts");
-const Replies = require("../../models/Replies");
+
 
 // import mongoose from 'mongoose';
 
@@ -122,7 +122,7 @@ router.post('/upvote/:id', passport.authenticate('jwt', { session: false }),
         await Posts.findOneAndUpdate(
             {
                 _id: req.params.id,
-                upvotedBy: { "$ne": req.user._id },
+                upvotedBy: { "$ne": req.user._id }
             },
             {
                 "$inc": { "points": 1 },
@@ -186,159 +186,6 @@ router.delete('/post/:id', async (req, res) => {
         .catch(err => console.log(err))
 })
 
-// Add a comment to post
-
-router.post('/newReply/:id', async (req, res) => {
-    const body = req.body
-
-    console.log(req.body)
-
-    if (!body) {
-        return res.status(400).json({
-            success: false,
-            error: 'No text entered!',
-        })
-    }
-
-    const reply = new Replies(body)
-    
-    if (!reply) {
-        return res.status(400).json({ success: false, error: err })
-    }
-
-    const filter = { _id: req.params.id }
-    const update =  {
-        "$inc": { "replies": 1 },
-        "$push": { comments: reply },
-    }
-
-    Posts.findByIdAndUpdate(filter, update, function (err) {
-        if (err) {
-            return res.status(404).json({
-                success: false,
-                error: err,
-                message: 'Post not found!',
-            })
-        } else {
-            // res.send(doc)
-            return res.status(200).json({
-                success: true,
-                id: reply._id,
-                message: 'Reply created!',
-                reply: reply.reply,
-                points: reply.points,
-                createdAt: reply.createdAt
-            })
-        }
-    })
-})
-
-// Get replies for a given post
-
-router.get('/allReplies/:id', async (req, res) => {
-        await Posts.find({ _id: req.params.id }, (err, comments) => {
-            if (err) {
-                return res.status(400).json({ success: false, error: err })
-            }
-    
-            if (!comments) {
-                return res
-                    .status(404)
-                    .json({ success: false, error: `Replies not found` })
-            }
-            return res.status(200).json({ success: true, data: comments })
-        }).select('comments')
-        .catch(err => console.log(err))
-    })
-
-// Delete a reply on a post
-
-// .update({'_id': ObjectId("5e892c4eea788336a42694f9") }, { '$pull': { 'comments': ObjectId("5e892c55ea788336a42694fa")}});
-
-router.post('/:id/reply/:replyid', passport.authenticate('jwt', { session: false }), async (req, res) => {
-    const filter = { _id: req.params.id }
-    const update = {
-        "$inc": { "replies": -1 },
-        "$pull": { "comments": { _id: mongoose.Types.ObjectId(req.params.replyid) }},
-    }
-
-    Posts.findByIdAndUpdate(filter, update, function (err) {
-        if (err) {
-            return res.status(404).json({
-                success: false,
-                error: err,
-                message: 'Post not found!',
-            })
-        } 
-        else {
-            return res.status(200).json({
-        //         success: true,
-        //         id: reply._id,
-                message: 'Reply deleted!',
-        //         reply: reply.reply,
-        //         points: reply.points,
-        //         createdAt: reply.createdAt
-            })
-        }
-    })
-})
-
-// Upvote a reply on a post
-
-router.post("/upvote/reply/id/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
-    try {
-        const result = await Posts.findOneAndUpdate(
-            { 
-                "comments._id": mongoose.Types.ObjectId(req.params.id),
-                "comments.upvotedBy" : { "$ne": mongoose.Types.ObjectId(req.user._id) }
-            },
-            {
-                $inc: { "comments.$.points": 1 },
-                $push: { "comments.$.upvotedBy": mongoose.Types.ObjectId(req.user._id) },
-                $pull: { "comments.$.downvotedBy": mongoose.Types.ObjectId(req.user._id) },
-            }
-        );
-        return res.status(200).json({
-            success: true,
-            data: result,
-        });
-    } catch (error) {
-        return res.status(404).json({
-            success: false,
-            error: error.message,
-            message: "Post not upvoted!",
-        });
-    }
-});
-
-// Downvote a reply on a post
-
-router.post("/downvote/reply/id/:id", passport.authenticate('jwt', { session: false }), async (req, res) => {
-    try {
-        const result = await Posts.findOneAndUpdate(
-            { 
-                "comments._id": mongoose.Types.ObjectId(req.params.id),
-                "comments.downvotedBy" : { "$ne": mongoose.Types.ObjectId(req.user._id) }
-            },
-            {
-                $inc: { "comments.$.points": -1 },
-                $pull: { "comments.$.upvotedBy": mongoose.Types.ObjectId(req.user._id) },
-                $push: { "comments.$.downvotedBy": mongoose.Types.ObjectId(req.user._id) },
-            }
-        );
-        return res.status(200).json({
-            success: true,
-            data: result,
-        });
-    } catch (error) {
-        return res.status(404).json({
-            success: false,
-            error: error.message,
-            message: "Post not upvoted!",
-        });
-    }
-});
-
 // Check the posts a user has upvoted
 
 router.get('/upvotedPosts', passport.authenticate('jwt', { session: false }),
@@ -391,48 +238,7 @@ router.get('/downvotedPosts', passport.authenticate('jwt', { session: false }),
         })
     })
                     
-                    
-// Check if a user has voted on a post
-
-// router.get('/votedPost/:id', passport.authenticate('jwt', { session: false }), 
-//     async (req, res) => {
-//         const filter = { 
-//             _id: req.params.id, 
-//             'upvotedBy': req.user._id 
-//             // 'upvotedBy': 'test123'
-//         }
-
-//         Posts.find(filter, function (err, posts) {
-//             // let hasVoted = false
-
-//             if (err) {
-//                 return res.status(404).json({
-//                     success: false,
-//                     error: err,
-//                     message: 'Post not found!',
-//                 })
-//             } 
-//             else {
-//                 return res.status(200).json({
-//                     success: true,
-//                     message: 'Post found!',
-//                     data: posts,
-//                 })
-//             }
-//         })
-//     // res.send('foo')
-// })
-
 router.get('/yakarma/:id', passport.authenticate('jwt', { session: false }), async (req, res) => {
-    // console.log(typeof JSON.stringify(req.user._id))
-    // console.log(JSON.stringify(req.user._id))
-    // res.send(req.user._id)
-    // console.log('test')
-
-    // const user_id = JSON.stringify(req.user._id)
-
-    // console.log(user_id)
-    
     await Posts.aggregate([
         { $match: { 'user_id': req.params.id } },
         { $group: { '_id': null, points: { $sum: "$points" } } },

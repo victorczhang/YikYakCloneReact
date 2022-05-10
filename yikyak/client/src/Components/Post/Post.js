@@ -9,11 +9,31 @@ class Post extends Component {
         this.state = {
             hasUpvoted: false,
             hasDownvoted: false,
+            numOfComments: 0,
         }
     }
 
     componentDidMount = () => {
-        this.handleGetUpvotedPosts(this.props.id);
+        this.handleGetVotedPosts(this.props.id);
+        this.getNumOfComments(this.props.id);
+    }
+
+    getNumOfComments = (id) => {
+        try {
+            axios
+                .get(`/api/comments/count/id/${id}`)
+                .then(res => {
+                    if (res.data.data > 0) {
+                        this.setState({
+                            numOfComments: res.data.data
+                        })
+                    }
+                })
+        }
+        catch (err) {
+            console.log(err)
+        }
+        // console.log(req.user._id)
     }
 
     handleUpvoteChange = () => {
@@ -40,14 +60,14 @@ class Post extends Component {
         this.props.handleDownvote()
     }
 
-    handleGetUpvotedPosts = (id) => {
+    handleGetVotedPosts = (id) => {
         try {
             axios
                 .get(`/api/posts/post/${id}`)
                 .then(res => {
                     let upvotedPosts = res.data.data.upvotedBy;
                     let downvotedPosts = res.data.data.downvotedBy;
-                    let userId = this.props.auth.user.id;
+                    let userId = this.props.auth;
                     if (upvotedPosts.includes(userId)) {
                         this.setState({
                             hasUpvoted: true
@@ -68,6 +88,9 @@ class Post extends Component {
     render() {
         const date = new Date(this.props.createdAt)
         const formattedTimestamp = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear()
+        let upvoteStyle = { color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.5)' }
+        let downvoteStyle = { color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.5)' }
+
         return (
             <div className='post'>
                 <div className='postMain'>
@@ -76,25 +99,23 @@ class Post extends Component {
                     </div>
                     <div className='postDetails'>
                         <p className='postTimestamp'>{formattedTimestamp}</p>
-                        <p className='postReplies'><Link to={`/post/${this.props.id}`}>{this.props.replies} {this.props.replies == 1 ? 'reply' : 'replies'}</Link></p>
+                        <p className='postReplies'><Link to={`/post/${this.props.id}`}>{this.state.numOfComments} {this.state.numOfComments == 1 ? 'comment' : 'comments'}</Link></p>
                     </div>
                 </div>
                 <div className='postScore'>
                     <button
-                        style={{ color: this.state.hasUpvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.5)' }}
+                        style={upvoteStyle}
                         disabled={this.state.hasUpvoted ? 'disabled' : ''}
                         className="material-icons"
-                        // onClick={this.props.handleUpvote}
                         onClick={this.onClickUpvote}
                     >
                         keyboard_arrow_up
                     </button>
                     <div><p className='postPoints'>{this.props.points}</p></div>
                     <button
-                        style={{ color: this.state.hasDownvoted ? 'rgb(48,219,189)' : 'rgba(138, 138, 138, 0.5)' }}
+                        style={downvoteStyle}
                         className="material-icons"
                         disabled={this.state.hasDownvoted ? 'disabled' : ''}
-                        // onClick={this.props.handleDownvote}
                         onClick={this.onClickDownvote}
                     >
                         keyboard_arrow_down
