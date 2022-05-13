@@ -237,33 +237,5 @@ router.get('/downvotedPosts', passport.authenticate('jwt', { session: false }),
             }
         })
     })
-                    
-router.get('/yakarma/:id', passport.authenticate('jwt', { session: false }), async (req, res) => {
-    await Posts.aggregate([
-        { $match: { 'user_id': req.params.id } },
-        { $group: { '_id': null, points: { $sum: "$points" } } },
-    ],
-    (err, result) => {
-        // console.log('test')
-
-        if (err) {
-            return res.status(404).json({
-                success: false,
-                error: err,
-                message: 'Yakarma could not be totalled',
-
-            })
-        }
-        else {
-            // console.log(req.user)
-            return res.status(200).json({
-                success: true,
-                message: 'Yakarma found!',
-                data: result,
-            })
-        }
-    })
-    // console.log('test 2')
-})
 
 module.exports = router;

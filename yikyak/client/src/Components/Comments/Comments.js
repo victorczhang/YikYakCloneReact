@@ -84,10 +84,7 @@ class Comments extends Component {
                         </div>
                         <div className='replyDetails'>
                             <p className='replyTimestamp'>{formattedTimestamp}</p>
-                            <button
-                                className='replyControlColumn'
-                                onClick={this.props.handleDelete}
-                            >DELETE</button>
+                            <i className="material-icons delete" onClick={this.props.handleDelete}>delete</i>
                         </div>
                     </div>
                     <div className='replyScore'>

@@ -4,12 +4,15 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+const passport = require("passport");
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const User = require("../../models/User");
+const Posts = require("../../models/Posts");
+const Comments = require("../../models/Comments");
 
 // @route POST api/users/register
 // @desc Register user
@@ -98,5 +101,33 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+router.get('/yakarma/:id', passport.authenticate('jwt', { session: false }), async (req, res) => {
+  await Posts.aggregate([
+      { $match: { 'user_id': req.params.id } },
+      { $group: { '_id': null, points: { $sum: "$points" } } },
+  ],
+  (err, result) => {
+      // console.log('test')
+
+      if (err) {
+          return res.status(404).json({
+              success: false,
+              error: err,
+              message: 'Yakarma could not be totalled',
+
+          })
+      }
+      else {
+          // console.log(req.user)
+          return res.status(200).json({
+              success: true,
+              message: 'Yakarma found!',
+              data: result,
+          })
+      }
+  })
+  // console.log('test 2')
+})
 
 module.exports = router;

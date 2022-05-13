@@ -46,7 +46,7 @@ class Dashboard extends Component {
 
     try {
       axios
-        .get(`/api/posts/yakarma/${user.id}`)
+        .get(`/api/users/yakarma/${user.id}`)
         .then(res => {
           if (res.data.data.length > 0) {
             this.setState({

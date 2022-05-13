@@ -26,25 +26,80 @@ class Profile extends Component {
 
     async fetchPosts() {
         const { user } = this.props.auth
-    
+
         try {
-          this.setState(
-            { isLoading: true }
-          )
-          axios
-            .get(`/api/posts/post/user/${user.id}`)
-            .then(res =>
-              this.setState({
-                posts: res.data.data,
-                isLoading: false,
-              })
+            this.setState(
+                { isLoading: true }
             )
+            axios
+                .get(`/api/posts/post/user/${user.id}`)
+                .then(res =>
+                    this.setState({
+                        posts: res.data.data,
+                        isLoading: false,
+                    })
+                )
         } catch (err) {
-          this.setState({
-            isLoading: false
-          })
-          console.log(err.status)
+            this.setState({
+                isLoading: false
+            })
+            console.log(err.status)
         }
+    }
+
+    handleUpvote = (id) => {
+        this.setState(prevState => {
+            const updatedPosts = prevState.posts.map(item => {
+                if (item._id === id) {
+                    try {
+                        axios
+                            .post(`/api/posts/upvote/${id}`)
+                            .then(res => {
+                                console.log(res)
+                            })
+                    }
+                    catch (err) {
+                        console.log(err)
+                    }
+                    return {
+                        ...item,
+                        points: item.points + 1
+                    }
+                }
+                return item
+            })
+            return {
+                posts: updatedPosts
+            }
+        })
+    }
+
+    handleDownvote = (id) => {
+        this.setState(prevState => {
+            const updatedPosts = prevState.posts.map(item => {
+                if (item._id === id) {
+                    try {
+                        axios
+                            .post(`/api/posts/downvote/${id}`)
+                            .then(res => {
+                                console.log(res)
+                            })
+                    }
+                    catch (err) {
+                        console.log(err)
+                    }
+                    return {
+                        ...item,
+                        // voted: true,
+                        points: item.points - 1
+                    }
+                }
+                return item
+            })
+            return {
+                posts: updatedPosts
+            }
+        })
     }
 
     handleDelete = (id) => {
@@ -82,12 +137,14 @@ class Profile extends Component {
 
     render() {
         // console.log(this.state.posts)
+        const { user } = this.props.auth;
+        const userId = user.id;
 
         const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
             obj2.createdAt.localeCompare(obj1.createdAt));
 
         const PostItemComponent = sortedPosts.map((item, i) =>
-            <div 
+            <div
                 className='feedItem'
                 key={i}
             >
@@ -96,9 +153,10 @@ class Profile extends Component {
                     id={item._id}
                     replies={item.replies}
                     createdAt={item.createdAt}
+                    auth={this.props.auth.user.id}
                     points={item.points}
-                    handleUpvote={() => this.handleUpvote(item._id, item.points)}
-                    handleDownvote={() => this.handleDownvote(item._id, item.points)}
+                    handleUpvote={() => this.handleUpvote(item._id)}
+                    handleDownvote={() => this.handleDownvote(item._id)}
                     handleDelete={() => this.handleDelete(item._id)}
                 />
             </div>
@@ -110,7 +168,7 @@ class Profile extends Component {
             )
         }
 
-        let myPosts = this.state.isLoading ? 
+        let myPosts = this.state.isLoading ?
             <div className='myPosts loading'>
                 <Loader />
             </div>
@@ -171,7 +229,7 @@ class Profile extends Component {
                             <h1>Settings</h1>
                         </div>
                         <div className='settingsList'>
-                        <button className='settingsButton'>Change Username</button>
+                            <button className='settingsButton'>Change Username</button>
                             <button className='settingsButton'>Change Password</button>
                             <button className='settingsButton'>Privacy</button>
                             <button className='settingsButton'>Blocked Users</button>
@@ -183,7 +241,7 @@ class Profile extends Component {
                         <div className='profileHeading'>
                             <h1>My Posts</h1>
                         </div>
-                        <div> 
+                        <div>
                             {myPosts}
                         </div>
                     </div>

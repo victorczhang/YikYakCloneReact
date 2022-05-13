@@ -180,9 +180,21 @@ li {
   line-height: 1.6em;
 }
 
-.postDetails, .replyDetails {
-  display: flex;
-  flex-direction: row;
+.postDetails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 50%;
+  align-items: center;
+}
+
+.postDetails i {
+  text-align: center;
+}
+
+.replyDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 25%;
   align-items: center;
 }
 
@@ -191,7 +203,7 @@ li {
   color: #30DBBD;
   font-weight: 500;
   /* background: orange; */
-  width: 120px;
+  /* width: 120px; */
 }
 
 .postReplies {
@@ -921,6 +933,15 @@ input.loginField, input.signUpField {
 
 .material-icons:hover {
   color: rgba(48,219,189,.5);
+}
+
+.material-icons.delete {
+  color: #db3041;
+  font-weight: 100;
+}
+
+.material-icons.delete:hover {
+  color: rgba(219,48,65, .5);
 }
 
 .featuredPostsContent, .followUsContent {
