@@ -292,7 +292,9 @@ class SinglePostView extends Component {
             />
         )
 
-        const comments = this.state.allComments.slice().map((item, i) =>
+        let sortedComments = this.state.allComments.slice().sort((obj1, obj2) =>
+        obj2.createdAt.localeCompare(obj1.createdAt));
+        const comments = sortedComments.slice().map((item, i) =>
             <div 
                 key={i}
                 className='replyItem'

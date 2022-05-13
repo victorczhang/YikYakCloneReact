@@ -914,6 +914,7 @@ input.loginField, input.signUpField {
   color: #30DBBD;
   background: none;
   border: none;
+  font-weight: 600;
   /* width: 20px; */
   /* height: 40px; */
 }
@@ -1256,4 +1257,32 @@ iframe {
   width: 100%;
   border: none;
   padding-top: 50px;
+}
+
+/* Placeholder Font Family */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+
+textarea {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
