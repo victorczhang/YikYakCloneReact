@@ -87,8 +87,14 @@ class UserHeader extends Component {
                         <div className='errorNotice'>
                             <p>We are aware of the current issues regarding upvoting and downvoting posts.</p>
                         </div>
-                        <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
-                        <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
+                        <Link to='/profile'>
+                            <button className='userProfile'>
+                                <i className='material-icons md-24'>account</i>
+                            </button>
+                        </Link>
+                        <button className='userLogout' onClick={this.onLogoutClick}>
+                            <i className='material-icons md-24'>logout</i>
+                        </button>
                     </div>
                 </div>
             )
@@ -99,35 +105,6 @@ class UserHeader extends Component {
                 <div className='dashboardLogo'>
                     <Link to='/dashboard'><i className='material-icons md-24'>home</i></Link>
                 </div>
-                <div className='dashboardFeedSelection'> 
-                    {/* <p id='nearby'>Nearby</p>
-                    <p id='myHerd'>My Herd</p> */}
-                </div>
-                <div className='dashboardNewHot'>
-                    {/* <div className='newPostToggle'>
-                        <input 
-                            type='radio' 
-                            name='feedOption' 
-                            value='new'
-                            id='newPostToggle' 
-                            // checked={this.props.new}
-                            defaultChecked={true}
-                            // onChange={this.handleRadioChange}
-                        />
-                        <label htmlFor='newPostToggle'>New</label>
-                    </div>
-                    <div className='hotPostToggle'>
-                        <input 
-                            type='radio' 
-                            name='feedOption'
-                            value='hot'
-                            id='hotPostToggle' 
-                            // checked={this.props.hot}
-                            // onChange={this.handleRadioChange}
-                        />
-                        <label htmlFor='hotPostToggle'>Hot</label>
-                    </div> */}
-                </div>
                 <div className='dashboardUserPref'>
                     <div>
                         <button
@@ -137,8 +114,14 @@ class UserHeader extends Component {
                             <i className='material-icons md-24'>notifications</i>
                         </button>
                     </div>
-                    <Link to='/profile'><button className='userProfile'>Hey there, <b>{user.name.split(" ")[0]}</b></button></Link>
-                    <button className='userLogout' onClick={this.onLogoutClick}>Log Out</button>
+                    <Link to='/profile'>
+                        <button className='userProfile'>
+                            <i className='material-icons md-24'>person</i>
+                        </button>
+                    </Link>
+                    <button className='userLogout' onClick={this.onLogoutClick}>
+                        <i className='material-icons md-24'>logout</i>
+                    </button>
                 </div>
             </div>
         )

@@ -203,9 +203,6 @@ class Dashboard extends Component {
     const sortedPosts = this.state.posts.slice().sort((obj1, obj2) =>
       obj2.createdAt.localeCompare(obj1.createdAt));
 
-    // const hotPosts = this.state.posts.slice().sort((obj1, obj2) => 
-    //   obj2.points - obj1.points)
-
     const PostItemComponent = sortedPosts.map((item, i) =>
       <div
         // key={i}

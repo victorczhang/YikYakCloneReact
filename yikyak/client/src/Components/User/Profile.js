@@ -241,7 +241,7 @@ class Profile extends Component {
                         <div className='profileHeading'>
                             <h1>My Posts</h1>
                         </div>
-                        <div>
+                        <div className='myPostsContainer'>
                             {myPosts}
                         </div>
                     </div>
