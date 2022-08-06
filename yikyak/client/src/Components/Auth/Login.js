@@ -48,7 +48,7 @@ class Login extends Component {
       this.setState({
         isLoading: true
       });
-      this.props.loginUser(userData) // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+      this.props.loginUser(userData)
         .then(() =>
           this.setState({
             isLoading: false
@@ -92,11 +92,6 @@ class Login extends Component {
                   invalid: errors.email || errors.emailnotfound
                 })}
               />
-              {/* <label htmlFor="email">Email</label> */}
-              <span className="red-text">
-                {errors.email}
-                {errors.emailnotfound}
-              </span>
             </div>
             <div>
               <input
@@ -112,8 +107,7 @@ class Login extends Component {
               />
               {/* <label htmlFor="password">Password</label> */}
               <span className="red-text">
-                {errors.password}
-                {errors.passwordincorrect}
+                <p>{errors.passwordincorrect} or {errors.emailnotfound}</p>
               </span>
             </div>
             <div>
