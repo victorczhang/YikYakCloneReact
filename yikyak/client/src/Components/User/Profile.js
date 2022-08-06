@@ -7,8 +7,6 @@ import { logoutUser } from "../../actions/authActions";
 import UserPost from '../Post/UserPost'
 import Loader from '../Loader/Loader'
 import Comments from '../Comments/Comments'
-// import ReplyMode from './'
-// import Dashboard from '../Dashboard/Dashboard'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 class Profile extends Component {
@@ -104,14 +102,7 @@ class Profile extends Component {
 
     handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete the post?')) {
-
             const currentPosts = this.state.posts;
-            // console.log(currentPosts)
-
-            // this.setState({
-            //     posts: currentPosts.filter(posts => posts._id !== id),
-            // });
-
             try {
                 this.setState({
                     isLoading: true
@@ -136,7 +127,6 @@ class Profile extends Component {
     }
 
     render() {
-        // console.log(this.state.posts)
         const { user } = this.props.auth;
         const userId = user.id;
 
@@ -234,7 +224,6 @@ class Profile extends Component {
                             <button className='settingsButton'>Privacy</button>
                             <button className='settingsButton'>Blocked Users</button>
                             <button className='settingsButton'>Contact Support</button>
-                            {/* <button className='settingsButton'></button> */}
                         </div>
                     </div>
                     <div>
@@ -245,9 +234,6 @@ class Profile extends Component {
                             {myPosts}
                         </div>
                     </div>
-                    {/* <div className='test2'>
-                        <h1>Hello 2</h1>
-                    </div> */}
                 </div>
             </div>
         )
