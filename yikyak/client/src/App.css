@@ -476,7 +476,7 @@ input.loginField, input.signUpField {
 .textareaReply {
   overflow: hidden;
   resize: none;
-  border: 2px solid rgba(231, 231, 231, .4);
+  border: 2px solid rgb(231, 231, 231);
   /* border: none; */
   /* width: calc(80% - 40px); */
   width: calc(100% - 40px);
