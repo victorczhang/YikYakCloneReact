@@ -62,9 +62,12 @@ class Login extends Component {
       console.log(err.status)
     }
   };
-  
+
   render() {
     const { errors } = this.state;
+
+    let missingPasswordAndEmailErr = errors.password && errors.email ? "Email and Password is Required" : "";
+    let incorrectPasswordOrEmailErr = errors.passwordincorrect || errors.emailnotfound ? "Email or Password is Incorrect" : "";
 
     let loginInputs = this.state.isLoading ?
       <Loader />
@@ -107,7 +110,8 @@ class Login extends Component {
               />
               {/* <label htmlFor="password">Password</label> */}
               <span className="red-text">
-                <p>{errors.passwordincorrect} or {errors.emailnotfound}</p>
+                {missingPasswordAndEmailErr}
+                {incorrectPasswordOrEmailErr}
               </span>
             </div>
             <div>

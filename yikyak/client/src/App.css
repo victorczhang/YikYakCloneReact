@@ -369,31 +369,14 @@ input.loginField, input.signUpField {
   font-size: 16px;
 }
 
-/* .loginInputs form div {
-  padding-top: 10px;
-} */
-
-/* button.login, button.signup {
-  width: 400px;
-  height: 40px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: none;
-  background: white;
-  font-size: 16px;
-  font-weight: bold;
-} */
-
 .loginConfirm, .signUpConfirm {
   width: 100%;
   height: 40px;
   margin-top: 30px;
   border-radius: 5px;
   border: none;
-  /* outline: 5px solid white; */
   font-size: 16px;
   font-weight: bold;
-
   background: white;
   background-size: 0% 100%;
 }
@@ -421,7 +404,6 @@ input.loginField, input.signUpField {
 
 .loginGraphic, .signUpGraphic {
   width: 40%;
-  /* background: rgb(48, 253, 216); */
   background: whitesmoke;
 }
 
@@ -460,28 +442,19 @@ input.loginField, input.signUpField {
   resize: none;
   border: 1px solid rgb(231, 231, 231);
   width: calc(100% - 40px);
-  /* border: none; */
-  /* width: calc(100% - 230px); */
-  /* width: 100%; */
-  /* height: calc(130px - 20px); */
   height: 110px;
   font-size: 18px;
   box-shadow: 0px 3px 4px rgba(184, 184, 184, 0.4);
   padding-left: 20px;
   padding-top: 20px;
   padding-right: 20px;
-  /* max-width: 100%; */
 }
 
 .textareaReply {
   overflow: hidden;
   resize: none;
   border: 2px solid rgba(231, 231, 231, .4);
-  /* border: none; */
-  /* width: calc(80% - 40px); */
   width: calc(100% - 40px);
-  /* width: 100%; */
-  /* height: calc(130px - 20px); */
   height: 100px;
   font-size: 18px;
   box-shadow: 0px 5px 10px rgba(184, 184, 184, 0.3);
@@ -489,17 +462,11 @@ input.loginField, input.signUpField {
   padding-left: 20px;
   padding-top: 20px;
   padding-right: 20px;
-  /* max-width: 100%; */
 }
 
 .textareaBar {
   display: flex;
   flex-direction: row;
-  /* position: absolute; */
-  /* background: rgba(243, 243, 243, .7); */
-  /* border-bottom: 1px solid rgb(231, 231, 231);
-  border-left: 1px solid rgb(231, 231, 231);
-  border-right: 1px solid rgb(231, 231, 231); */
   width: 100%;
   height: 40%;
   left: 0;
@@ -516,15 +483,12 @@ input.loginField, input.signUpField {
 .textareaBarReply {
   display: flex;
   flex-direction: row;
-  /* background: blue; */
   justify-content: flex-end;
   color: #30DBBD;
   font-weight: 600;
   position: absolute;
   width: 100%;
   align-items: center;
-  /* left: 0; */
-  /* bottom: 0px; */
   top: 235px;
   height: 30px;
   position: absolute;
@@ -561,11 +525,8 @@ input.loginField, input.signUpField {
 }
 
 .feedSidebar {
-  /* background: orange; */
   border: 2px solid rgba(138, 138, 138, 0.5);
-  /* height: 420px; */
   height: max-content;
-  /* height: 600px; */
   border-radius: 3px;
 }
 
@@ -578,7 +539,6 @@ input.loginField, input.signUpField {
   height: 50px;
   display: flex;
   flex-direction: row;
-  /* background: blue; */
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
@@ -594,7 +554,6 @@ input.loginField, input.signUpField {
 }
 
 .dashboardFeedSelection {
-  /* margin-left: 60px; */
   padding-left: 70px;
 }
 
@@ -603,42 +562,25 @@ input.loginField, input.signUpField {
 }
 
 .userProfile {
-  /* margin-right: 20px; */
-  /* border: none; */
   color: #30DBBD;
-  /* font-weight: 800; */
   font-size: 14px;
   background: white;
   height: 100%;
   padding: 5px;
-  /* border-radius: 4px; */
-  /* box-shadow: none; */
-  /* border: 1px solid rgba(231, 231, 231, .8) */
   border: none;
 }
 
-/* .userProfile:hover {
-  height: 100%;
-  color: rgba(48,219,189, .5);
-} */
-
 .userNotifications {
-  /* margin-right: 20px; */
   border: none;
   color: #30DBBD;
   background: white;
 }
 
 .userLogout {
-  /* padding: 20px; */
-  /* width: 100%; */
-  /* height: 30px; */
   background: white;
-  /* padding: 7px; */
   border-radius: 4px;
   font-weight: bold;
   box-shadow: none;
-  /* border: 1px solid rgba(231, 231, 231, .8) */
   border: none;
 }
 
@@ -647,7 +589,6 @@ input.loginField, input.signUpField {
 }
 
 .dashboardUserPref {
-  /* padding-right: 20px; */
   text-align: center;
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -660,8 +601,6 @@ input.loginField, input.signUpField {
 .dashboardNewHot {
   text-align: center;
   margin: 0 auto;
-  /* width: 100vw; */
-  /* padding-left: 150px; */
 }
 
 .dashboardNewHot input {
@@ -677,14 +616,11 @@ input.loginField, input.signUpField {
   background-color: white;
 	color: rgba(0, 0, 0, 0.6);
 	font-size: 14px;
-	/* line-height: 1; */
 	text-align: center;
 	padding: 6px 12px;
-	/* margin-right: -1px; */
   border-top: 3px solid #30DBBD;
   border-left: 3px solid #30DBBD;
   border-bottom: 3px solid #30DBBD;
-	/* box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1); */
   transition: all 0.1s ease-in-out;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -694,14 +630,11 @@ input.loginField, input.signUpField {
   background-color: white;
 	color: rgba(0, 0, 0, 0.6);
 	font-size: 14px;
-	/* line-height: 1; */
 	text-align: center;
 	padding: 6px 12px;
-	/* margin-right: -1px; */
 	border-top: 3px solid #30DBBD;
   border-right: 3px solid #30DBBD;
   border-bottom: 3px solid #30DBBD;
-	/* box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1); */
   transition: all 0.1s ease-in-out;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -718,27 +651,12 @@ input.loginField, input.signUpField {
 }
 
 .newPost {
-  /* position: absolute; */
-  /* top: 100px; */
-  /* left: 330px; */
-  /* width: 80%; */
-  /* width: 60/%; */
-  /* background: blue; */
   display: grid;
   grid-template-columns: 250px auto;
   width: 85%;
   margin-left: 60px;
   margin-top: -60px;
   grid-gap: 20px;
-  /* display: grid; */
-
-  /* width: calc(80% - 180px); */
-  /* padding-left: 330px; */
-  /* border: 1px solid rgb(231, 231, 231); */
-  /* border: none; */
-  /* width: calc(100% - 330px); */
-  /* height: calc(130px - 20px); */
-  /* margin: 0 auto; */
 }
 
 .textareaGrid {
@@ -747,8 +665,6 @@ input.loginField, input.signUpField {
 
 .newReply {
   margin: 10px auto 0 auto;
-  /* align-items: center; */
-  /* background: blue; */
   width: 100%;
 }
 
@@ -759,10 +675,6 @@ input.loginField, input.signUpField {
   margin: 0 auto;
   left: 0;
   right: 0;
-  /* background: white; */
-  /* background: rgb(245, 245, 245); */
-  /* border: 2px solid rgb(202, 202, 202, .3); */
-  /* box-shadow: 0px 4px 5px rgba(184, 184, 184, 0.4); */
 }
 
 .currentPost {
@@ -772,7 +684,6 @@ input.loginField, input.signUpField {
 
 .feedPost {
   border: 3px solid #30DBBD;
-  /* width: 100%; */
 }
 
 .feedContent {
@@ -784,7 +695,6 @@ input.loginField, input.signUpField {
 .userYakarma {
   width: 80%;
   text-align: center;
-  /* padding: 10px; */
   padding-top: 20px;
   padding-bottom: 10px;
   margin: 0 auto;
@@ -793,7 +703,6 @@ input.loginField, input.signUpField {
 }
 
 .featuredPosts {
-  /* padding: 10px; */
   padding-top: 5px;
   padding-bottom: 15px;
   margin: 0 auto;
@@ -808,15 +717,12 @@ input.loginField, input.signUpField {
   padding-bottom: 15px;
   margin: 0 auto;
   width: 80%;
-  /* border-bottom: 1px solid rgba(138, 138, 138, 0.7); */
   font-size: 14px;
   color: rgba(50, 50, 50, 0.8);
 }
 
 .featuredPostsHeading, .followUsHeading {
-  /* padding-bottom: 10px; */
   color: rgba(99, 99, 99, 0.8);
-  /* font-weight: 700px; */
 }
 
 #userPoints {
@@ -829,20 +735,6 @@ input.loginField, input.signUpField {
   font-size: 14px;
   padding-top: 3px;
 }
-
-/* .userPost { */
-  /* width: 80%; */
-  /* background: white; */
-  /* margin: 0 auto; */
-  /* border-bottom: 2px solid rgb(202, 202, 202, .3); */
-/* } */
-
-/* .profilePage { */
-  /* background: #f5f5dc; */
-  /* display: grid; */
-  /* grid-template-columns: 250px auto; */
-  /* grid-gap: 20px; */
-/* } */
 
 .profileContent {
   display: grid;
